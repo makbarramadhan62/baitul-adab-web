@@ -1,7 +1,7 @@
-import Navbar from "../components/Navbar";
 import Image from "next/image";
 import CurriculumCard from "@/components/CuriculumCard";
 import TestimonialCard from "@/components/TestimonialCard";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
