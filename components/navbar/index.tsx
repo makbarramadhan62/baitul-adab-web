@@ -97,7 +97,7 @@ const Navbar = () => {
           </div>
         )}
 
-        {/* Tombol Pendaftaran */}
+        {/* Button Pendaftaran */}
 
         <div className="flex gap-6 font-semibold items-center">
           <button
