@@ -2,9 +2,6 @@ import Navbar from "../components/Navbar";
 import Image from "next/image";
 import CurriculumCard from "@/components/CuriculumCard";
 import TestimonialCard from "@/components/TestimonialCard";
-import "swiper/css";
-import { Swiper } from "swiper/react";
-import { SwiperSlide } from "swiper/react";
 
 export default function Home() {
   return (
@@ -138,7 +135,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="carousel gap-8 rounded-box">
+          <div className="carousel w-full gap-8 rounded-box">
             <div className="carousel-item">
               <TestimonialCard
                 imageSrc="/image/home/TestimonialPerson.png"
@@ -180,19 +177,6 @@ export default function Home() {
               />
             </div>
           </div>
-
-          <Swiper
-            spaceBetween={50}
-            slidesPerView={3}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
-          >
-            <SwiperSlide>Slide 1</SwiperSlide>
-            <SwiperSlide>Slide 2</SwiperSlide>
-            <SwiperSlide>Slide 3</SwiperSlide>
-            <SwiperSlide>Slide 4</SwiperSlide>
-            ...
-          </Swiper>
         </div>
       </section>
       {/* Third Section*/}
