@@ -7,7 +7,10 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section*/}
-      <div className="px-16 flex flex-col lg:flex-row items-center justify-center mt-4">
+      <section
+        id="hero"
+        className="p-16 flex flex-col lg:flex-row items-center justify-center mt-4"
+      >
         {/* Bagian Kiri */}
         <div className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0">
           <div className="mt-4">
@@ -22,7 +25,7 @@ export default function Home() {
               ultrices ligula in turpis posuere, at sodales ipsum consequat. Ut
               eleifend tellus sit amet enim maximus vehicula.
             </p>
-            <button className="mt-6 px-6 py-3 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition duration-300 ease-in-out">
+            <button className="btn btn-primary text-white">
               Daftar Sekarang <i className="bi bi-arrow-right"></i>
             </button>
           </div>
@@ -40,9 +43,18 @@ export default function Home() {
             className="object-contain mx-auto"
           />
         </div>
-      </div>
-
+      </section>
       {/* Hero Section*/}
+
+      {/* Second Section*/}
+      <section
+        id="second"
+        className="px-16 flex flex-col lg:flex-row items-center justify-center mt-4 w-1/2 lg:w-full lg:order-1 lg:justify-center"
+        style={{ backgroundColor: "#FF9F66" }}
+      >
+        <span className="text-5xl">Kenapa Harus Baitul Adab?</span>
+      </section>
+      {/* Second Section*/}
     </main>
   );
 }
