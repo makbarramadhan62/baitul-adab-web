@@ -1,8 +1,9 @@
 import type { Config } from "tailwindcss";
 import daisyui from "daisyui";
+import tailwindScrollbar from "tailwind-scrollbar";
 
 const config: Config = {
-  plugins: [daisyui],
+  plugins: [daisyui, tailwindScrollbar],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -22,15 +23,16 @@ const config: Config = {
       {
         mytheme: {
           primary: "#2278D4",
-          secondary_1: "#FF9F66",
-          secondary_2: "#FF5F00",
-          green: "#03A7A0",
-          white_1: "#fff",
-          white_2: "#F2F0F4",
-          black_1: "#191919",
-          black_2: "#343434",
+          "primary-content": "#FF9F66",
+          "secondary-content": "#FF5F00",
+          success: "#03A7A0",
+          "base-100": "#fff",
+          "base-200": "#F2F0F4",
+          neutral: "#191919",
+          "base-content": "#343434",
         },
       },
+      "winter",
     ],
   },
 };
