@@ -1,9 +1,66 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "@/components/navbar";
 import TestimonialCard from "@/components/testimonialCard";
 import CurriculumCard from "@/components/curiculumCard";
+import Footer from "@/components/footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+    });
+  }, []);
+
+  const testimonials = [
+    {
+      imageSrc: "/image/home/TestimonialPerson.png",
+      imageAlt: "school-pict",
+      title: "Kurikulum Terbaru",
+      description:
+        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
+    },
+    {
+      imageSrc: "/image/home/TestimonialPerson.png",
+      imageAlt: "school-pict",
+      title: "Kurikulum Terbaru",
+      description:
+        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
+    },
+    {
+      imageSrc: "/image/home/TestimonialPerson.png",
+      imageAlt: "school-pict",
+      title: "Kurikulum Terbaru",
+      description:
+        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
+    },
+    {
+      imageSrc: "/image/home/TestimonialPerson.png",
+      imageAlt: "school-pict",
+      title: "Kurikulum Terbaru",
+      description:
+        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
+    },
+    {
+      imageSrc: "/image/home/TestimonialPerson.png",
+      imageAlt: "school-pict",
+      title: "Kurikulum Terbaru",
+      description:
+        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
+    },
+    {
+      imageSrc: "/image/home/TestimonialPerson.png",
+      imageAlt: "school-pict",
+      title: "Kurikulum Terbaru",
+      description:
+        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
+    },
+  ];
+
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
       <Navbar />
@@ -11,10 +68,13 @@ export default function Home() {
       {/* Hero Section*/}
       <section
         id="hero"
-        className="p-16 flex flex-col lg:flex-row items-center justify-center mt-4 relative"
+        className="p-16 flex flex-col lg:flex-row items-center justify-center mb-0 lg:my-8 relative"
       >
         {/* Bagian Kiri */}
-        <div className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0">
+        <div
+          data-aos="fade-right"
+          className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0"
+        >
           <div className="mt-4">
             <h2 className="text-4xl font-bold text-gray-800">
               Selamat Datang di
@@ -27,14 +87,18 @@ export default function Home() {
               ultrices ligula in turpis posuere, at sodales ipsum consequat. Ut
               eleifend tellus sit amet enim maximus vehicula.
             </p>
-            <button className="btn btn-primary text-white">
+            <button className="btn btn-primary text-white mt-4">
               Daftar Sekarang <i className="bi bi-arrow-right"></i>
             </button>
           </div>
         </div>
 
         {/* Bagian Kanan */}
-        <div className="w-full lg:w-1/2 lg:order-2">
+        <div
+          data-aos="fade-left"
+          data-aos-delay="400"
+          className="w-full lg:w-1/2 lg:order-2"
+        >
           <Image
             height={100}
             width={100}
@@ -52,7 +116,7 @@ export default function Home() {
           style={{ width: "100%", height: "auto" }}
           src="/image/home/UnionBg.svg"
           alt="school-pict"
-          className="object-cover absolute bottom-0 lg:-bottom-36"
+          className="object-cover absolute bottom-0 lg:-bottom-20 xl:-bottom-44 z-10"
         />
       </section>
       {/* Hero Section*/}
@@ -60,7 +124,7 @@ export default function Home() {
       {/* Second Section*/}
       <section
         id="second"
-        className="w-full relative z-10 my-8 bg-primary-content"
+        className="w-full relative z-20 bg-primary-content mt-0 lg:my-8"
       >
         <div className="px-16">
           <div className="w-full text-center">
@@ -136,50 +200,143 @@ export default function Home() {
           </div>
 
           <div className="carousel w-full gap-8 rounded-box">
-            <div className="carousel-item">
-              <TestimonialCard
-                imageSrc="/image/home/TestimonialPerson.png"
-                imageAlt="school-pict"
-                title="Kurikulum Terbaru"
-                description="Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum"
-              />
+            {testimonials.map((testimonial, index) => (
+              <div className="carousel-item" key={index}>
+                <TestimonialCard
+                  imageSrc={testimonial.imageSrc}
+                  imageAlt={testimonial.imageAlt}
+                  title={testimonial.title}
+                  description={testimonial.description}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* Third Section*/}
+
+      {/*  Fourth Section*/}
+      <section id="fourth" className="w-full relative z-10 my-8">
+        <div className="px-16">
+          <div className="w-full text-center mb-8">
+            <div className="flex flex-col justify-center gap-4">
+              <span className="text-neutral text-5xl font-semibold">
+                Bagaimana Cara Melakukan{" "}
+                <span className="text-secondary-content">Pendaftaran?</span>
+              </span>
+              <span className="text-neutral text-2xl w-1/2 mx-auto">
+                Ikuti langkah - langkah dibawah ini untuk pendaftaran sekolah di
+                Baitul Adab Islamic School
+              </span>
             </div>
-            <div className="carousel-item">
-              <TestimonialCard
-                imageSrc="/image/home/TestimonialPerson.png"
-                imageAlt="school-pict"
-                title="Kurikulum Terbaru"
-                description="Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum"
-              />
+          </div>
+          <div className="w-full my-24 lg:order-2">
+            <Image
+              height={100}
+              width={100}
+              unoptimized
+              style={{ width: "80%", height: "auto" }}
+              src="/image/home/registrationStep.png"
+              alt="school-pict"
+              className="object-contain mx-auto"
+            />
+          </div>
+        </div>
+      </section>
+      {/*  Fourth Section*/}
+
+      {/*  Fifth Section*/}
+      <section id="fifth" className="w-full my-8">
+        <div className="px-16">
+          <div className="w-full text-center mb-8">
+            <div className="flex flex-col justify-center gap-4">
+              <span className="text-neutral text-5xl font-semibold">
+                Ayo Mulai Kumpulkan Berkas{" "}
+                <span className="text-secondary-content">Pendaftarannya!</span>
+              </span>
+              <span className="text-neutral text-2xl w-1/2 mx-auto">
+                Berkas apa saja yang diperlukan saat proses pendaftaran?
+              </span>
             </div>
-            <div className="carousel-item">
-              <TestimonialCard
-                imageSrc="/image/home/TestimonialPerson.png"
-                imageAlt="school-pict"
-                title="Kurikulum Terbaru"
-                description="Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum"
-              />
+          </div>
+
+          <div className="flex flex-col lg:flex-row items-center justify-center">
+            {/* Bagian Kiri */}
+            <div className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0">
+              <div className="card w-full bg-primary-content shadow-xl">
+                <div className="card-body">
+                  <h2 className="card-title mx-auto text-4xl font-bold">
+                    Syarat Umum
+                  </h2>
+                  <hr />
+                  <div className="flex flex-col gap-8">
+                    <div className="flex gap-4">
+                      <i className="bi bi-arrow-right-circle text-2xl"></i>
+                      <span className="text-2xl font-medium">
+                        Usia Kelompok Bermain minimal 3 tahun di bulan Juli 2024
+                      </span>
+                    </div>
+                    <div className="flex gap-4">
+                      <i className="bi bi-arrow-right-circle text-2xl"></i>
+                      <span className="text-2xl font-medium">
+                        Usia Kelompok A minimal 4 tahun di bulan Juli 2024
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="card-body">
+                  <h2 className="card-title mx-auto text-4xl font-bold">
+                    Berkas Pendaftaran
+                  </h2>
+                  <hr />
+                  <div className="flex flex-col gap-8">
+                    <div className="flex gap-4">
+                      <i className="bi bi-arrow-right-circle text-2xl"></i>
+                      <span className="text-2xl font-medium">
+                        Fotocopy Akte Kelahiran
+                      </span>
+                    </div>
+                    <div className="flex gap-4">
+                      <i className="bi bi-arrow-right-circle text-2xl"></i>
+                      <span className="text-2xl font-medium">
+                        Fotocopy Kartu Keluarga
+                      </span>
+                    </div>
+                    <div className="flex gap-4">
+                      <i className="bi bi-arrow-right-circle text-2xl"></i>
+                      <span className="text-2xl font-medium">
+                        Fotocopy KTP Orangtua
+                      </span>
+                    </div>
+                    <div className="flex gap-4">
+                      <i className="bi bi-arrow-right-circle text-2xl"></i>
+                      <span className="text-2xl font-medium">
+                        Pas Foto 3 x 4 sebanyak 3 lembar
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="carousel-item">
-              <TestimonialCard
-                imageSrc="/image/home/TestimonialPerson.png"
-                imageAlt="school-pict"
-                title="Kurikulum Terbaru"
-                description="Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum"
-              />
-            </div>
-            <div className="carousel-item">
-              <TestimonialCard
-                imageSrc="/image/home/TestimonialPerson.png"
-                imageAlt="school-pict"
-                title="Kurikulum Terbaru"
-                description="Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum"
+
+            {/* Bagian Kanan */}
+            <div className="w-full lg:w-1/2 lg:order-2">
+              <Image
+                height={100}
+                width={100}
+                unoptimized
+                style={{ width: "80%", height: "auto" }}
+                src="/image/home/personIllustration.svg"
+                alt="school-pict"
+                className="object-contain mx-auto"
               />
             </div>
           </div>
         </div>
       </section>
-      {/* Third Section*/}
+      {/*  Fifth Section*/}
+
+      <Footer />
     </div>
   );
 }
