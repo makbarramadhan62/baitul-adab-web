@@ -16,7 +16,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <>
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-96 bg-[#FFFCEF] shadow-md my-2">
         <figure className="px-10 pt-10">
           <Image
             height={100}
