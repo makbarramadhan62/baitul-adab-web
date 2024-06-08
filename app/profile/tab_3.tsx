@@ -1,4 +1,3 @@
-import Image from "next/image";
 import FacilityCard from "@/components/facilityCard";
 
 const Tab_3 = () => {
