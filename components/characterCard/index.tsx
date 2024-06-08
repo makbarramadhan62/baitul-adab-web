@@ -1,0 +1,48 @@
+import Image from "next/image";
+import React from "react";
+
+interface CharacterCardProps {
+  imageSrc: string;
+  imageAlt: string;
+  title: string;
+  description: string;
+}
+
+const CharacterCard: React.FC<CharacterCardProps> = ({
+  imageSrc,
+  imageAlt,
+  title,
+  description,
+}) => {
+  return (
+    <>
+      <div
+        className="card w-72 bg-[#FAFAFA] shadow-xl hover:bg-primary"
+        style={{
+          backgroundImage: "url(/image/profil_sekolah/background.svg)",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="card-body items-center text-center">
+          <span className="card-title text-2xl underline text-secondary-content">
+            {title}
+          </span>
+          <Image
+            height={100}
+            width={100}
+            unoptimized
+            style={{ width: "100%", height: "auto" }}
+            src={imageSrc}
+            alt={imageAlt}
+            className="object-contain mx-auto"
+          />
+          <p>{description}</p>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default CharacterCard;
