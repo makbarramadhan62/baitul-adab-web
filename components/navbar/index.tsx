@@ -17,11 +17,11 @@ const Navbar = () => {
   const getLinkClass = (path: string) => {
     return activePath === path
       ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-      : "text-gray-600 hover:text-gray-400";
+      : "text-gray-600 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 hover:pb-1";
   };
 
   return (
-    <nav className="bg-white py-4 px-8 w-full sticky top-0 z-50">
+    <nav className="bg-white py-4 px-8 w-full fixed top-0 z-50">
       <div className="mx-auto flex justify-between items-center">
         <div className="flex gap-6 font-semibold items-center">
           {/* Logo Website */}
@@ -41,7 +41,7 @@ const Navbar = () => {
               <span className={getLinkClass("/")}>Home</span>
             </Link>
             <Link href="/profile">
-              <span className={getLinkClass("/about")}>Profile Sekolah</span>
+              <span className={getLinkClass("/profile")}>Profile Sekolah</span>
             </Link>
             <Link href="/program">
               <span className={getLinkClass("/contact")}>Program Sekolah</span>
@@ -72,7 +72,7 @@ const Navbar = () => {
               <span className={getLinkClass("/")}>Home</span>
             </Link>
             <Link href="/profile">
-              <span className={getLinkClass("/about")}>Profile Sekolah</span>
+              <span className={getLinkClass("/profile")}>Profile Sekolah</span>
             </Link>
             <Link href="/program">
               <span className={getLinkClass("/contact")}>Program Sekolah</span>
