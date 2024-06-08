@@ -4,7 +4,6 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import { SetStateAction, useState } from "react";
-import CharacterCard from "@/components/characterCard";
 import Tab_1 from "@/app/profile/tab_1";
 import Tab_2 from "@/app/profile/tab_2";
 import Tab_3 from "@/app/profile/tab_3";
@@ -15,51 +14,6 @@ export default function Profile() {
   const handleTabChange = (tabIndex: SetStateAction<number>) => {
     setActiveTab(tabIndex);
   };
-
-  const characters = [
-    {
-      imageSrc: "/image/profil_sekolah/karakter.svg",
-      imageAlt: "school-pict",
-      title: "HUMBLE",
-      description: "Menjadi anak yang mudah bergaul dengan anak lain",
-    },
-    {
-      imageSrc: "/image/profil_sekolah/karakter-1.svg",
-      imageAlt: "school-pict",
-      title: "SHOLEH",
-      description: "Menjadi anak yang mudah bergaul dengan anak lain",
-    },
-    {
-      imageSrc: "/image/profil_sekolah/karakter-2.svg",
-      imageAlt: "school-pict",
-      title: "SANTUN",
-      description: "Menjadi anak yang mudah bergaul dengan anak lain",
-    },
-    {
-      imageSrc: "/image/profil_sekolah/karakter-3.svg",
-      imageAlt: "school-pict",
-      title: "MANDIRI",
-      description: "Menjadi anak yang mudah bergaul dengan anak lain",
-    },
-    {
-      imageSrc: "/image/profil_sekolah/karakter-4.svg",
-      imageAlt: "school-pict",
-      title: "BERSAHABAT",
-      description: "Menjadi anak yang mudah bergaul dengan anak lain",
-    },
-    {
-      imageSrc: "/image/profil_sekolah/karakter-5.svg",
-      imageAlt: "school-pict",
-      title: "DISIPLIN",
-      description: "Menjadi anak yang mudah bergaul dengan anak lain",
-    },
-    {
-      imageSrc: "/image/profil_sekolah/karakter-6.svg",
-      imageAlt: "school-pict",
-      title: "CERDAS",
-      description: "Menjadi anak yang mudah bergaul dengan anak lain",
-    },
-  ];
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
       <Navbar />
