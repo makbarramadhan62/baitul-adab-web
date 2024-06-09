@@ -4,9 +4,9 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import { SetStateAction, useState } from "react";
-import Tab_1 from "@/app/profile/tab_1";
-import Tab_2 from "@/app/profile/tab_2";
-import Tab_3 from "@/app/profile/tab_3";
+import Tab_1 from "@/app/profil-sekolah/tab_1";
+import Tab_2 from "@/app/profil-sekolah/tab_2";
+import Tab_3 from "@/app/profil-sekolah/tab_3";
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState(1);

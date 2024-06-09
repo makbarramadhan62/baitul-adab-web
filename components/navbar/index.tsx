@@ -41,7 +41,9 @@ const Navbar = () => {
               <span className={getLinkClass("/")}>Home</span>
             </Link>
             <Link href="/profile">
-              <span className={getLinkClass("/profile")}>Profile Sekolah</span>
+              <span className={getLinkClass("/profil-sekolah")}>
+                Profile Sekolah
+              </span>
             </Link>
             <Link href="/program">
               <span className={getLinkClass("/contact")}>Program Sekolah</span>
@@ -72,7 +74,9 @@ const Navbar = () => {
               <span className={getLinkClass("/")}>Home</span>
             </Link>
             <Link href="/profile">
-              <span className={getLinkClass("/profile")}>Profile Sekolah</span>
+              <span className={getLinkClass("/profil-sekolah")}>
+                Profile Sekolah
+              </span>
             </Link>
             <Link href="/program">
               <span className={getLinkClass("/contact")}>Program Sekolah</span>
