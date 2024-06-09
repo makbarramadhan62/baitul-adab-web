@@ -128,7 +128,7 @@ export default function Home() {
       >
         <div className="px-16">
           <div className="w-full text-center">
-            <span className="text-5xl font-semibold">
+            <span className="text-3xl lg:text-5xl font-semibold">
               Kenapa Harus Baitul Adab?
             </span>
           </div>
@@ -189,7 +189,7 @@ export default function Home() {
       <section id="third" className="w-full relative z-10 my-8">
         <div className="px-16">
           <div className="w-full text-center mb-8">
-            <div className="flex flex-col justify-center gap-4 text-5xl font-semibold">
+            <div className="flex flex-col justify-center gap-4 text-3xl lg:text-5xl font-semibold">
               <span className="text-neutral">
                 Apa Kata Para Orangtua Tentang
               </span>
@@ -220,11 +220,11 @@ export default function Home() {
         <div className="px-16">
           <div className="w-full text-center mb-8">
             <div className="flex flex-col justify-center gap-4">
-              <span className="text-neutral text-5xl font-semibold">
+              <span className="text-neutral text-3xl lg:text-5xl font-semibold">
                 Bagaimana Cara Melakukan{" "}
                 <span className="text-secondary-content">Pendaftaran?</span>
               </span>
-              <span className="text-neutral text-2xl w-1/2 mx-auto">
+              <span className="w-full text-neutral text-lg lg:text-2xl mx-auto">
                 Ikuti langkah - langkah dibawah ini untuk pendaftaran sekolah di
                 Baitul Adab Islamic School
               </span>
@@ -250,11 +250,11 @@ export default function Home() {
         <div className="px-16">
           <div className="w-full text-center mb-8">
             <div className="flex flex-col justify-center gap-4">
-              <span className="text-neutral text-5xl font-semibold">
+              <span className="text-neutral text-3xl lg:text-5xl font-semibold">
                 Ayo Mulai Kumpulkan Berkas{" "}
                 <span className="text-secondary-content">Pendaftarannya!</span>
               </span>
-              <span className="text-neutral text-2xl w-1/2 mx-auto">
+              <span className="text-neutral text-lg lg:text-2xl w-full mx-auto">
                 Berkas apa saja yang diperlukan saat proses pendaftaran?
               </span>
             </div>
@@ -265,52 +265,52 @@ export default function Home() {
             <div className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0">
               <div className="card w-full bg-primary-content shadow-xl">
                 <div className="card-body">
-                  <h2 className="card-title mx-auto text-4xl font-bold">
+                  <h2 className="card-title mx-auto text-2xl lg:text-4xl font-bold">
                     Syarat Umum
                   </h2>
                   <hr />
                   <div className="flex flex-col gap-8">
                     <div className="flex gap-4">
-                      <i className="bi bi-arrow-right-circle text-2xl"></i>
-                      <span className="text-2xl font-medium">
+                      <i className="bi bi-arrow-right-circle text-lg lg:text-2xl"></i>
+                      <span className="text-lg lg:text-2xl font-medium">
                         Usia Kelompok Bermain minimal 3 tahun di bulan Juli 2024
                       </span>
                     </div>
                     <div className="flex gap-4">
-                      <i className="bi bi-arrow-right-circle text-2xl"></i>
-                      <span className="text-2xl font-medium">
+                      <i className="bi bi-arrow-right-circle text-lg lg:text-2xl"></i>
+                      <span className="text-lg lg:text-2xl font-medium">
                         Usia Kelompok A minimal 4 tahun di bulan Juli 2024
                       </span>
                     </div>
                   </div>
                 </div>
                 <div className="card-body">
-                  <h2 className="card-title mx-auto text-4xl font-bold">
+                  <h2 className="card-title mx-auto text-xl lg:text-4xl font-bold">
                     Berkas Pendaftaran
                   </h2>
                   <hr />
                   <div className="flex flex-col gap-8">
                     <div className="flex gap-4">
-                      <i className="bi bi-arrow-right-circle text-2xl"></i>
-                      <span className="text-2xl font-medium">
+                      <i className="bi bi-arrow-right-circle text-lg lg:text-2xl"></i>
+                      <span className="text-lg lg:text-2xl font-medium">
                         Fotocopy Akte Kelahiran
                       </span>
                     </div>
                     <div className="flex gap-4">
-                      <i className="bi bi-arrow-right-circle text-2xl"></i>
-                      <span className="text-2xl font-medium">
+                      <i className="bi bi-arrow-right-circle text-lg lg:text-2xl"></i>
+                      <span className="text-lg lg:text-2xl font-medium">
                         Fotocopy Kartu Keluarga
                       </span>
                     </div>
                     <div className="flex gap-4">
-                      <i className="bi bi-arrow-right-circle text-2xl"></i>
-                      <span className="text-2xl font-medium">
+                      <i className="bi bi-arrow-right-circle text-lg lg:text-2xl"></i>
+                      <span className="text-lg lg:text-2xl font-medium">
                         Fotocopy KTP Orangtua
                       </span>
                     </div>
                     <div className="flex gap-4">
-                      <i className="bi bi-arrow-right-circle text-2xl"></i>
-                      <span className="text-2xl font-medium">
+                      <i className="bi bi-arrow-right-circle text-lg lg:text-2xl"></i>
+                      <span className="text-lg lg:text-2xl font-medium">
                         Pas Foto 3 x 4 sebanyak 3 lembar
                       </span>
                     </div>
