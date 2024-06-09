@@ -40,16 +40,20 @@ const Navbar = () => {
             <Link href="/">
               <span className={getLinkClass("/")}>Home</span>
             </Link>
-            <Link href="/profile">
+            <Link href="/profil-sekolah">
               <span className={getLinkClass("/profil-sekolah")}>
                 Profile Sekolah
               </span>
             </Link>
-            <Link href="/program">
-              <span className={getLinkClass("/contact")}>Program Sekolah</span>
+            <Link href="/program-sekolah">
+              <span className={getLinkClass("/program-sekolah")}>
+                Program Sekolah
+              </span>
             </Link>
-            <Link href="/gallery">
-              <span className={getLinkClass("/contact")}>Galeri Sekolah</span>
+            <Link href="/galeri-sekolah">
+              <span className={getLinkClass("/galeri-sekolah")}>
+                Galeri Sekolah
+              </span>
             </Link>
             <Link href="/contact">
               <span className={getLinkClass("/contact")}>Contact Us</span>
@@ -69,20 +73,27 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden flex flex-col items-start gap-4 absolute top-16 left-8 bg-white rounded-lg shadow-md p-4">
+          <div
+            onMouseLeave={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden flex flex-col items-start gap-4 absolute top-16 left-8 bg-white rounded-lg shadow-md p-4"
+          >
             <Link href="/">
               <span className={getLinkClass("/")}>Home</span>
             </Link>
-            <Link href="/profile">
+            <Link href="/profil-sekolah">
               <span className={getLinkClass("/profil-sekolah")}>
                 Profile Sekolah
               </span>
             </Link>
-            <Link href="/program">
-              <span className={getLinkClass("/contact")}>Program Sekolah</span>
+            <Link href="/program-sekolah">
+              <span className={getLinkClass("/program-sekolah")}>
+                Program Sekolah
+              </span>
             </Link>
-            <Link href="/gallery">
-              <span className={getLinkClass("/contact")}>Galeri Sekolah</span>
+            <Link href="/galeri-sekolah">
+              <span className={getLinkClass("/galeri-sekolah")}>
+                Galeri Sekolah
+              </span>
             </Link>
             <Link href="/contact">
               <span className={getLinkClass("/contact")}>Contact Us</span>
