@@ -28,14 +28,13 @@ export default function Profile() {
             height={100}
             width={100}
             unoptimized
-            style={{ width: "100%", height: "auto" }}
             src="/image/profil_sekolah/image.png"
             alt="school-pict"
-            className="object-contain mx-auto"
+            className="object-cover mx-auto w-full h-96 lg:h-auto rounded-lg"
           />
         </div>
-        <div className="w-full text-center mb-8">
-          <div className="flex flex-col justify-center gap-4 text-5xl font-semibold">
+        <div className="w-full text-center mb-0 lg:mb-8">
+          <div className="flex flex-col justify-center gap-0 lg:gap-4 text-3xl lg:text-5xl font-semibold">
             <span className="text-neutral">Sejarah Singkat</span>
             <span className="text-secondary-content">
               Baitul Adab Islamic School
@@ -43,8 +42,8 @@ export default function Profile() {
           </div>
         </div>
 
-        <div className="gap-16 flex flex-col lg:flex-row items-center justify-center text-neutral">
-          <span className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0 text-2xl">
+        <div className="gap-0 lg:gap-16 flex flex-col lg:flex-row items-center justify-center text-neutral">
+          <span className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0 text-lg lg:text-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -53,7 +52,7 @@ export default function Profile() {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </span>
-          <span className="w-full lg:w-1/2 lg:order-2 text-2xl">
+          <span className="w-full lg:w-1/2 lg:order-2 text-lg lg:text-2xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -69,25 +68,22 @@ export default function Profile() {
       {/* Second Section */}
       <section id="profile-second" className="w-full my-8">
         <div className="px-16 flex flex-col gap-8 items-center justify-center">
-          <div className="w-full text-center mb-8">
-            <div className="flex flex-col justify-center gap-4 text-5xl font-semibold">
+          <div className="w-full text-center mb-0 lg:mb-8">
+            <div className="flex flex-col justify-center gap-4 text-3xl lg:text-5xl font-semibold">
               <span className="text-neutral">Visi & Misi</span>
             </div>
           </div>
 
-          <div className="gap-16 flex flex-col lg:flex-row items-center justify-center text-neutral">
+          <div className="gap-8 lg:gap-16 flex flex-col lg:flex-row items-center justify-center text-neutral">
             {/* Bagian Kiri */}
-            <div className="lg:w-1/2 lg:order-1 mb-8 md:mb-0">
-              <div
-                style={{ height: "500px" }}
-                className="card gap-24 bg-primary-content shadow-xl px-16"
-              >
-                <div className="card-body gap-10 text-white">
-                  <h2 className="card-title mx-auto underline text-4xl font-medium">
+            <div className="lg:w-1/2 lg:order-1 mb-0 lg:mb-8">
+              <div className="card gap-24 bg-primary-content shadow-xl px-2 lg:px-16 h-auto lg:h-[500px]">
+                <div className="card-body gap-4 lg:gap-10 text-white">
+                  <h2 className="card-title mx-auto underline text-2xl lg:text-4xl font-medium">
                     Visi
                   </h2>
                   <div className="flex flex-col gap-8">
-                    <span className="text-lg font-semibold text-center">
+                    <span className="text-md lg:text-lg font-semibold text-center">
                       “Menjadi sekolah unggul dalam mendidik generasi muslim
                       yang shaleh, cerdas, terampil dan beradab “
                     </span>
@@ -107,13 +103,10 @@ export default function Profile() {
               </div>
             </div>
             {/* Bagian Kiri */}
-            <div className="lg:w-1/2 lg:order-1 mb-8 md:mb-0">
-              <div
-                style={{ height: "500px" }}
-                className="card bg-primary-content shadow-xl px-16"
-              >
-                <div className="card-body gap-10 text-white">
-                  <h2 className="card-title mx-auto underline text-4xl font-medium">
+            <div className="lg:w-1/2 lg:order-1 mb-0 lg:mb-8">
+              <div className="card bg-primary-content shadow-xl px-2 lg:px-16 h-auto lg:h-[500px]">
+                <div className="card-body gap-4 lg:gap-10 text-white">
+                  <h2 className="card-title mx-auto underline text-2xl lg:text-4xl font-medium">
                     Misi
                   </h2>
                   <div>

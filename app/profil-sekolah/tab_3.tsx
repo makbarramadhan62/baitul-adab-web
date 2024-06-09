@@ -3,7 +3,7 @@ import FacilityCard from "@/components/facilityCard";
 const Tab_3 = () => {
   return (
     <div className="mt-4 card p-10 bg-primary-content relative">
-      <span className="font-bold text-5xl text-center">
+      <span className="font-bold text-3xl lg:text-5xl text-center">
         <span className="text-white">Fasilitas</span> Apa Saja Yang Tersedia?
       </span>
 

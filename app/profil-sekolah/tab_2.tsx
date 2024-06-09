@@ -22,7 +22,7 @@ const Tab_2 = () => {
         alt="school-pict"
         className="object-contain mx-auto absolute bottom-5 right-5"
       />
-      <span className="font-bold text-5xl text-center">
+      <span className="font-bold text-3xl lg:text-5xl text-center">
         <span className="text-white">Lulusan</span> Seperti Apa Yang Dibentuk?
       </span>
 
