@@ -47,3 +47,23 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #585858;
 }
+
+.program-card-container {
+  display: flex;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.program-card {
+  position: absolute;
+  height: 320px;
+  padding: 16px;
+  text-align: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.program-card-back {
+  transform: translateZ(-100px) scale(0.8);
+  opacity: 0.5;
+}
