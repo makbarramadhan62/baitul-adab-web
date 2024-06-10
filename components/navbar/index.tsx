@@ -55,8 +55,8 @@ const Navbar = () => {
                 Galeri Sekolah
               </span>
             </Link>
-            <Link href="/contact">
-              <span className={getLinkClass("/contact")}>Contact Us</span>
+            <Link href="/contact-us/">
+              <span className={getLinkClass("/contact-us/")}>Contact Us</span>
             </Link>
           </div>
         </div>
@@ -95,8 +95,8 @@ const Navbar = () => {
                 Galeri Sekolah
               </span>
             </Link>
-            <Link href="/contact">
-              <span className={getLinkClass("/contact")}>Contact Us</span>
+            <Link href="/contact-us">
+              <span className={getLinkClass("/contact-us")}>Contact Us</span>
             </Link>
             <div className="space-x-4">
               <Link href="/">
