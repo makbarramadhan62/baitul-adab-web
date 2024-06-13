@@ -292,10 +292,16 @@ export default function RegistrationForm() {
                   <option value="" disabled>
                     Pilih Jenjang Pendidikan
                   </option>
-                  <option value="TK">TK</option>
-                  <option value="SD">SD</option>
-                  <option value="SMP">SMP</option>
-                  <option value="SMA">SMA</option>
+                  <option value="Playgroup Regular">Playgroup Regular</option>
+                  <option value="Playgroup Plus Daycare">
+                    Playgroup Plus Daycare
+                  </option>
+                  <option value="Kindergarten Regular">
+                    Kindergarten Regular
+                  </option>
+                  <option value="Kindergarten Plus Daycare">
+                    Kindergarten Plus Daycare
+                  </option>
                 </select>
               </div>
             </div>
@@ -419,12 +425,21 @@ export default function RegistrationForm() {
           </div>
 
           <div className="w-full flex justify-center mb-16">
-            <button
-              className="btn btn-primary text-base-100 w-1/4"
-              disabled={isLoading}
-            >
-              {isLoading ? "Mengirim..." : "KIRIM"}
-            </button>
+            {isLoading ? (
+              <>
+                <button
+                  className="btn btn-primary text-base-100 w-1/4"
+                  disabled
+                >
+                  <span className="loading loading-dots loading-lg"></span>
+                  Tunggu Sebentar
+                </button>
+              </>
+            ) : (
+              <button className="btn btn-primary text-base-100 w-1/4">
+                KIRIM
+              </button>
+            )}
           </div>
 
           {toastVisible && (
