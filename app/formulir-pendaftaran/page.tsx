@@ -230,10 +230,10 @@ export default function RegistrationForm() {
                   <option value="" disabled>
                     Pilih Jenjang Pendidikan
                   </option>
-                  <option value="tk">TK</option>
-                  <option value="sd">SD</option>
-                  <option value="smp">SMP</option>
-                  <option value="sma">SMA</option>
+                  <option value="TK">TK</option>
+                  <option value="SD">SD</option>
+                  <option value="SMP">SMP</option>
+                  <option value="SMA">SMA</option>
                 </select>
               </div>
             </div>
