@@ -1,4 +1,108 @@
+"use client";
+
+import { useState } from "react";
+
 export default function RegistrationForm() {
+  const [formData, setFormData] = useState({
+    namaSiswa: "",
+    namaOrangTua: "",
+    noHp: "",
+    alamat: "",
+    jenjangPendidikan: "",
+    files: {
+      akteKelahiran: null,
+      kartuKeluarga: null,
+      ktpOrangTua: null,
+      fotoSiswa: null,
+    },
+  });
+
+  const handleChange = (e: any) => {
+    const { name, value, files } = e.target;
+    if (
+      name === "akteKelahiran" ||
+      name === "kartuKeluarga" ||
+      name === "ktpOrangTua" ||
+      name === "fotoSiswa"
+    ) {
+      setFormData({
+        ...formData,
+        files: {
+          ...formData.files,
+          [name]: files[0],
+        },
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value,
+      });
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      const fileDataArray = await Promise.all(
+        Object.keys(formData.files).map(async (key) => {
+          // @ts-ignore
+          const file = formData.files[key];
+          if (file) {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            return new Promise((resolve, reject) => {
+              reader.onloadend = () => {
+                if (typeof reader.result === "string") {
+                  resolve({
+                    fileName: file.name,
+                    fileType: file.type,
+                    fileData: reader.result.split(",")[1],
+                  });
+                }
+              };
+              reader.onerror = reject;
+            });
+          }
+          return null;
+        }),
+      );
+
+      const cleanedFileDataArray = fileDataArray.filter(
+        (file) => file !== null,
+      );
+
+      const data = {
+        namaSiswa: formData.namaSiswa,
+        namaOrangTua: formData.namaOrangTua,
+        noHp: formData.noHp,
+        alamat: formData.alamat,
+        jenjangPendidikan: formData.jenjangPendidikan,
+        files: cleanedFileDataArray,
+      };
+
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbx-BVmOoFIReRWdjeblogfAVV053vECbF4-3rubJ4e6ftl85OYh_wYVjnYysb27fLeisg/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+        },
+      );
+
+      console.log(data);
+      console.log(response);
+
+      if (!response.ok) {
+        console.log("Terjadi kesalahan saat mengirim data.");
+      }
+
+      const result = await response.json();
+      console.log(result);
+    } catch (error: any) {
+      console.error("Error:", error.message);
+    }
+  };
+
   return (
     <div
       className="min-h-screen flex w-full flex-col items-center overflow-x-hidden bg-primary-content py-8"
@@ -23,7 +127,7 @@ export default function RegistrationForm() {
           isi data dengan benar
         </span>
 
-        <form className="flex flex-col gap-8">
+        <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
           <div className="card">
             <div className="flex flex-col gap-2 bg-primary px-8 py-4 rounded-lg mb-4">
               <span className="text-base-100 text-2xl font-bold">
@@ -41,10 +145,12 @@ export default function RegistrationForm() {
                   Nama Calon Siswa<span className="text-red-600">*</span>
                 </label>
                 <input
+                  name="namaSiswa"
                   type="text"
                   placeholder="Masukkan nama calon siswa"
                   className="input input-bordered w-full text-neutral"
                   required
+                  onChange={handleChange}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -52,10 +158,12 @@ export default function RegistrationForm() {
                   Nama Orang Tua / Wali<span className="text-red-600">*</span>
                 </label>
                 <input
+                  name="namaOrangTua"
                   type="text"
                   placeholder="Masukkan nama orangtua / wali"
                   className="input input-bordered w-full text-neutral"
                   required
+                  onChange={handleChange}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -63,10 +171,12 @@ export default function RegistrationForm() {
                   No Hp Orang Tua / Wali<span className="text-red-600">*</span>
                 </label>
                 <input
+                  name="noHp"
                   type="number"
                   placeholder="Masukkan nomor hp orangtua / wali"
                   className="input input-bordered w-full text-neutral"
                   required
+                  onChange={handleChange}
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -74,19 +184,26 @@ export default function RegistrationForm() {
                   Alamat Lengkap
                 </label>
                 <textarea
-                  placeholder="Masukkan nomor hp orangtua / wali"
+                  name="alamat"
+                  placeholder="Masukkan alamat lengkap"
                   className="input input-bordered w-full text-neutral py-2"
+                  onChange={handleChange}
                 />
               </div>
               <div className="flex flex-col gap-2">
-                <select className="select select-bordered w-full text-neutral bg-base-100">
-                  <option disabled selected>
+                <select
+                  name="jenjangPendidikan"
+                  className="select select-bordered w-full text-neutral bg-base-100"
+                  defaultValue=""
+                  onChange={handleChange}
+                >
+                  <option value="" disabled>
                     Pilih Jenjang Pendidikan
                   </option>
-                  <option>TK</option>
-                  <option>SD</option>
-                  <option>SMP</option>
-                  <option>SMA</option>
+                  <option value="tk">TK</option>
+                  <option value="sd">SD</option>
+                  <option value="smp">SMP</option>
+                  <option value="sma">SMA</option>
                 </select>
               </div>
             </div>
@@ -114,6 +231,8 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  onChange={handleChange}
+                  name="akteKelahiran"
                   type="file"
                   className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-primary file:hover:bg-blue-600 file:text-white rounded"
                 />
@@ -130,6 +249,8 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  onChange={handleChange}
+                  name="kartuKeluarga"
                   type="file"
                   className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-primary file:hover:bg-blue-600 file:text-white rounded"
                 />
@@ -146,6 +267,8 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  onChange={handleChange}
+                  name="ktpOrangTua"
                   type="file"
                   className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-primary file:hover:bg-blue-600 file:text-white rounded"
                 />
@@ -162,6 +285,8 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  onChange={handleChange}
+                  name="fotoSiswa"
                   type="file"
                   className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-primary file:hover:bg-blue-600 file:text-white rounded"
                 />
@@ -170,9 +295,7 @@ export default function RegistrationForm() {
           </div>
 
           <div className="w-full flex justify-center mb-16">
-            <button className="btn btn-primary text-base-100">
-              KIRIM VIA WHATSAPP
-            </button>
+            <button className="btn btn-primary text-base-100">KIRIM</button>
           </div>
 
           <div className="flex justify-between gap-4">
