@@ -2,6 +2,12 @@
 
 import { useRef, useState } from "react";
 
+type FileTypes =
+  | "akteKelahiran"
+  | "kartuKeluarga"
+  | "ktpOrangTua"
+  | "fotoSiswa";
+
 export default function RegistrationForm() {
   const initialFormData = {
     namaSiswa: "",
@@ -18,14 +24,42 @@ export default function RegistrationForm() {
   };
 
   const [formData, setFormData] = useState(initialFormData);
-
+  const [errors, setErrors] = useState<Record<FileTypes, string | null>>({
+    akteKelahiran: null,
+    kartuKeluarga: null,
+    ktpOrangTua: null,
+    fotoSiswa: null,
+  });
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [toastVisible, setToastVisible] = useState(false);
 
   const akteKelahiranRef = useRef(null);
   const kartuKeluargaRef = useRef(null);
   const ktpOrangTuaRef = useRef(null);
   const fotoSiswaRef = useRef(null);
+
+  const validateFile = (
+    file: { size: number; name: string },
+    acceptedFormats: any[],
+    maxSize: number,
+  ) => {
+    if (file) {
+      const fileSizeInMb = file.size / 1024 / 1024;
+      const fileExtension = file.name.split(".").pop()!.toLowerCase();
+
+      if (!acceptedFormats.includes(fileExtension)) {
+        return `Format file tidak valid. Diterima: ${acceptedFormats.join(
+          ", ",
+        )}`;
+      }
+
+      if (fileSizeInMb > maxSize) {
+        return `Ukuran file melebihi ${maxSize} Mb.`;
+      }
+    }
+    return null;
+  };
 
   const handleChange = (e: any) => {
     const { name, value, files } = e.target;
@@ -35,13 +69,26 @@ export default function RegistrationForm() {
       name === "ktpOrangTua" ||
       name === "fotoSiswa"
     ) {
-      setFormData({
-        ...formData,
-        files: {
-          ...formData.files,
-          [name]: files[0],
-        },
-      });
+      const file = files[0];
+      const acceptedFormats =
+        name === "fotoSiswa" ? ["jpg", "jpeg", "png"] : ["pdf"];
+      const maxSize = 2;
+
+      const error = validateFile(file, acceptedFormats, maxSize);
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        [name]: error,
+      }));
+
+      if (!error) {
+        setFormData({
+          ...formData,
+          files: {
+            ...formData.files,
+            [name]: file,
+          },
+        });
+      }
     } else {
       setFormData({
         ...formData,
@@ -50,10 +97,24 @@ export default function RegistrationForm() {
     }
   };
 
+  const showToast = () => {
+    setToastVisible(true);
+    setTimeout(() => {
+      setToastVisible(false);
+    }, 3000);
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     setIsSuccess(false);
+
+    const hasErrors = Object.values(errors).some((error) => error !== null);
+    if (hasErrors) {
+      setIsLoading(false);
+      showToast();
+      return;
+    }
 
     try {
       const fileDataArray = await Promise.all(
@@ -106,7 +167,8 @@ export default function RegistrationForm() {
       }
 
       setIsSuccess(true);
-      setTimeout(() => resetForm(), 2500);
+      showToast();
+      setTimeout(() => resetForm(), 3000);
     } catch (error: any) {
       console.error("Error:", error.message);
     } finally {
@@ -139,8 +201,8 @@ export default function RegistrationForm() {
         backgroundRepeat: "repeat",
       }}
     >
-      <div className="card p-8 bg-base-100 w-2/3">
-        <div className="flex flex-col gap-2 items-center mb-8">
+      <div className="card p-8 bg-base-100 w-11/12 lg:w-2/3">
+        <div className="flex flex-col gap-2 items-center mb-8 text-center">
           <span className="text-secondary-content text-5xl font-bold">
             Formulir Pendaftaran Sekolah
           </span>
@@ -261,12 +323,19 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  accept="application/pdf"
                   ref={akteKelahiranRef}
                   onChange={handleChange}
                   name="akteKelahiran"
                   type="file"
                   className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-primary file:hover:bg-blue-600 file:text-white rounded"
+                  required
                 />
+                {errors.akteKelahiran && (
+                  <span className="text-red-600 text-sm">
+                    {errors.akteKelahiran}
+                  </span>
+                )}
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
@@ -280,12 +349,19 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  accept="application/pdf"
                   ref={kartuKeluargaRef}
                   onChange={handleChange}
                   name="kartuKeluarga"
                   type="file"
                   className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-primary file:hover:bg-blue-600 file:text-white rounded"
+                  required
                 />
+                {errors.kartuKeluarga && (
+                  <span className="text-red-600 text-sm">
+                    {errors.kartuKeluarga}
+                  </span>
+                )}
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
@@ -299,12 +375,19 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  accept="application/pdf"
                   ref={ktpOrangTuaRef}
                   onChange={handleChange}
                   name="ktpOrangTua"
                   type="file"
                   className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-primary file:hover:bg-blue-600 file:text-white rounded"
+                  required
                 />
+                {errors.ktpOrangTua && (
+                  <span className="text-red-600 text-sm">
+                    {errors.ktpOrangTua}
+                  </span>
+                )}
               </div>
               <div className="flex flex-col gap-2">
                 <div className="flex justify-between">
@@ -318,12 +401,19 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  accept="image/*"
                   ref={fotoSiswaRef}
                   onChange={handleChange}
                   name="fotoSiswa"
                   type="file"
                   className="w-full text-gray-500 font-medium text-base bg-gray-100 file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-primary file:hover:bg-blue-600 file:text-white rounded"
+                  required
                 />
+                {errors.fotoSiswa && (
+                  <span className="text-red-600 text-sm">
+                    {errors.fotoSiswa}
+                  </span>
+                )}
               </div>
             </div>
           </div>
@@ -337,10 +427,18 @@ export default function RegistrationForm() {
             </button>
           </div>
 
-          {isSuccess && (
+          {toastVisible && (
             <div className="toast toast-top toast-end">
-              <div className="alert alert-success text-base-100">
-                <span>Formulir Berhasil Dikirim</span>
+              <div
+                className={`alert ${
+                  isSuccess ? "alert-success" : "alert-error"
+                } text-base-100`}
+              >
+                <span>
+                  {isSuccess
+                    ? "Formulir Berhasil Dikirim"
+                    : "Terdapat kesalahan dalam mengirim formulir."}
+                </span>
               </div>
             </div>
           )}
