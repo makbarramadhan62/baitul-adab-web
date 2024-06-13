@@ -58,7 +58,7 @@ const Tab2_1 = () => {
                 {/* row 6 */}
                 <tr>
                   <td>Biaya Perbulan</td>
-                  <td className="text-end">Rp. 700.000</td>
+                  <td className="text-end">Rp.875.000</td>
                 </tr>
                 {/* row 7 */}
                 <tr>
@@ -68,7 +68,7 @@ const Tab2_1 = () => {
                 {/* row 8 */}
                 <tr className="font-bold text-secondary-content">
                   <td>Total Pembayaran</td>
-                  <td className="text-end">Rp. 8.235.000</td>
+                  <td className="text-end">Rp. 8.410.000</td>
                 </tr>
               </tbody>
             </table>

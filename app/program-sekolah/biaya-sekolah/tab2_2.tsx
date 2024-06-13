@@ -58,7 +58,7 @@ const Tab2_2 = () => {
                 {/* row 6 */}
                 <tr>
                   <td>Biaya Perbulan</td>
-                  <td className="text-end">Rp. 700.000</td>
+                  <td className="text-end">Rp.1.450.000</td>
                 </tr>
                 {/* row 7 */}
                 <tr>
@@ -68,7 +68,7 @@ const Tab2_2 = () => {
                 {/* row 8 */}
                 <tr className="font-bold text-secondary-content">
                   <td>Total Pembayaran</td>
-                  <td className="text-end">Rp. 8.235.000</td>
+                  <td className="text-end">Rp. 8.985.000</td>
                 </tr>
               </tbody>
             </table>
@@ -101,6 +101,16 @@ const Tab2_2 = () => {
               {/* row 3 */}
               <tr>
                 <td>RABU</td>
+                <td className="text-end">08:30 - 11:00</td>
+              </tr>
+              {/* row 4 */}
+              <tr>
+                <td>KAMIS</td>
+                <td className="text-end">08:30 - 11:00</td>
+              </tr>
+              {/* row 5 */}
+              <tr>
+                <td>JUMAT</td>
                 <td className="text-end">08:30 - 11:00</td>
               </tr>
             </tbody>
