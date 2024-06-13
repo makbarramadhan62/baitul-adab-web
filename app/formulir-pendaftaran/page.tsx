@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export default function RegistrationForm() {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     namaSiswa: "",
     namaOrangTua: "",
     noHp: "",
@@ -15,7 +15,17 @@ export default function RegistrationForm() {
       ktpOrangTua: null,
       fotoSiswa: null,
     },
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const akteKelahiranRef = useRef(null);
+  const kartuKeluargaRef = useRef(null);
+  const ktpOrangTuaRef = useRef(null);
+  const fotoSiswaRef = useRef(null);
 
   const handleChange = (e: any) => {
     const { name, value, files } = e.target;
@@ -42,6 +52,8 @@ export default function RegistrationForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
+    setIsSuccess(false);
 
     try {
       const fileDataArray = await Promise.all(
@@ -89,18 +101,32 @@ export default function RegistrationForm() {
         },
       );
 
-      console.log(data);
-      console.log(response);
-
       if (!response.ok) {
         console.log("Terjadi kesalahan saat mengirim data.");
       }
 
-      const result = await response.json();
-      console.log(result);
+      setIsSuccess(true);
+      setTimeout(() => resetForm(), 2500);
     } catch (error: any) {
       console.error("Error:", error.message);
+    } finally {
+      setIsLoading(false);
     }
+  };
+
+  const resetForm = () => {
+    setFormData(initialFormData);
+    setIsSuccess(false);
+    setIsLoading(false);
+
+    // @ts-ignore
+    if (akteKelahiranRef.current) akteKelahiranRef.current.value = "";
+    // @ts-ignore
+    if (kartuKeluargaRef.current) kartuKeluargaRef.current.value = "";
+    // @ts-ignore
+    if (ktpOrangTuaRef.current) ktpOrangTuaRef.current.value = "";
+    // @ts-ignore
+    if (fotoSiswaRef.current) fotoSiswaRef.current.value = "";
   };
 
   return (
@@ -149,8 +175,9 @@ export default function RegistrationForm() {
                   type="text"
                   placeholder="Masukkan nama calon siswa"
                   className="input input-bordered w-full text-neutral"
-                  required
+                  value={formData.namaSiswa}
                   onChange={handleChange}
+                  required
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -162,8 +189,9 @@ export default function RegistrationForm() {
                   type="text"
                   placeholder="Masukkan nama orangtua / wali"
                   className="input input-bordered w-full text-neutral"
-                  required
+                  value={formData.namaOrangTua}
                   onChange={handleChange}
+                  required
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -175,8 +203,9 @@ export default function RegistrationForm() {
                   type="number"
                   placeholder="Masukkan nomor hp orangtua / wali"
                   className="input input-bordered w-full text-neutral"
-                  required
+                  value={formData.noHp}
                   onChange={handleChange}
+                  required
                 />
               </div>
               <div className="flex flex-col gap-2">
@@ -187,6 +216,7 @@ export default function RegistrationForm() {
                   name="alamat"
                   placeholder="Masukkan alamat lengkap"
                   className="input input-bordered w-full text-neutral py-2"
+                  value={formData.alamat}
                   onChange={handleChange}
                 />
               </div>
@@ -194,7 +224,7 @@ export default function RegistrationForm() {
                 <select
                   name="jenjangPendidikan"
                   className="select select-bordered w-full text-neutral bg-base-100"
-                  defaultValue=""
+                  value={formData.jenjangPendidikan}
                   onChange={handleChange}
                 >
                   <option value="" disabled>
@@ -231,6 +261,7 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  ref={akteKelahiranRef}
                   onChange={handleChange}
                   name="akteKelahiran"
                   type="file"
@@ -249,6 +280,7 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  ref={kartuKeluargaRef}
                   onChange={handleChange}
                   name="kartuKeluarga"
                   type="file"
@@ -267,6 +299,7 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  ref={ktpOrangTuaRef}
                   onChange={handleChange}
                   name="ktpOrangTua"
                   type="file"
@@ -285,6 +318,7 @@ export default function RegistrationForm() {
                   </span>
                 </div>
                 <input
+                  ref={fotoSiswaRef}
                   onChange={handleChange}
                   name="fotoSiswa"
                   type="file"
@@ -295,8 +329,21 @@ export default function RegistrationForm() {
           </div>
 
           <div className="w-full flex justify-center mb-16">
-            <button className="btn btn-primary text-base-100">KIRIM</button>
+            <button
+              className="btn btn-primary text-base-100 w-1/4"
+              disabled={isLoading}
+            >
+              {isLoading ? "Mengirim..." : "KIRIM"}
+            </button>
           </div>
+
+          {isSuccess && (
+            <div className="toast toast-top toast-end">
+              <div className="alert alert-success text-base-100">
+                <span>Formulir Berhasil Dikirim</span>
+              </div>
+            </div>
+          )}
 
           <div className="flex justify-between gap-4">
             <div className="text-neutral text-sm flex items-center gap-2">
