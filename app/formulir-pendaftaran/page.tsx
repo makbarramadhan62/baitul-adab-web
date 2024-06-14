@@ -203,10 +203,10 @@ export default function RegistrationForm() {
     >
       <div className="card p-4 lg:p-8 bg-base-100 w-11/12 lg:w-2/3">
         <div className="flex flex-col gap-2 items-center mb-8 text-center">
-          <span className="text-secondary-content text-5xl font-bold">
+          <span className="text-secondary-content text-2xl lg:text-5xl font-bold">
             Formulir Pendaftaran Sekolah
           </span>
-          <span className="text-neutral text-2xl font-bold">
+          <span className="text-neutral text-xl lg:text-2xl font-bold">
             BAITUL ADAB ISLAMIC SCHOOL
           </span>
         </div>
@@ -428,11 +428,11 @@ export default function RegistrationForm() {
             {isLoading ? (
               <>
                 <button
-                  className="btn btn-primary text-base-100 w-1/4"
+                  className="btn btn-primary text-base-100 w-auto lg:w-1/4"
                   disabled
                 >
                   <span className="loading loading-dots loading-lg"></span>
-                  Tunggu Sebentar
+                  Mengirim
                 </button>
               </>
             ) : (
