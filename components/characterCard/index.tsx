@@ -21,7 +21,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
         style={{
           backgroundImage: "url(/image/profil_sekolah/background.svg)",
           backgroundSize: "contain",
-          backgroundPosition: "center",
+          backgroundPosition: "bottom",
           backgroundRepeat: "no-repeat",
         }}
       >
