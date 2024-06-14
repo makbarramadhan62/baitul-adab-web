@@ -7,7 +7,7 @@ import CurriculumCard from "@/components/curiculumCard";
 import Footer from "@/components/footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -215,9 +215,9 @@ export default function Home() {
       {/* Third Section*/}
 
       {/*  Fourth Section*/}
-      <section id="fourth" className="w-full relative z-10 my-8">
+      <section id="fourth" className="w-full relative z-10 my-16">
         <div className="px-4 lg:px-16">
-          <div className="w-full text-center mb-8">
+          <div className="w-full text-center mb-16">
             <div className="flex flex-col justify-center gap-4">
               <span className="text-neutral text-3xl lg:text-5xl font-semibold">
                 Bagaimana Cara Melakukan{" "}
@@ -229,16 +229,81 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <div className="w-full my-24 lg:order-2">
-            <Image
-              height={100}
-              width={100}
-              unoptimized
-              style={{ width: "80%", height: "auto" }}
-              src="/image/home/registrationStep.png"
-              alt="school-pict"
-              className="object-contain mx-auto"
-            />
+          <div className="w-full lg:order-2">
+            <div className="flex flex-col lg:flex-row">
+              <div className="card w-auto md:w-auto bg-transparent rounded-lg">
+                <Image
+                  height={100}
+                  width={100}
+                  unoptimized
+                  style={{ width: "auto", height: "auto" }}
+                  src="/image/home/registrationStep1.svg"
+                  alt="school-pict"
+                  className="object-contain mx-auto"
+                />
+                <div className="card-body items-center text-center text-primary">
+                  <h2 className="font-semibold text-2xl">Mengisi Formulir</h2>
+                  <p className="text-lg font-normal">
+                    Isi formulir pendaftaran dan siapkan berkas - berkas yang
+                    dibutuhkan
+                  </p>
+                </div>
+              </div>
+              <Image
+                height={100}
+                width={100}
+                unoptimized
+                style={{ height: "auto" }}
+                src="/image/home/arrow1.svg"
+                alt="school-pict"
+                className="object-contain mx-auto mb-auto w-1/5 hidden 2xl:block"
+              />
+              <div className="card w-auto md:w-auto bg-transparent rounded-lg">
+                <Image
+                  height={100}
+                  width={100}
+                  unoptimized
+                  style={{ width: "auto", height: "auto" }}
+                  src="/image/home/registrationStep1.svg"
+                  alt="school-pict"
+                  className="object-contain mx-auto"
+                />
+                <div className="card-body items-center text-center text-primary">
+                  <h2 className="font-semibold text-2xl">Mengisi Formulir</h2>
+                  <p className="text-lg font-normal">
+                    Isi formulir pendaftaran dan siapkan berkas - berkas yang
+                    dibutuhkan
+                  </p>
+                </div>
+              </div>
+              <Image
+                height={100}
+                width={100}
+                unoptimized
+                style={{ height: "auto" }}
+                src="/image/home/arrow2.svg"
+                alt="school-pict"
+                className="object-contain mx-auto w-1/5 hidden 2xl:block"
+              />
+              <div className="card w-auto md:w-auto bg-transparent rounded-lg">
+                <Image
+                  height={100}
+                  width={100}
+                  unoptimized
+                  style={{ width: "auto", height: "auto" }}
+                  src="/image/home/registrationStep1.svg"
+                  alt="school-pict"
+                  className="object-contain mx-auto"
+                />
+                <div className="card-body items-center text-center text-primary">
+                  <h2 className="font-semibold text-2xl">Mengisi Formulir</h2>
+                  <p className="text-lg font-normal">
+                    Isi formulir pendaftaran dan siapkan berkas - berkas yang
+                    dibutuhkan
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
