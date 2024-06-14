@@ -8,7 +8,7 @@ export default function Gallery() {
       <Navbar />
       <section
         id="gallery-first"
-        className="w-full px-16 flex flex-col gap-8 items-center justify-center mb-0 mt-24 lg:mt-32"
+        className="w-full px-4 lg:px-16 flex flex-col gap-8 items-center justify-center mb-0 mt-24 lg:mt-32"
       >
         <div className="mx-auto">
           <div className="flex flex-col justify-center items-center  text-3xl lg:text-5xl font-semibold mb-8 lg:mb-16">

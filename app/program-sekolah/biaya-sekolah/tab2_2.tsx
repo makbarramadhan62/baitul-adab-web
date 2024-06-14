@@ -15,7 +15,7 @@ const Tab2_2 = () => {
       </div>
 
       <div className="mt-10 flex flex-col gap-10 lg:flex-row items-start justify-center">
-        <div className="w-2/3 border border-primary-content rounded-md">
+        <div className="w-full xl:w-2/3 border border-primary-content rounded-md">
           <div className="overflow-x-auto">
             <table className="table">
               {/* head */}
@@ -74,47 +74,49 @@ const Tab2_2 = () => {
             </table>
           </div>
         </div>
-        <div className="w-1/3 border border-primary-content rounded-md">
-          <table className="table">
-            {/* head */}
-            <thead>
-              <tr>
-                <th
-                  colSpan={2}
-                  className="text-center text-lg bg-primary-content bg-opacity-80 text-neutral"
-                >
-                  JADWAL PLAYGROUP REGULAR
-                </th>
-              </tr>
-            </thead>
-            <tbody className="text-sm text-neutral font-medium">
-              {/* row 1 */}
-              <tr>
-                <td>SENIN</td>
-                <td className="text-end">08:30 - 11:00</td>
-              </tr>
-              {/* row 2 */}
-              <tr>
-                <td>SELASA</td>
-                <td className="text-end">08:30 - 11:00</td>
-              </tr>
-              {/* row 3 */}
-              <tr>
-                <td>RABU</td>
-                <td className="text-end">08:30 - 11:00</td>
-              </tr>
-              {/* row 4 */}
-              <tr>
-                <td>KAMIS</td>
-                <td className="text-end">08:30 - 11:00</td>
-              </tr>
-              {/* row 5 */}
-              <tr>
-                <td>JUMAT</td>
-                <td className="text-end">08:30 - 11:00</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="w-full xl:w-1/3 border border-primary-content rounded-md">
+          <div className="overflow-x-auto">
+            <table className="table">
+              {/* head */}
+              <thead>
+                <tr>
+                  <th
+                    colSpan={2}
+                    className="text-center text-lg bg-primary-content bg-opacity-80 text-neutral"
+                  >
+                    JADWAL PLAYGROUP REGULAR
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="text-sm text-neutral font-medium">
+                {/* row 1 */}
+                <tr>
+                  <td>SENIN</td>
+                  <td className="text-end">08:30 - 11:00</td>
+                </tr>
+                {/* row 2 */}
+                <tr>
+                  <td>SELASA</td>
+                  <td className="text-end">08:30 - 11:00</td>
+                </tr>
+                {/* row 3 */}
+                <tr>
+                  <td>RABU</td>
+                  <td className="text-end">08:30 - 11:00</td>
+                </tr>
+                {/* row 4 */}
+                <tr>
+                  <td>KAMIS</td>
+                  <td className="text-end">08:30 - 11:00</td>
+                </tr>
+                {/* row 5 */}
+                <tr>
+                  <td>JUMAT</td>
+                  <td className="text-end">08:30 - 11:00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

@@ -47,8 +47,8 @@ export default function Program() {
         id="program-first"
         className="min-h-screen w-full mb-0 mt-24 lg:mt-32 flex-grow relative"
       >
-        <div className="px-16 flex flex-col gap-8 items-center justify-center">
-          <div className="flex flex-col justify-center items-center gap-0 lg:gap-4 text-3xl lg:text-5xl font-semibold">
+        <div className="px-4 lg:px-16 flex flex-col gap-8 items-center justify-center">
+          <div className="flex flex-col justify-center items-center gap-0 lg:gap-4 text-5xl font-semibold">
             <span className="text-neutral text-center">Program Sekolah Di</span>
             <span className="text-secondary-content text-center">
               Baitul Adab Islamic School
@@ -104,7 +104,7 @@ export default function Program() {
           style={{ width: "100%", height: "auto" }}
           src="/image/home/UnionBg.svg"
           alt="school-pict"
-          className="object-cover absolute bottom-0 lg:-bottom-20 xl:-bottom-24 z-10"
+          className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-24 z-10"
         />
       </section>
       {/* First Section*/}
@@ -114,8 +114,10 @@ export default function Program() {
         id="program-second"
         className="h-[700px] w-full relative z-20 bg-primary-content"
       >
-        <div className="px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8 text-3xl lg:text-5xl">
-          <span className="text-base-100 font-semibold">Apa Itu Daycare?</span>
+        <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8 text-5xl">
+          <span className="text-base-100 font-semibold text-center">
+            Apa Itu Daycare?
+          </span>
           <p className="text-lg lg:text-2xl font-normal text-center">
             Program ini merupakan unggulan kami, program yang hadir untuk
             membantu orangtua dalam proses pengasuhan tumbuh kembang anak.
@@ -153,7 +155,7 @@ export default function Program() {
           style={{ width: "100%", height: "auto" }}
           src="/image/program_sekolah/bg_tosca.svg"
           alt="school-pict"
-          className="object-cover absolute bottom-0 lg:-bottom-20 xl:-bottom-44 z-10"
+          className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-44 z-10"
         />
       </section>
       {/* Second Section*/}
@@ -163,8 +165,8 @@ export default function Program() {
         id="program-third"
         className="h-auto lg:h-[900px] w-full relative z-20 bg-success"
       >
-        <div className="px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
-          <span className="text-3xl lg:text-5xl text-base-100 font-semibold text-center">
+        <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
+          <span className="text-5xl text-base-100 font-semibold text-center">
             APA ITU PLAYGROUP?
           </span>
           <p className="text-lg lg:text-2xl font-normal text-center">
@@ -213,7 +215,7 @@ export default function Program() {
           style={{ width: "100%", height: "auto" }}
           src="/image/program_sekolah/bg_blue.svg"
           alt="school-pict"
-          className="object-cover absolute bottom-0 lg:-bottom-20 xl:-bottom-44 z-10"
+          className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-44 z-10"
         />
       </section>
       {/* Third Section*/}
@@ -223,8 +225,8 @@ export default function Program() {
         id="program-fourth"
         className="h-auto lg:h-[800px] w-full relative z-20 bg-[#2278D4]"
       >
-        <div className="px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
-          <span className="text-3xl lg:text-5xl text-base-100 font-semibold text-center">
+        <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
+          <span className="text-5xl text-base-100 font-semibold text-center mb-2">
             APA ITU KINDEGARTEN?
           </span>
           <p className="text-lg lg:text-2xl font-normal text-center">
@@ -270,9 +272,18 @@ export default function Program() {
       {/* Fourth Section*/}
 
       {/* Fifth Section*/}
-      <section id="program-fifth" className="h-auto lg:h-[700px] w-full">
-        <div className="px-16 h-full w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
-          <span className="text-secondary-content text-3xl lg:text-5xl font-semibold">
+      <section
+        id="program-fifth"
+        className="h-auto lg:h-[700px] w-full"
+        style={{
+          backgroundImage: "url(/image/program_sekolah/bgIllustration.svg)",
+          backgroundSize: "contain",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="px-4 lg:px-16 h-full w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
+          <span className="text-secondary-content text-5xl font-semibold">
             Kurikulum
           </span>
           <p className="text-neutral text-lg lg:text-2xl font-normal text-center">
@@ -293,7 +304,7 @@ export default function Program() {
 
       {/* Sixth Section*/}
       <section id="program-sixth" className="h-auto w-full mb-8">
-        <div className="px-16 h-full w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
+        <div className="px-0 lg:px-16 h-full w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
           <span className="text-secondary-content text-3xl text-center lg:text-5xl font-semibold">
             Kelas & Jadwal Harian
           </span>

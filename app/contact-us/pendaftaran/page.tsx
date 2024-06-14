@@ -5,11 +5,11 @@ import PendaftaranForm from "@/app/contact-us/pendaftaran/pendaftaranForm";
 
 export default function Pendaftaran() {
   return (
-    <div className="flex w-full flex-col items-center overflow-x-hidden">
+    <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
       <Navbar />
       <section
         id="program-first"
-        className="h-full lg:h-[944px] w-full mb-16 lg:mb-0 mt-[92px] relative flex items-center justify-center"
+        className="h-full lg:h-[944px] w-full mb-16 lg:mb-0 mt-[92px] relative "
       >
         <Image
           height={100}
@@ -20,7 +20,7 @@ export default function Pendaftaran() {
           className="object-cover absolute hidden lg:flex lg:h-[944px] w-auto right-0 top-0 z-10"
         />
 
-        <div className="px-16 flex items-center flex-col lg:flex-row justify-start gap-16">
+        <div className="px-4 lg:px-16 h-full flex items-center flex-col lg:flex-row justify-start gap-16">
           <div className="w-full lg:w-3/5">
             <div className="flex flex-col mb-4">
               <span className="text-4xl font-bold text-secondary-content">
@@ -37,7 +37,7 @@ export default function Pendaftaran() {
 
             <PendaftaranForm />
 
-            <div className="flex justify-between gap-4">
+            <div className="flex flex-wrap justify-between gap-4">
               <div className="text-neutral text-sm flex items-center gap-2">
                 <i className="bi bi-telephone text-2xl"></i>
                 <div className="font-semibold flex flex-col">

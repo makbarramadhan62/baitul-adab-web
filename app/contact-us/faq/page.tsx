@@ -5,9 +5,9 @@ export default function Faq() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
       <Navbar />
-      <div className="w-full px-16 flex flex-col gap-8 items-center justify-center mb-8 mt-24 lg:mt-32">
+      <div className="w-full px-4 lg:px-16 flex flex-col gap-8 items-center justify-center mb-8 mt-24 lg:mt-32">
         <span className="text-neutral text-8xl font-bold">FAQ</span>
-        <div className="flex flex-col w-3/4 gap-4">
+        <div className="flex flex-col w-full lg:w-3/4 gap-4">
           <div
             tabIndex={0}
             className="collapse collapse-arrow bg-base-100 text-neutral"

@@ -21,55 +21,60 @@ export default function Profile() {
       {/* First Section */}
       <section
         id="profile-first"
-        className="px-16 flex flex-col gap-8 items-center justify-center mb-0 mt-24 lg:mt-28"
+        className="flex flex-col gap-8 items-center justify-center mb-0 mt-24 lg:mt-28"
       >
-        <div className="w-full">
-          <Image
-            height={100}
-            width={100}
-            unoptimized
-            src="/image/profil_sekolah/image.png"
-            alt="school-pict"
-            className="object-cover mx-auto w-full h-96 lg:h-auto rounded-lg"
-          />
-        </div>
-        <div className="w-full text-center mb-0 lg:mb-8">
-          <div className="flex flex-col justify-center gap-0 lg:gap-4 text-3xl lg:text-5xl font-semibold">
-            <span className="text-neutral">Sejarah Singkat</span>
-            <span className="text-secondary-content">
-              Baitul Adab Islamic School
+        <div className="px-4 lg:px-16">
+          <div className="w-full mb-4 lg:mb-0">
+            <Image
+              height={100}
+              width={100}
+              unoptimized
+              src="/image/profil_sekolah/image.png"
+              alt="school-pict"
+              className="object-cover mx-auto w-full h-96 lg:h-auto rounded-lg"
+            />
+          </div>
+          <div className="w-full text-center mb-4 lg:mb-8">
+            <div className="flex flex-col justify-center gap-0 lg:gap-4 text-5xl font-semibold">
+              <span className="text-neutral">Sejarah Singkat</span>
+              <span className="text-secondary-content">
+                Baitul Adab Islamic School
+              </span>
+            </div>
+          </div>
+
+          <div className="gap-4 lg:gap-16 flex flex-col lg:flex-row items-center justify-center text-neutral">
+            <span className="w-full lg:w-1/2 lg:order-1 text-lg lg:text-2xl">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </span>
+            <span className="w-full lg:w-1/2 lg:order-2 text-lg lg:text-2xl">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
             </span>
           </div>
-        </div>
-
-        <div className="gap-0 lg:gap-16 flex flex-col lg:flex-row items-center justify-center text-neutral">
-          <span className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0 text-lg lg:text-2xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </span>
-          <span className="w-full lg:w-1/2 lg:order-2 text-lg lg:text-2xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </span>
         </div>
       </section>
       {/* First Section */}
 
       {/* Second Section */}
-      <section id="profile-second" className="w-full my-8">
-        <div className="px-16 flex flex-col gap-8 items-center justify-center">
+      <section
+        id="profile-second"
+        className="w-full my-8 flex flex-col items-center justify-center"
+      >
+        <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-0 lg:mb-8">
-            <div className="flex flex-col justify-center gap-4 text-3xl lg:text-5xl font-semibold">
+            <div className="text-5xl font-semibold mb-4">
               <span className="text-neutral">Visi & Misi</span>
             </div>
           </div>
@@ -102,7 +107,7 @@ export default function Profile() {
                 </div>
               </div>
             </div>
-            {/* Bagian Kiri */}
+            {/* Bagian Kanan */}
             <div className="lg:w-1/2 lg:order-1 mb-0 lg:mb-8">
               <div className="card bg-primary-content shadow-xl px-2 lg:px-16 h-auto lg:h-[500px]">
                 <div className="card-body gap-4 lg:gap-10 text-white">
@@ -156,7 +161,7 @@ export default function Profile() {
 
       {/* Third Section */}
       <section id="profile-third" className="w-full my-8">
-        <div className="px-16 text-neutral">
+        <div className="px-4 lg:px-16 text-neutral">
           <div className="flex gap-8 items-start font-semibold">
             <button
               className={`${

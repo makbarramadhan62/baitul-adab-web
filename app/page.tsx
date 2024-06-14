@@ -68,7 +68,7 @@ export default function Home() {
       {/* Hero Section*/}
       <section
         id="hero"
-        className="p-16 flex flex-col lg:flex-row items-center justify-center mb-0 lg:my-8 relative"
+        className="p-4 lg:p-16 mt-16 flex flex-col lg:flex-row items-center justify-center mb-0 lg:mb-8 relative"
       >
         {/* Bagian Kiri */}
         <div
@@ -103,20 +103,19 @@ export default function Home() {
             height={100}
             width={100}
             unoptimized
-            style={{ width: "80%", height: "auto" }}
+            style={{ height: "auto" }}
             src="/image/home/heroSecrtion-children.png"
             alt="school-pict"
-            className="object-contain mx-auto"
+            className="object-contain mx-auto w-full md:w-4/5"
           />
         </div>
         <Image
           height={100}
           width={100}
           unoptimized
-          style={{ width: "100%", height: "auto" }}
           src="/image/home/UnionBg.svg"
           alt="school-pict"
-          className="object-cover absolute bottom-0 lg:-bottom-20 xl:-bottom-44 z-10"
+          className="object-cover absolute h-auto w-full -bottom-1 lg:-bottom-20 xl:-bottom-28 z-10"
         />
       </section>
       {/* Hero Section*/}
@@ -126,9 +125,9 @@ export default function Home() {
         id="second"
         className="w-full relative z-20 bg-primary-content mt-0 lg:my-8"
       >
-        <div className="px-16">
+        <div className="px-4 lg:px-16">
           <div className="w-full text-center">
-            <span className="text-3xl lg:text-5xl font-semibold">
+            <span className="text-5xl font-semibold">
               Kenapa Harus Baitul Adab?
             </span>
           </div>
@@ -187,7 +186,7 @@ export default function Home() {
 
       {/* Third Section*/}
       <section id="third" className="w-full relative z-10 my-8">
-        <div className="px-16">
+        <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
             <div className="flex flex-col justify-center gap-4 text-3xl lg:text-5xl font-semibold">
               <span className="text-neutral">
@@ -217,7 +216,7 @@ export default function Home() {
 
       {/*  Fourth Section*/}
       <section id="fourth" className="w-full relative z-10 my-8">
-        <div className="px-16">
+        <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
             <div className="flex flex-col justify-center gap-4">
               <span className="text-neutral text-3xl lg:text-5xl font-semibold">
@@ -247,7 +246,7 @@ export default function Home() {
 
       {/*  Fifth Section*/}
       <section id="fifth" className="w-full my-8">
-        <div className="px-16">
+        <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
             <div className="flex flex-col justify-center gap-4">
               <span className="text-neutral text-3xl lg:text-5xl font-semibold">
@@ -259,7 +258,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-
+          o
           <div className="flex flex-col lg:flex-row items-center justify-center">
             {/* Bagian Kiri */}
             <div className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0">
@@ -328,7 +327,7 @@ export default function Home() {
                 style={{ width: "80%", height: "auto" }}
                 src="/image/home/personIllustration.svg"
                 alt="school-pict"
-                className="object-contain mx-auto"
+                className="object-contain mx-auto hidden lg:block"
               />
             </div>
           </div>

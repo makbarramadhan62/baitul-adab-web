@@ -2,15 +2,14 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="w-full">
+    <div className="w-full relative mt-8">
       <Image
         height={100}
         width={100}
         unoptimized
-        style={{ width: "100%", height: "auto" }}
         src="/image/footer/topFooterBG.svg"
         alt="school-pict"
-        className="object-contain mx-auto"
+        className="object-contain w-full absolute -top-5 z-10"
       />
       <footer className="footer p-10 lg:px-80 gap-24 bg-primary-content text-base-content">
         <aside className="w-2/3">

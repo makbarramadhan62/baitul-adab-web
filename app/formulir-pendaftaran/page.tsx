@@ -201,7 +201,7 @@ export default function RegistrationForm() {
         backgroundRepeat: "repeat",
       }}
     >
-      <div className="card p-8 bg-base-100 w-11/12 lg:w-2/3">
+      <div className="card p-4 lg:p-8 bg-base-100 w-11/12 lg:w-2/3">
         <div className="flex flex-col gap-2 items-center mb-8 text-center">
           <span className="text-secondary-content text-5xl font-bold">
             Formulir Pendaftaran Sekolah
@@ -217,7 +217,7 @@ export default function RegistrationForm() {
 
         <form className="flex flex-col gap-8" onSubmit={handleSubmit}>
           <div className="card">
-            <div className="flex flex-col gap-2 bg-primary px-8 py-4 rounded-lg mb-4">
+            <div className="flex flex-col gap-2 bg-primary px-2 lg:px-8 py-4 rounded-lg mb-4">
               <span className="text-base-100 text-2xl font-bold">
                 Data Diri Calon Siswa
               </span>
@@ -306,7 +306,7 @@ export default function RegistrationForm() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 bg-primary px-8 py-4 rounded-lg mb-4">
+            <div className="flex flex-col gap-2 bg-primary px-2 lg:px-8 py-4 rounded-lg mb-4">
               <span className="text-base-100 text-2xl font-bold">
                 Data Berkas Calon Siswa
               </span>
@@ -318,13 +318,13 @@ export default function RegistrationForm() {
 
             <div className="flex flex-col gap-4 w-full">
               <div className="flex flex-col gap-2">
-                <div className="flex justify-between">
-                  <label className="text-neutral text-lg font-medium">
+                <div className="flex justify-between items-end">
+                  <label className="text-neutral text-base lg:text-lg font-medium">
                     Fotocopy Akte Kelahiran Calon Siswa
                     <span className="text-red-600">*</span>
                   </label>
 
-                  <span className="text-[#FF5F00] font-semibold">
+                  <span className="text-[#FF5F00] font-semibold text-xs lg:text-base text-end">
                     Max 2 Mb | Format PDF
                   </span>
                 </div>
@@ -344,13 +344,13 @@ export default function RegistrationForm() {
                 )}
               </div>
               <div className="flex flex-col gap-2">
-                <div className="flex justify-between">
-                  <label className="text-neutral text-lg font-medium">
+                <div className="flex justify-between items-end">
+                  <label className="text-neutral text-base lg:text-lg font-medium">
                     Fotocopy Kartu Keluarga Calon Siswa
                     <span className="text-red-600">*</span>
                   </label>
 
-                  <span className="text-[#FF5F00] font-semibold">
+                  <span className="text-[#FF5F00] font-semibold text-xs lg:text-base text-end">
                     Max 2 Mb | Format PDF
                   </span>
                 </div>
@@ -370,13 +370,13 @@ export default function RegistrationForm() {
                 )}
               </div>
               <div className="flex flex-col gap-2">
-                <div className="flex justify-between">
-                  <label className="text-neutral text-lg font-medium">
+                <div className="flex justify-between items-end">
+                  <label className="text-neutral text-base lg:text-lg font-medium">
                     Fotocopy KTP Orang Tua / Wali
                     <span className="text-red-600">*</span>
                   </label>
 
-                  <span className="text-[#FF5F00] font-semibold">
+                  <span className="text-[#FF5F00] font-semibold text-xs lg:text-base text-end">
                     Max 2 Mb | Format PDF
                   </span>
                 </div>
@@ -396,13 +396,13 @@ export default function RegistrationForm() {
                 )}
               </div>
               <div className="flex flex-col gap-2">
-                <div className="flex justify-between">
-                  <label className="text-neutral text-lg font-medium">
+                <div className="flex justify-between items-end">
+                  <label className="text-neutral text-base lg:text-lg font-medium">
                     Pass Foto 3x4 Calon Siswa
                     <span className="text-red-600">*</span>
                   </label>
 
-                  <span className="text-[#FF5F00] font-semibold">
+                  <span className="text-[#FF5F00] font-semibold text-xs lg:text-base text-end">
                     Max 2 Mb | Format JPG, PNG, JPEG
                   </span>
                 </div>
@@ -424,7 +424,7 @@ export default function RegistrationForm() {
             </div>
           </div>
 
-          <div className="w-full flex justify-center mb-16">
+          <div className="w-full flex justify-center mb-8">
             {isLoading ? (
               <>
                 <button
@@ -458,7 +458,7 @@ export default function RegistrationForm() {
             </div>
           )}
 
-          <div className="flex justify-between gap-4">
+          <div className="flex flex-wrap justify-between gap-4">
             <div className="text-neutral text-sm flex items-center gap-2">
               <i className="bi bi-telephone text-2xl"></i>
               <div className="font-semibold flex flex-col">
