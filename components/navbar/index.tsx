@@ -17,7 +17,7 @@ const Navbar = () => {
   const getLinkClass = (path: string) => {
     return activePath === path
       ? "text-blue-600 border-b-2 border-blue-600 pb-1"
-      : "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 hover:pb-1";
+      : "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
   };
 
   return (
@@ -40,11 +40,35 @@ const Navbar = () => {
             <Link href="/">
               <span className={getLinkClass("/")}>Home</span>
             </Link>
-            <Link href="/profil-sekolah">
-              <span className={getLinkClass("/profil-sekolah")}>
-                Profile Sekolah
-              </span>
-            </Link>
+            <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button">
+                <Link href="/profil-sekolah">
+                  <span className={getLinkClass("/profil-sekolah")}>
+                    Profile Sekolah
+                  </span>
+                </Link>
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/profil-sekolah/#profile-second">
+                    <span className="block px-4 py-2">Visi & Misi</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/profil-sekolah/sejarah">
+                    <span className="block px-4 py-2">Sejarah</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/profil-sekolah/struktur-organisasi">
+                    <span className="block px-4 py-2">Struktur Organisasi</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
             <Link href="/program-sekolah">
               <span className={getLinkClass("/program-sekolah")}>
                 Program Sekolah
@@ -113,7 +137,6 @@ const Navbar = () => {
         )}
 
         {/* Button Pendaftaran */}
-
         <div className="flex gap-6 font-semibold items-center">
           <button
             type="button"
