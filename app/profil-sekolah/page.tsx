@@ -70,7 +70,7 @@ export default function Profile() {
       {/* Second Section */}
       <section
         id="profile-second"
-        className="w-full my-8 flex flex-col items-center justify-center"
+        className="w-full pt-40 pb-52 flex flex-col items-center justify-center"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-0 lg:mb-8">
