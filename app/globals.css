@@ -67,3 +67,12 @@ body {
   transform: translateZ(-100px) scale(0.8);
   opacity: 0.5;
 }
+
+.hover-card:hover .image-hover {
+  filter: invert(1);
+  transition: filter 0.3s ease;
+}
+
+.hover-card:hover {
+  background-color: white;
+}

@@ -15,7 +15,7 @@ const CurriculumCard: React.FC<CurriculumCardProps> = ({
   description,
 }) => {
   return (
-    <div className="card w-96 md:w-auto bg-transparent hover:bg-white hover:text-neutral rounded-lg">
+    <div className="card w-96 md:w-auto bg-transparent hover:bg-white hover:text-neutral rounded-lg hover-card">
       <figure className="px-10 pt-10">
         <Image
           height={100}
@@ -24,7 +24,7 @@ const CurriculumCard: React.FC<CurriculumCardProps> = ({
           style={{ width: "auto", height: "auto" }}
           src={imageSrc}
           alt={imageAlt}
-          className="object-contain mx-auto"
+          className="object-contain mx-auto image-hover"
         />
       </figure>
       <div className="card-body items-center text-center">
