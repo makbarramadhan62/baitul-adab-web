@@ -104,7 +104,7 @@ export default function Home() {
             width={100}
             unoptimized
             style={{ height: "auto" }}
-            src="/image/home/heroSecrtion-children.png"
+            src="/image/home/heroSectionChildren.png"
             alt="school-pict"
             className="object-contain mx-auto w-full md:w-4/5"
           />
