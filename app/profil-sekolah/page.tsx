@@ -24,7 +24,7 @@ export default function Profile() {
         className="flex flex-col gap-8 items-center justify-center mb-0 mt-24 lg:mt-28"
       >
         <div className="px-4 lg:px-16">
-          <div className="w-full mb-4 lg:mb-0">
+          <div className="w-full mb-4 lg:mb-8">
             <Image
               height={100}
               width={100}
@@ -43,7 +43,7 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="gap-4 lg:gap-16 flex flex-col lg:flex-row items-center justify-center text-neutral">
+          <div className="gap-4 lg:gap-8 flex flex-col lg:flex-row items-center justify-center text-neutral">
             <span className="w-full lg:w-1/2 lg:order-1 text-lg lg:text-2xl">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
