@@ -102,7 +102,7 @@ export default function Home() {
           <Image
             height={100}
             width={100}
-            unoptimized
+            priority={true}
             style={{ height: "auto" }}
             src="/image/home/heroSectionChildren.png"
             alt="school-pict"
