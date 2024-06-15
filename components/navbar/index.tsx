@@ -31,6 +31,7 @@ const Navbar = () => {
               height={100}
               style={{ width: "auto", height: "auto" }}
               src={"/image/logo.svg"}
+              priority
               alt="schools"
             />
           </div>
