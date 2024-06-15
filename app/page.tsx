@@ -109,8 +109,6 @@ export default function Home() {
           />
         </div>
         <Image
-          data-aos="fade-up"
-          data-aos-delay="800"
           height={100}
           width={100}
           unoptimized
@@ -127,7 +125,7 @@ export default function Home() {
         className="w-full relative z-20 bg-primary-content mt-0 lg:my-8"
       >
         <div className="px-4 lg:px-16">
-          <div className="w-full text-center">
+          <div className="w-full text-center" data-aos="fade-up">
             <span className="text-5xl font-semibold">
               Kenapa Harus Baitul Adab?
             </span>
