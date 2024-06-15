@@ -47,10 +47,18 @@ const Footer = () => {
         </aside>
         <nav className="text-white">
           <h6 className="text-xl font-semibold">Pages</h6>
-          <a className="link link-hover">Home</a>
-          <a className="link link-hover">Profile</a>
-          <a className="link link-hover">Program Sekolah</a>
-          <a className="link link-hover">Gallery Sekolah</a>
+          <a className="link link-hover" href="/">
+            Home
+          </a>
+          <a className="link link-hover" href="/profil-sekolah">
+            Profil Sekolah
+          </a>
+          <a className="link link-hover" href="/program-sekolah">
+            Program Sekolah
+          </a>
+          <a className="link link-hover" href="/galeri-sekolah">
+            Galleri Sekolah
+          </a>
         </nav>
         <nav className="text-white">
           <h6 className="text-xl font-semibold">Contact</h6>
