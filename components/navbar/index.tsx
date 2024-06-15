@@ -221,10 +221,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div
-            onMouseLeave={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden flex flex-col items-start gap-4 absolute top-16 left-8 bg-white rounded-lg shadow-md p-4 overflow-y-auto"
-          >
+          <div className="lg:hidden flex flex-col items-start gap-4 absolute top-16 left-8 bg-white rounded-lg shadow-md p-4 overflow-y-auto">
             <div className="join join-vertical w-full text-neutral">
               {/*Home*/}
               <div className="collapse collapse-arrow join-item">
@@ -242,27 +239,42 @@ const Navbar = () => {
                 </div>
                 <div className="collapse-content">
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/#hero">
+                    <Link
+                      href="/#hero"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Home</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/#fasilitas">
+                    <Link
+                      href="/#fasilitas"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Fasilitas</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/#testimoni">
+                    <Link
+                      href="/#testimoni"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Testimoni</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/#alur-pendaftaran">
+                    <Link
+                      href="/#alur-pendaftaran"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Alur Pendaftaran</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/#syarat-pendaftaran">
+                    <Link
+                      href="/#syarat-pendaftaran"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">
                         Syarat Pendaftaran
                       </span>
@@ -286,17 +298,26 @@ const Navbar = () => {
                 </div>
                 <div className="collapse-content">
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/profil-sekolah/#sejarah-singkat">
+                    <Link
+                      href="/profil-sekolah/#sejarah-singkat"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Sejarah Singkat</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/profil-sekolah/#visi-misi">
+                    <Link
+                      href="/profil-sekolah/#visi-misi"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Visi & Misi</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/profil-sekolah/#detail-sekolah">
+                    <Link
+                      href="/profil-sekolah/#detail-sekolah"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Detail Sekolah</span>
                     </Link>
                   </div>
@@ -318,50 +339,74 @@ const Navbar = () => {
                 </div>
                 <div className="collapse-content">
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/program-sekolah/#program-sekolah">
+                    <Link
+                      href="/program-sekolah/#program-sekolah"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Program Sekolah</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/program-sekolah/#daycare">
+                    <Link
+                      href="/program-sekolah/#daycare"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Apa itu Daycare?</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/program-sekolah/#playgroup">
+                    <Link
+                      href="/program-sekolah/#playgroup"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">
                         Apa itu Playgroup?
                       </span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/program-sekolah/#kindegarten">
+                    <Link
+                      href="/program-sekolah/#kindegarten"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">
                         Apa itu Kindgarten?
                       </span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/program-sekolah/#kurikulum">
+                    <Link
+                      href="/program-sekolah/#kurikulum"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Kurikulum</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/program-sekolah/#kelas-jadwal-harian">
+                    <Link
+                      href="/program-sekolah/#kelas-jadwal-harian"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">
                         Kelas & Jadwal Harian
                       </span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/program-sekolah/biaya-sekolah">
+                    <Link
+                      href="/program-sekolah/biaya-sekolah"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Biaya Sekolah</span>
                     </Link>
                   </div>
                 </div>
               </div>
               {/*Galeri Sekolah*/}
-              <Link href="/galeri-sekolah">
+              <Link
+                href="/galeri-sekolah"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              >
                 <div className="collapse join-item">
                   <input
                     type="radio"
@@ -382,23 +427,33 @@ const Navbar = () => {
                 <input
                   type="radio"
                   name="my-accordion"
-                  defaultChecked={activePath === "/contact-us"}
+                  defaultChecked={
+                    activePath === "/contact-us" ||
+                    activePath === "/contact-us/faq"
+                  }
                 />
                 <div
                   className={`collapse-title font-medium ${getMobileLinkClass([
                     "/contact-us",
+                    "/contact-us/faq",
                   ])}`}
                 >
                   Contact us
                 </div>
                 <div className="collapse-content">
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/contact-us/">
+                    <Link
+                      href="/contact-us/"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">Contact Us</span>
                     </Link>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link href="/contact-us/faq">
+                    <Link
+                      href="/contact-us/faq"
+                      onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    >
                       <span className="block px-4 py-2">FAQ</span>
                     </Link>
                   </div>
