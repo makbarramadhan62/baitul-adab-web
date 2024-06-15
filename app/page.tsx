@@ -136,7 +136,11 @@ export default function Home() {
             </span>
           </div>
           <div className="flex flex-col gap-10 items-center justify-center p-8 w-1/2 lg:w-full lg:order-1 lg:justify-center mx-auto">
-            <div className="flex flex-col lg:flex-row items-center justify-center">
+            <div
+              className="flex flex-col lg:flex-row items-center justify-center"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <CurriculumCard
                 imageSrc="/image/home/BookOpen.svg"
                 imageAlt="school-pict"
@@ -163,7 +167,11 @@ export default function Home() {
               />
             </div>
 
-            <div className="flex flex-col lg:flex-row items-center justify-center">
+            <div
+              className="flex flex-col lg:flex-row items-center justify-center"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
               <CurriculumCard
                 imageSrc="/image/home/BookOpen.svg"
                 imageAlt="school-pict"
@@ -192,7 +200,10 @@ export default function Home() {
       <section id="testimoni" className="w-full py-32 relative z-10">
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
-            <div className="flex flex-col justify-center gap-4 text-3xl lg:text-5xl font-semibold">
+            <div
+              className="flex flex-col justify-center gap-4 text-3xl lg:text-5xl font-semibold"
+              data-aos="fade-up"
+            >
               <span className="text-neutral">
                 Apa Kata Para Orangtua Tentang
               </span>
@@ -204,7 +215,12 @@ export default function Home() {
 
           <div className="carousel w-full gap-8 rounded-box">
             {testimonials.map((testimonial, index) => (
-              <div className="carousel-item" key={index}>
+              <div
+                className="carousel-item"
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 350}
+              >
                 <TestimonialCard
                   imageSrc={testimonial.imageSrc}
                   imageAlt={testimonial.imageAlt}
@@ -222,7 +238,10 @@ export default function Home() {
       <section id="alur-pendaftaran" className="w-full py-32 relative z-10">
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-16">
-            <div className="flex flex-col justify-center gap-4">
+            <div
+              className="flex flex-col justify-center gap-4"
+              data-aos="fade-up"
+            >
               <span className="text-neutral text-3xl lg:text-5xl font-semibold">
                 Bagaimana Cara Melakukan{" "}
                 <span className="text-secondary-content">Pendaftaran?</span>
@@ -235,7 +254,11 @@ export default function Home() {
           </div>
           <div className="w-full lg:order-2">
             <div className="flex flex-col lg:flex-row">
-              <div className="card w-auto md:w-auto bg-transparent rounded-lg">
+              <div
+                className="card w-auto md:w-auto bg-transparent rounded-lg"
+                data-aos="fade-up"
+                data-aos-delay="500"
+              >
                 <Image
                   height={100}
                   width={100}
@@ -254,6 +277,8 @@ export default function Home() {
                 </div>
               </div>
               <Image
+                data-aos="fade-up"
+                data-aos-delay="800"
                 height={100}
                 width={100}
                 unoptimized
@@ -262,7 +287,11 @@ export default function Home() {
                 alt="school-pict"
                 className="object-contain mx-auto mb-auto w-1/5 hidden 2xl:block"
               />
-              <div className="card w-auto md:w-auto bg-transparent rounded-lg">
+              <div
+                className="card w-auto md:w-auto bg-transparent rounded-lg"
+                data-aos="fade-up"
+                data-aos-delay="1200"
+              >
                 <Image
                   height={100}
                   width={100}
@@ -281,6 +310,8 @@ export default function Home() {
                 </div>
               </div>
               <Image
+                data-aos="fade-up"
+                data-aos-delay="1600"
                 height={100}
                 width={100}
                 unoptimized
@@ -289,7 +320,11 @@ export default function Home() {
                 alt="school-pict"
                 className="object-contain mx-auto w-1/5 hidden 2xl:block"
               />
-              <div className="card w-auto md:w-auto bg-transparent rounded-lg">
+              <div
+                className="card w-auto md:w-auto bg-transparent rounded-lg"
+                data-aos="fade-up"
+                data-aos-delay="2000"
+              >
                 <Image
                   height={100}
                   width={100}
@@ -317,7 +352,10 @@ export default function Home() {
       <section id="syarat-pendaftaran" className="w-full py-32">
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
-            <div className="flex flex-col justify-center gap-4">
+            <div
+              className="flex flex-col justify-center gap-4"
+              data-aos="fade-up"
+            >
               <span className="text-neutral text-3xl lg:text-5xl font-semibold">
                 Ayo Mulai Kumpulkan Berkas{" "}
                 <span className="text-secondary-content">Pendaftarannya!</span>
@@ -330,7 +368,11 @@ export default function Home() {
           o
           <div className="flex flex-col lg:flex-row items-center justify-center">
             {/* Bagian Kiri */}
-            <div className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0">
+            <div
+              className="w-full lg:w-1/2 lg:order-1 mb-8 md:mb-0"
+              data-aos="fade-up"
+              data-aos-delay="400"
+            >
               <div className="card w-full bg-primary-content shadow-xl">
                 <div className="card-body">
                   <h2 className="card-title mx-auto text-2xl lg:text-4xl font-bold">
@@ -388,7 +430,11 @@ export default function Home() {
             </div>
 
             {/* Bagian Kanan */}
-            <div className="w-full lg:w-1/2 lg:order-2">
+            <div
+              className="w-full lg:w-1/2 lg:order-2"
+              data-aos="fade-up"
+              data-aos-delay="800"
+            >
               <Image
                 height={100}
                 width={100}
