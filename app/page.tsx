@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
+import { Element } from "react-scroll";
 
 export default function Home() {
   useEffect(() => {
@@ -67,8 +68,9 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section*/}
-      <section
-        id="hero"
+      <Element
+        name="home"
+        id="home"
         className="pt-16 lg:pt-32 lg:pb-16 px-4 lg:px-16 flex flex-col lg:flex-row items-center justify-center relative min-h-screen "
       >
         {/* Bagian Kiri */}
@@ -121,11 +123,12 @@ export default function Home() {
           alt="school-pict"
           className="object-cover absolute h-auto w-full -bottom-1 lg:-bottom-20 xl:-bottom-28 z-10"
         />
-      </section>
+      </Element>
       {/* Hero Section*/}
 
       {/* Second Section*/}
-      <section
+      <Element
+        name="fasilitas"
         id="fasilitas"
         className="w-full py-32 relative z-20 bg-primary-content mt-0"
       >
@@ -193,11 +196,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Element>
       {/* Second Section*/}
 
       {/* Third Section*/}
-      <section id="testimoni" className="w-full py-32 relative z-10">
+      <Element
+        name="testimoni"
+        id="testimoni"
+        className="w-full py-32 relative z-10"
+      >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
             <div
@@ -231,11 +238,15 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </Element>
       {/* Third Section*/}
 
       {/*  Fourth Section*/}
-      <section id="alur-pendaftaran" className="w-full py-32 relative z-10">
+      <Element
+        name="alur-pendaftaran"
+        id="alur-pendaftaran"
+        className="w-full py-32 relative z-10"
+      >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-16">
             <div
@@ -252,7 +263,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <div className="w-full lg:order-2">
+          <div className="w-full lg:order-2 mt-56">
             <div className="flex flex-col lg:flex-row">
               <div
                 className="card w-auto md:w-auto bg-transparent rounded-lg"
@@ -345,11 +356,15 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Element>
       {/*  Fourth Section*/}
 
       {/*  Fifth Section*/}
-      <section id="syarat-pendaftaran" className="w-full py-32">
+      <Element
+        name="syarat-pendaftaran"
+        id="syarat-pendaftaran"
+        className="w-full py-32"
+      >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
             <div
@@ -447,7 +462,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Element>
       {/*  Fifth Section*/}
 
       <Footer />
