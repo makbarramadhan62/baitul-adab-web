@@ -111,6 +111,8 @@ export default function Home() {
           />
         </div>
         <Image
+          data-aos="fade-up"
+          data-aos-delay="800"
           height={100}
           width={100}
           unoptimized
