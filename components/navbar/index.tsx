@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -41,6 +42,87 @@ const Navbar = () => {
       : "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
   };
 
+  const menuItems = [
+    {
+      label: "Home",
+      href: "/",
+      scrollLinks: [
+        { label: "Home", to: "home", href: "/#home" },
+        { label: "Fasilitas", to: "fasilitas", href: "/#fasilitas" },
+        { label: "Testimoni", to: "testimoni", href: "/#testimoni" },
+        {
+          label: "Alur Pendaftaran",
+          to: "alur-pendaftaran",
+          href: "/#alur-pendaftaran",
+        },
+        {
+          label: "Syarat Pendaftaran",
+          to: "syarat-pendaftaran",
+          href: "/#syarat-pendaftaran",
+        },
+      ],
+    },
+    {
+      label: "Profil Sekolah",
+      href: "/profil-sekolah",
+      scrollLinks: [
+        {
+          label: "Sejarah Singkat",
+          to: "sejarah-singkat",
+          href: "/profil-sekolah/#sejarah-singkat",
+        },
+        {
+          label: "Visi & Misi",
+          to: "visi-misi",
+          href: "/profil-sekolah/#visi-misi",
+        },
+        {
+          label: "Detail Sekolah",
+          to: "detail-sekolah",
+          href: "/profil-sekolah/#detail-sekolah",
+        },
+      ],
+    },
+    {
+      label: "Program Sekolah",
+      href: "/program-sekolah",
+      scrollLinks: [
+        {
+          label: "Program Sekolah",
+          to: "program-sekolah",
+          href: "/program-sekolah/#program-sekolah",
+        },
+        {
+          label: "Apa itu Daycare?",
+          to: "daycare",
+          href: "/program-sekolah/#daycare",
+        },
+        {
+          label: "Biaya Sekolah",
+          to: "biaya-sekolah",
+          href: "/program-sekolah/#biaya-sekolah",
+        },
+      ],
+    },
+    {
+      label: "Galeri Sekolah",
+      href: "/galeri-sekolah",
+      scrollLinks: [],
+    },
+    {
+      label: "Contact Us",
+      href: "/contact-us",
+      scrollLinks: [
+        {
+          label: "Contact Us",
+          to: "contact-us",
+          href: "/contact-us",
+        },
+        { label: "FAQ", to: "faq", href: "/contact-us/faq" },
+      ],
+    },
+  ];
+
   return (
     <nav className="bg-white py-4 px-8 w-full fixed top-0 z-50">
       <div className="mx-auto flex justify-between items-center">
@@ -59,168 +141,212 @@ const Navbar = () => {
 
           {/* Navigasi Utama */}
           <div className="hidden lg:flex space-x-6">
-            {/*Home*/}
-            <div className="dropdown dropdown-hover">
-              <div tabIndex={0} role="button">
-                <Link href="/">
-                  <span className={getLinkClass(["/"])}>Home</span>
-                </Link>
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/#hero">
-                    <span className="block px-4 py-2">Hero</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/#fasilitas">
-                    <span className="block px-4 py-2">Fasilitas</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/#testimoni">
-                    <span className="block px-4 py-2">Testimoni</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/#alur-pendaftaran">
-                    <span className="block px-4 py-2">Alur Pendaftaran</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/#syarat-pendaftaran">
-                    <span className="block px-4 py-2">Syarat Pendaftaran</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/*Profile*/}
-            <div className="dropdown dropdown-hover">
-              <div tabIndex={0} role="button">
-                <Link href="/profil-sekolah">
-                  <span className={getLinkClass(["/profil-sekolah"])}>
-                    Profil Sekolah
-                  </span>
-                </Link>
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/profil-sekolah/#sejarah-singkat">
-                    <span className="block px-4 py-2">Sejarah Singkat</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/profil-sekolah/#visi-misi">
-                    <span className="block px-4 py-2">Visi & Misi</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/profil-sekolah/#detail-sekolah">
-                    <span className="block px-4 py-2">Detail Sekolah</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/*Program Sekolah*/}
-            <div className="dropdown dropdown-hover">
-              <div tabIndex={0} role="button">
-                <Link href="/program-sekolah">
-                  <span
-                    className={getLinkClass([
-                      "/program-sekolah",
-                      "/program-sekolah/biaya-sekolah",
-                    ])}
-                  >
-                    Program Sekolah
-                  </span>
-                </Link>
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/program-sekolah/#program-sekolah">
-                    <span className="block px-4 py-2">Program Sekolah</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/program-sekolah/#daycare">
-                    <span className="block px-4 py-2">Apa itu Daycare?</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/program-sekolah/#playgroup">
-                    <span className="block px-4 py-2">Apa itu Playgroup?</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/program-sekolah/#kindegarten">
-                    <span className="block px-4 py-2">Apa itu Kindgarten?</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/program-sekolah/#kurikulum">
-                    <span className="block px-4 py-2">Kurikulum</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/program-sekolah/#kelas-jadwal-harian">
-                    <span className="block px-4 py-2">
-                      Kelas & Jadwal Harian
+            {menuItems.map((menu, index) => (
+              <div key={index} className="dropdown dropdown-hover">
+                <div tabIndex={0} role="button">
+                  <Link href={menu.href}>
+                    <span className={getLinkClass([menu.href])}>
+                      {menu.label}
                     </span>
                   </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/program-sekolah/biaya-sekolah">
-                    <span className="block px-4 py-2">Biaya Sekolah</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/*Galeri Sekolah*/}
-            <Link href="/galeri-sekolah">
-              <span className={getLinkClass(["/galeri-sekolah"])}>
-                Galeri Sekolah
-              </span>
-            </Link>
-
-            {/*Contact Us*/}
-            <div className="dropdown dropdown-hover">
-              <div tabIndex={0} role="button">
-                <Link href="/contact-us">
-                  <span
-                    className={getLinkClass(["/contact-us", "/contact-us/faq"])}
-                  >
-                    Contact Us
-                  </span>
-                </Link>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className={`${
+                    menu.scrollLinks.length > 0 &&
+                    "dropdown-content shadow bg-base-100 rounded-box w-52"
+                  } z-[1] p-2`}
+                >
+                  {menu.scrollLinks.map((link, index) => (
+                    <li
+                      key={index}
+                      className="text-gray-600 hover:text-blue-600 hover:cursor-pointer"
+                    >
+                      {activePath === menu.href && link.href.includes("#") ? (
+                        <ScrollLink to={link.to} smooth={true} duration={500}>
+                          <span className="block px-4 py-2">{link.label}</span>
+                        </ScrollLink>
+                      ) : (
+                        <Link href={link.href}>
+                          <span className="block px-4 py-2">{link.label}</span>
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-              >
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/contact-us/">
-                    <span className="block px-4 py-2">Contact Us</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/contact-us/faq">
-                    <span className="block px-4 py-2">FAQ</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            ))}
+
+            {/*/!* Home *!/*/}
+            {/*<div className="dropdown dropdown-hover">*/}
+            {/*  <div tabIndex={0} role="button">*/}
+            {/*    <Link href="/">*/}
+            {/*      <span className={getLinkClass(["/"])}>Home</span>*/}
+            {/*    </Link>*/}
+            {/*  </div>*/}
+            {/*  <ul*/}
+            {/*    tabIndex={0}*/}
+            {/*    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"*/}
+            {/*  >*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <ScrollLink to="home" smooth={true} duration={500}>*/}
+            {/*        <span className="block px-4 py-2">Home</span>*/}
+            {/*      </ScrollLink>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <ScrollLink to="fasilitas" smooth={true} duration={500}>*/}
+            {/*        <span className="block px-4 py-2">Fasilitas</span>*/}
+            {/*      </ScrollLink>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <ScrollLink to="testimoni" smooth={true} duration={500}>*/}
+            {/*        <span className="block px-4 py-2">Testimoni</span>*/}
+            {/*      </ScrollLink>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <ScrollLink*/}
+            {/*        to="alur-pendaftaran"*/}
+            {/*        smooth={true}*/}
+            {/*        duration={500}*/}
+            {/*      >*/}
+            {/*        <span className="block px-4 py-2">Alur Pendaftaran</span>*/}
+            {/*      </ScrollLink>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <ScrollLink*/}
+            {/*        to="syarat-pendaftaran"*/}
+            {/*        smooth={true}*/}
+            {/*        duration={500}*/}
+            {/*      >*/}
+            {/*        <span className="block px-4 py-2">Syarat Pendaftaran</span>*/}
+            {/*      </ScrollLink>*/}
+            {/*    </li>*/}
+            {/*  </ul>*/}
+            {/*</div>*/}
+
+            {/*/!* Profil Sekolah *!/*/}
+            {/*<div className="dropdown dropdown-hover">*/}
+            {/*  <div tabIndex={0} role="button">*/}
+            {/*    <Link href="/profil-sekolah">*/}
+            {/*      <span className={getLinkClass(["/profil-sekolah"])}>*/}
+            {/*        Profil Sekolah*/}
+            {/*      </span>*/}
+            {/*    </Link>*/}
+            {/*  </div>*/}
+            {/*  <ul*/}
+            {/*    tabIndex={0}*/}
+            {/*    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"*/}
+            {/*  >*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/profil-sekolah#sejarah-singkat">*/}
+            {/*        <span className="block px-4 py-2">Sejarah Singkat</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/profil-sekolah#visi-misi">*/}
+            {/*        <span className="block px-4 py-2">Visi & Misi</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/profil-sekolah#detail-sekolah">*/}
+            {/*        <span className="block px-4 py-2">Detail Sekolah</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*  </ul>*/}
+            {/*</div>*/}
+
+            {/*/!* Program Sekolah *!/*/}
+            {/*<div className="dropdown dropdown-hover">*/}
+            {/*  <div tabIndex={0} role="button">*/}
+            {/*    <Link href="/program-sekolah">*/}
+            {/*      <span*/}
+            {/*        className={getLinkClass([*/}
+            {/*          "/program-sekolah",*/}
+            {/*          "/program-sekolah/biaya-sekolah",*/}
+            {/*        ])}*/}
+            {/*      >*/}
+            {/*        Program Sekolah*/}
+            {/*      </span>*/}
+            {/*    </Link>*/}
+            {/*  </div>*/}
+            {/*  <ul*/}
+            {/*    tabIndex={0}*/}
+            {/*    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"*/}
+            {/*  >*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/program-sekolah#program-sekolah">*/}
+            {/*        <span className="block px-4 py-2">Program Sekolah</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/program-sekolah#daycare">*/}
+            {/*        <span className="block px-4 py-2">Apa itu Daycare?</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/program-sekolah#playgroup">*/}
+            {/*        <span className="block px-4 py-2">Apa itu Playgroup?</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/program-sekolah#kindegarten">*/}
+            {/*        <span className="block px-4 py-2">Apa itu Kindgarten?</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/program-sekolah#kurikulum">*/}
+            {/*        <span className="block px-4 py-2">Kurikulum</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/program-sekolah#kelas-jadwal-harian">*/}
+            {/*        <span className="block px-4 py-2">*/}
+            {/*          Kelas & Jadwal Harian*/}
+            {/*        </span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/program-sekolah/biaya-sekolah">*/}
+            {/*        <span className="block px-4 py-2">Biaya Sekolah</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*  </ul>*/}
+            {/*</div>*/}
+
+            {/*/!* Galeri Sekolah *!/*/}
+            {/*<Link href="/galeri-sekolah">*/}
+            {/*  <span className={getLinkClass(["/galeri-sekolah"])}>*/}
+            {/*    Galeri Sekolah*/}
+            {/*  </span>*/}
+            {/*</Link>*/}
+
+            {/*/!* Contact Us *!/*/}
+            {/*<div className="dropdown dropdown-hover">*/}
+            {/*  <div tabIndex={0} role="button">*/}
+            {/*    <Link href="/contact-us">*/}
+            {/*      <span*/}
+            {/*        className={getLinkClass(["/contact-us", "/contact-us/faq"])}*/}
+            {/*      >*/}
+            {/*        Contact Us*/}
+            {/*      </span>*/}
+            {/*    </Link>*/}
+            {/*  </div>*/}
+            {/*  <ul*/}
+            {/*    tabIndex={0}*/}
+            {/*    className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"*/}
+            {/*  >*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/contact-us">*/}
+            {/*        <span className="block px-4 py-2">Contact Us</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*    <li className="text-gray-600 hover:text-blue-600">*/}
+            {/*      <Link href="/contact-us/faq">*/}
+            {/*        <span className="block px-4 py-2">FAQ</span>*/}
+            {/*      </Link>*/}
+            {/*    </li>*/}
+            {/*  </ul>*/}
+            {/*</div>*/}
           </div>
         </div>
 
@@ -257,46 +383,46 @@ const Navbar = () => {
                 </div>
                 <div className="collapse-content">
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/#hero"
+                    <ScrollLink
+                      to="/#hero"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Home</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/#fasilitas"
+                    <ScrollLink
+                      to="/#fasilitas"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Fasilitas</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/#testimoni"
+                    <ScrollLink
+                      to="/#testimoni"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Testimoni</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/#alur-pendaftaran"
+                    <ScrollLink
+                      to="/#alur-pendaftaran"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Alur Pendaftaran</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/#syarat-pendaftaran"
+                    <ScrollLink
+                      to="/#syarat-pendaftaran"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">
                         Syarat Pendaftaran
                       </span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                 </div>
               </div>
@@ -316,28 +442,28 @@ const Navbar = () => {
                 </div>
                 <div className="collapse-content">
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/profil-sekolah/#sejarah-singkat"
+                    <ScrollLink
+                      to="/profil-sekolah/#sejarah-singkat"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Sejarah Singkat</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/profil-sekolah/#visi-misi"
+                    <ScrollLink
+                      to="/profil-sekolah/#visi-misi"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Visi & Misi</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/profil-sekolah/#detail-sekolah"
+                    <ScrollLink
+                      to="/profil-sekolah/#detail-sekolah"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Detail Sekolah</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                 </div>
               </div>
@@ -357,72 +483,72 @@ const Navbar = () => {
                 </div>
                 <div className="collapse-content">
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/program-sekolah/#program-sekolah"
+                    <ScrollLink
+                      to="/program-sekolah/#program-sekolah"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Program Sekolah</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/program-sekolah/#daycare"
+                    <ScrollLink
+                      to="/program-sekolah/#daycare"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Apa itu Daycare?</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/program-sekolah/#playgroup"
+                    <ScrollLink
+                      to="/program-sekolah/#playgroup"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">
                         Apa itu Playgroup?
                       </span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/program-sekolah/#kindegarten"
+                    <ScrollLink
+                      to="/program-sekolah/#kindegarten"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">
                         Apa itu Kindgarten?
                       </span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/program-sekolah/#kurikulum"
+                    <ScrollLink
+                      to="/program-sekolah/#kurikulum"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Kurikulum</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/program-sekolah/#kelas-jadwal-harian"
+                    <ScrollLink
+                      to="/program-sekolah/#kelas-jadwal-harian"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">
                         Kelas & Jadwal Harian
                       </span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/program-sekolah/biaya-sekolah"
+                    <ScrollLink
+                      to="/program-sekolah/biaya-sekolah"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Biaya Sekolah</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                 </div>
               </div>
               {/*Galeri Sekolah*/}
-              <Link
-                href="/galeri-sekolah"
+              <ScrollLink
+                to="/galeri-sekolah"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 <div className="collapse join-item">
@@ -439,7 +565,7 @@ const Navbar = () => {
                     Galeri Sekolah
                   </div>
                 </div>
-              </Link>
+              </ScrollLink>
               {/*Contact Us*/}
               <div className="collapse collapse-arrow join-item">
                 <input
@@ -460,49 +586,49 @@ const Navbar = () => {
                 </div>
                 <div className="collapse-content">
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/contact-us/"
+                    <ScrollLink
+                      to="/contact-us/"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">Contact Us</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                   <div className="text-gray-600 hover:text-blue-600">
-                    <Link
-                      href="/contact-us/faq"
+                    <ScrollLink
+                      to="/contact-us/faq"
                       onClick={() => setIsMenuOpen(!isMenuOpen)}
                     >
                       <span className="block px-4 py-2">FAQ</span>
-                    </Link>
+                    </ScrollLink>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="space-x-4">
-              <Link href="/">
+              <ScrollLink to="/">
                 <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
-              </Link>
-              <Link href="/">
+              </ScrollLink>
+              <ScrollLink to="/">
                 <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
-              </Link>
-              <Link href="/">
+              </ScrollLink>
+              <ScrollLink to="/">
                 <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
-              </Link>
+              </ScrollLink>
             </div>
           </div>
         )}
 
         {/* Button Pendaftaran */}
         <div className="flex gap-6 font-semibold items-center">
-          <Link href="/contact-us">
+          <ScrollLink to="/contact-us">
             <button
               type="button"
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 focus:outline-none dark:focus:ring-blue-800"
             >
               Pendaftaran
             </button>
-          </Link>
+          </ScrollLink>
           <div className="hidden lg:flex space-x-4">
             <Link href="/">
               <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
