@@ -20,6 +20,12 @@ const Navbar = () => {
       : "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
   };
 
+  const getMobileLinkClass = (paths: string | string[]) => {
+    return paths.includes(activePath)
+      ? "text-blue-600"
+      : "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
+  };
+
   return (
     <nav className="bg-white py-4 px-8 w-full fixed top-0 z-50">
       <div className="mx-auto flex justify-between items-center">
@@ -189,6 +195,11 @@ const Navbar = () => {
                 className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/contact-us/">
+                    <span className="block px-4 py-2">Contact Us</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
                   <Link href="/contact-us/faq">
                     <span className="block px-4 py-2">FAQ</span>
                   </Link>
@@ -212,29 +223,189 @@ const Navbar = () => {
         {isMenuOpen && (
           <div
             onMouseLeave={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden flex flex-col items-start gap-4 absolute top-16 left-8 bg-white rounded-lg shadow-md p-4"
+            className="lg:hidden flex flex-col items-start gap-4 absolute top-16 left-8 bg-white rounded-lg shadow-md p-4 overflow-y-auto"
           >
-            <Link href="/">
-              <span className={getLinkClass(["/"])}>Home</span>
-            </Link>
-            <Link href="/profil-sekolah">
-              <span className={getLinkClass(["/profil-sekolah"])}>
-                Profile Sekolah
-              </span>
-            </Link>
-            <Link href="/program-sekolah">
-              <span className={getLinkClass(["/program-sekolah"])}>
-                Program Sekolah
-              </span>
-            </Link>
-            <Link href="/galeri-sekolah">
-              <span className={getLinkClass(["/galeri-sekolah"])}>
-                Galeri Sekolah
-              </span>
-            </Link>
-            <Link href="/contact-us">
-              <span className={getLinkClass(["/contact-us"])}>Contact Us</span>
-            </Link>
+            <div className="join join-vertical w-full text-neutral">
+              {/*Home*/}
+              <div className="collapse collapse-arrow join-item">
+                <input
+                  type="radio"
+                  name="my-accordion"
+                  defaultChecked={activePath === "/"}
+                />
+                <div
+                  className={`collapse-title font-medium ${getMobileLinkClass([
+                    "/",
+                  ])}`}
+                >
+                  Home
+                </div>
+                <div className="collapse-content">
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/#hero">
+                      <span className="block px-4 py-2">Home</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/#fasilitas">
+                      <span className="block px-4 py-2">Fasilitas</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/#testimoni">
+                      <span className="block px-4 py-2">Testimoni</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/#alur-pendaftaran">
+                      <span className="block px-4 py-2">Alur Pendaftaran</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/#syarat-pendaftaran">
+                      <span className="block px-4 py-2">
+                        Syarat Pendaftaran
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              {/*Profil Sekolah*/}
+              <div className="collapse collapse-arrow join-item">
+                <input
+                  type="radio"
+                  name="my-accordion"
+                  defaultChecked={activePath === "/profil-sekolah"}
+                />
+                <div
+                  className={`collapse-title font-medium ${getMobileLinkClass([
+                    "/profil-sekolah",
+                  ])}`}
+                >
+                  Profil Sekolah
+                </div>
+                <div className="collapse-content">
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/profil-sekolah/#sejarah-singkat">
+                      <span className="block px-4 py-2">Sejarah Singkat</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/profil-sekolah/#visi-misi">
+                      <span className="block px-4 py-2">Visi & Misi</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/profil-sekolah/#detail-sekolah">
+                      <span className="block px-4 py-2">Detail Sekolah</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              {/*Program Sekolah*/}
+              <div className="collapse collapse-arrow join-item">
+                <input
+                  type="radio"
+                  name="my-accordion"
+                  defaultChecked={activePath === "/program-sekolah"}
+                />
+                <div
+                  className={`collapse-title font-medium ${getMobileLinkClass([
+                    "/program-sekolah",
+                  ])}`}
+                >
+                  Program Sekolah
+                </div>
+                <div className="collapse-content">
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/program-sekolah/#program-sekolah">
+                      <span className="block px-4 py-2">Program Sekolah</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/program-sekolah/#daycare">
+                      <span className="block px-4 py-2">Apa itu Daycare?</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/program-sekolah/#playgroup">
+                      <span className="block px-4 py-2">
+                        Apa itu Playgroup?
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/program-sekolah/#kindegarten">
+                      <span className="block px-4 py-2">
+                        Apa itu Kindgarten?
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/program-sekolah/#kurikulum">
+                      <span className="block px-4 py-2">Kurikulum</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/program-sekolah/#kelas-jadwal-harian">
+                      <span className="block px-4 py-2">
+                        Kelas & Jadwal Harian
+                      </span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/program-sekolah/biaya-sekolah">
+                      <span className="block px-4 py-2">Biaya Sekolah</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              {/*Galeri Sekolah*/}
+              <Link href="/galeri-sekolah">
+                <div className="collapse join-item">
+                  <input
+                    type="radio"
+                    name="my-accordion"
+                    defaultChecked={activePath === "/galeri-sekolah"}
+                  />
+                  <div
+                    className={`collapse-title font-medium ${getMobileLinkClass(
+                      ["/galeri-sekolah"],
+                    )}`}
+                  >
+                    Galeri Sekolah
+                  </div>
+                </div>
+              </Link>
+              {/*Contact Us*/}
+              <div className="collapse collapse-arrow join-item">
+                <input
+                  type="radio"
+                  name="my-accordion"
+                  defaultChecked={activePath === "/contact-us"}
+                />
+                <div
+                  className={`collapse-title font-medium ${getMobileLinkClass([
+                    "/contact-us",
+                  ])}`}
+                >
+                  Contact us
+                </div>
+                <div className="collapse-content">
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/contact-us/">
+                      <span className="block px-4 py-2">Contact Us</span>
+                    </Link>
+                  </div>
+                  <div className="text-gray-600 hover:text-blue-600">
+                    <Link href="/contact-us/faq">
+                      <span className="block px-4 py-2">FAQ</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="space-x-4">
               <Link href="/">
                 <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
