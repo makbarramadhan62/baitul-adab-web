@@ -62,13 +62,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
+    <div className="flex w-full flex-col items-center overflow-x-hidden">
       <Navbar />
 
       {/* Hero Section*/}
       <section
         id="hero"
-        className="p-4 lg:p-16 mt-16 flex flex-col lg:flex-row items-center justify-center mb-0 lg:mb-8 relative"
+        className="p-4 lg:p-16 mt-16 flex flex-col lg:flex-row items-center justify-center mb-0 lg:mb-8 relative min-h-screen "
       >
         {/* Bagian Kiri */}
         <div
