@@ -251,12 +251,14 @@ const Navbar = () => {
 
         {/* Button Pendaftaran */}
         <div className="flex gap-6 font-semibold items-center">
-          <button
-            type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 focus:outline-none dark:focus:ring-blue-800"
-          >
-            Pendaftaran
-          </button>
+          <Link href="/contact-us">
+            <button
+              type="button"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm px-5 py-2.5 focus:outline-none dark:focus:ring-blue-800"
+            >
+              Pendaftaran
+            </button>
+          </Link>
           <div className="hidden lg:flex space-x-4">
             <Link href="/">
               <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
