@@ -14,8 +14,8 @@ const Navbar = () => {
     setActivePath(pathname);
   }, [pathname]);
 
-  const getLinkClass = (path: string) => {
-    return activePath === path
+  const getLinkClass = (paths: string | string[]) => {
+    return paths.includes(activePath)
       ? "text-blue-600 border-b-2 border-blue-600 pb-1"
       : "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
   };
@@ -38,14 +38,51 @@ const Navbar = () => {
 
           {/* Navigasi Utama */}
           <div className="hidden lg:flex space-x-6">
-            <Link href="/">
-              <span className={getLinkClass("/")}>Home</span>
-            </Link>
+            {/*Home*/}
+            <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button">
+                <Link href="/">
+                  <span className={getLinkClass(["/"])}>Home</span>
+                </Link>
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/#hero">
+                    <span className="block px-4 py-2">Hero</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/#fasilitas">
+                    <span className="block px-4 py-2">Fasilitas</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/#testimoni">
+                    <span className="block px-4 py-2">Testimoni</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/#alur-pendaftaran">
+                    <span className="block px-4 py-2">Alur Pendaftaran</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/#syarat-pendaftaran">
+                    <span className="block px-4 py-2">Syarat Pendaftaran</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/*Profile*/}
             <div className="dropdown dropdown-hover">
               <div tabIndex={0} role="button">
                 <Link href="/profil-sekolah">
-                  <span className={getLinkClass("/profil-sekolah")}>
-                    Profile Sekolah
+                  <span className={getLinkClass(["/profil-sekolah"])}>
+                    Profil Sekolah
                   </span>
                 </Link>
               </div>
@@ -54,35 +91,110 @@ const Navbar = () => {
                 className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/profil-sekolah/#profile-second">
+                  <Link href="/profil-sekolah/#sejarah-singkat">
+                    <span className="block px-4 py-2">Sejarah Singkat</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/profil-sekolah/#visi-misi">
                     <span className="block px-4 py-2">Visi & Misi</span>
                   </Link>
                 </li>
                 <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/profil-sekolah/sejarah">
-                    <span className="block px-4 py-2">Sejarah</span>
-                  </Link>
-                </li>
-                <li className="text-gray-600 hover:text-blue-600">
-                  <Link href="/profil-sekolah/struktur-organisasi">
-                    <span className="block px-4 py-2">Struktur Organisasi</span>
+                  <Link href="/profil-sekolah/#detail-sekolah">
+                    <span className="block px-4 py-2">Detail Sekolah</span>
                   </Link>
                 </li>
               </ul>
             </div>
-            <Link href="/program-sekolah">
-              <span className={getLinkClass("/program-sekolah")}>
-                Program Sekolah
-              </span>
-            </Link>
+
+            {/*Program Sekolah*/}
+            <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button">
+                <Link href="/program-sekolah">
+                  <span
+                    className={getLinkClass([
+                      "/program-sekolah",
+                      "/program-sekolah/biaya-sekolah",
+                    ])}
+                  >
+                    Program Sekolah
+                  </span>
+                </Link>
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/program-sekolah/#program-sekolah">
+                    <span className="block px-4 py-2">Program Sekolah</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/program-sekolah/#daycare">
+                    <span className="block px-4 py-2">Apa itu Daycare?</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/program-sekolah/#playgroup">
+                    <span className="block px-4 py-2">Apa itu Playgroup?</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/program-sekolah/#kindegarten">
+                    <span className="block px-4 py-2">Apa itu Kindgarten?</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/program-sekolah/#kurikulum">
+                    <span className="block px-4 py-2">Kurikulum</span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/program-sekolah/#kelas-jadwal-harian">
+                    <span className="block px-4 py-2">
+                      Kelas & Jadwal Harian
+                    </span>
+                  </Link>
+                </li>
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/program-sekolah/biaya-sekolah">
+                    <span className="block px-4 py-2">Biaya Sekolah</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/*Galeri Sekolah*/}
             <Link href="/galeri-sekolah">
-              <span className={getLinkClass("/galeri-sekolah")}>
+              <span className={getLinkClass(["/galeri-sekolah"])}>
                 Galeri Sekolah
               </span>
             </Link>
-            <Link href="/contact-us/">
-              <span className={getLinkClass("/contact-us/")}>Contact Us</span>
-            </Link>
+
+            {/*Contact Us*/}
+            <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button">
+                <Link href="/contact-us">
+                  <span
+                    className={getLinkClass(["/contact-us", "/contact-us/faq"])}
+                  >
+                    Contact Us
+                  </span>
+                </Link>
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li className="text-gray-600 hover:text-blue-600">
+                  <Link href="/contact-us/faq">
+                    <span className="block px-4 py-2">FAQ</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -103,25 +215,25 @@ const Navbar = () => {
             className="lg:hidden flex flex-col items-start gap-4 absolute top-16 left-8 bg-white rounded-lg shadow-md p-4"
           >
             <Link href="/">
-              <span className={getLinkClass("/")}>Home</span>
+              <span className={getLinkClass(["/"])}>Home</span>
             </Link>
             <Link href="/profil-sekolah">
-              <span className={getLinkClass("/profil-sekolah")}>
+              <span className={getLinkClass(["/profil-sekolah"])}>
                 Profile Sekolah
               </span>
             </Link>
             <Link href="/program-sekolah">
-              <span className={getLinkClass("/program-sekolah")}>
+              <span className={getLinkClass(["/program-sekolah"])}>
                 Program Sekolah
               </span>
             </Link>
             <Link href="/galeri-sekolah">
-              <span className={getLinkClass("/galeri-sekolah")}>
+              <span className={getLinkClass(["/galeri-sekolah"])}>
                 Galeri Sekolah
               </span>
             </Link>
             <Link href="/contact-us">
-              <span className={getLinkClass("/contact-us")}>Contact Us</span>
+              <span className={getLinkClass(["/contact-us"])}>Contact Us</span>
             </Link>
             <div className="space-x-4">
               <Link href="/">

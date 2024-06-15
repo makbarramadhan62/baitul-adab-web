@@ -1,7 +1,7 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
-import PendaftaranForm from "@/app/contact-us/pendaftaran/pendaftaranForm";
+import PendaftaranForm from "@/app/contact-us/pendaftaranForm";
 
 export default function Pendaftaran() {
   return (
@@ -9,7 +9,7 @@ export default function Pendaftaran() {
       <Navbar />
       <section
         id="program-first"
-        className="h-full lg:h-[944px] w-full mb-16 lg:mb-0 mt-[92px] relative "
+        className="h-full lg:h-[944px] w-full mb-16 lg:mb-0 py-32 relative "
       >
         <Image
           height={100}

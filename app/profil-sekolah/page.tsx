@@ -20,8 +20,8 @@ export default function Profile() {
 
       {/* First Section */}
       <section
-        id="profile-first"
-        className="flex flex-col gap-8 items-center justify-center mb-0 mt-24 lg:mt-28"
+        id="sejarah-singkat"
+        className="flex flex-col gap-8 items-center justify-center mb-0 py-32"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full mb-4 lg:mb-8">
@@ -69,8 +69,8 @@ export default function Profile() {
 
       {/* Second Section */}
       <section
-        id="profile-second"
-        className="w-full pt-40 pb-52 flex flex-col items-center justify-center"
+        id="visi-misi"
+        className="w-full py-32 flex flex-col items-center justify-center"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-0 lg:mb-8">
@@ -160,7 +160,7 @@ export default function Profile() {
       {/* Second Section */}
 
       {/* Third Section */}
-      <section id="profile-third" className="w-full my-8">
+      <section id="detail-sekolah" className="w-full py-32">
         <div className="px-4 lg:px-16 text-neutral">
           <div className="flex gap-8 items-start font-semibold">
             <button

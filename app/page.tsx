@@ -69,7 +69,7 @@ export default function Home() {
       {/* Hero Section*/}
       <section
         id="hero"
-        className="p-4 lg:p-16 mt-16 flex flex-col lg:flex-row items-center justify-center mb-0 lg:mb-8 relative min-h-screen "
+        className="pt-16 lg:pt-32 lg:pb-16 px-4 lg:px-16 flex flex-col lg:flex-row items-center justify-center relative min-h-screen "
       >
         {/* Bagian Kiri */}
         <div
@@ -126,8 +126,8 @@ export default function Home() {
 
       {/* Second Section*/}
       <section
-        id="second"
-        className="w-full relative z-20 bg-primary-content mt-0 lg:my-8"
+        id="fasilitas"
+        className="w-full py-32 relative z-20 bg-primary-content mt-0"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center" data-aos="fade-up">
@@ -189,7 +189,7 @@ export default function Home() {
       {/* Second Section*/}
 
       {/* Third Section*/}
-      <section id="third" className="w-full relative z-10 my-8">
+      <section id="testimoni" className="w-full py-32 relative z-10">
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
             <div className="flex flex-col justify-center gap-4 text-3xl lg:text-5xl font-semibold">
@@ -219,7 +219,7 @@ export default function Home() {
       {/* Third Section*/}
 
       {/*  Fourth Section*/}
-      <section id="fourth" className="w-full relative z-10 my-16">
+      <section id="alur-pendaftaran" className="w-full py-32 relative z-10">
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-16">
             <div className="flex flex-col justify-center gap-4">
@@ -314,7 +314,7 @@ export default function Home() {
       {/*  Fourth Section*/}
 
       {/*  Fifth Section*/}
-      <section id="fifth" className="w-full my-8">
+      <section id="syarat-pendaftaran" className="w-full py-32">
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
             <div className="flex flex-col justify-center gap-4">
