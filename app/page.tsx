@@ -72,7 +72,11 @@ export default function Home() {
         className="p-4 lg:p-16 mt-16 flex flex-col lg:flex-row items-center justify-center mb-0 lg:mb-8 relative min-h-screen "
       >
         {/* Bagian Kiri */}
-        <div data-aos="fade-right" className="w-full lg:w-1/2 mb-8 md:mb-0">
+        <div
+          data-aos="fade-right"
+          data-aos-delay="400"
+          className="w-full lg:w-1/2 mb-8 md:mb-0"
+        >
           <div className="mt-4">
             <h2 className="text-4xl font-bold text-gray-800">
               Selamat Datang di
@@ -94,7 +98,7 @@ export default function Home() {
         {/* Bagian Kanan */}
         <div
           data-aos="fade-left"
-          data-aos-delay="400"
+          data-aos-delay="800"
           className="w-full lg:w-1/2"
         >
           <Image
@@ -109,6 +113,7 @@ export default function Home() {
           />
         </div>
         <Image
+          data-aos="fade-up"
           height={100}
           width={100}
           unoptimized
