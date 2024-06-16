@@ -7,6 +7,7 @@ import { SetStateAction, useState } from "react";
 import Tab_1 from "@/app/profil-sekolah/tab_1";
 import Tab_2 from "@/app/profil-sekolah/tab_2";
 import Tab_3 from "@/app/profil-sekolah/tab_3";
+import { Element } from "react-scroll";
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState(1);
@@ -19,8 +20,9 @@ export default function Profile() {
       <Navbar />
 
       {/* First Section */}
-      <section
+      <Element
         id="sejarah-singkat"
+        name="sejarah-singkat"
         className="flex flex-col gap-8 items-center justify-center mb-0 py-32"
       >
         <div className="px-4 lg:px-16">
@@ -64,12 +66,13 @@ export default function Profile() {
             </span>
           </div>
         </div>
-      </section>
+      </Element>
       {/* First Section */}
 
       {/* Second Section */}
-      <section
+      <Element
         id="visi-misi"
+        name="visi-misi"
         className="w-full py-32 flex flex-col items-center justify-center"
       >
         <div className="px-4 lg:px-16">
@@ -156,11 +159,15 @@ export default function Profile() {
             </div>
           </div>
         </div>
-      </section>
+      </Element>
       {/* Second Section */}
 
       {/* Third Section */}
-      <section id="detail-sekolah" className="w-full py-32">
+      <Element
+        id="detail-sekolah"
+        name="detail-sekolah"
+        className="w-full py-32"
+      >
         <div className="px-4 lg:px-16 text-neutral">
           <div className="flex gap-8 items-start font-semibold">
             <button
@@ -201,7 +208,7 @@ export default function Profile() {
           {activeTab === 2 && <Tab_2 />}
           {activeTab === 3 && <Tab_3 />}
         </div>
-      </section>
+      </Element>
       {/* Third Section */}
       <Footer />
     </div>

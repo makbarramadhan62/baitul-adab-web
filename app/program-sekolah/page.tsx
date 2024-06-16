@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -8,43 +8,45 @@ import ProgramCard from "@/components/programCard";
 import Image from "next/image";
 import LevelCard from "@/components/levelCard";
 import ClassCard from "@/components/classCard";
-
-const programs = [
-  {
-    title: "PLAYGROUP",
-    description:
-      "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
-  },
-  {
-    title: "KINDERGARTEN",
-    description:
-      "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
-  },
-  {
-    title: "DAYCARE",
-    description:
-      "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
-  },
-];
+import { Element } from "react-scroll";
 
 export default function Program() {
   const [current, setCurrent] = useState(0);
 
-  const nextProgram = () => {
+  const programs = [
+    {
+      title: "PLAYGROUP",
+      description:
+        "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
+    },
+    {
+      title: "KINDERGARTEN",
+      description:
+        "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
+    },
+    {
+      title: "DAYCARE",
+      description:
+        "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
+    },
+  ];
+
+  const nextProgram = useCallback(() => {
     setCurrent((prev) => (prev + 1) % programs.length);
-  };
+  }, [programs.length]);
 
   useEffect(() => {
     const interval = setInterval(nextProgram, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [nextProgram]);
 
   return (
     <div className="flex w-full flex-col items-center overflow-x-hidden">
       <Navbar />
       {/* First Section*/}
-      <section
+      <Element
         id="program-sekolah"
+        name="program-sekolah"
         className="min-h-screen w-full py-32 flex-grow relative"
       >
         <div className="px-4 lg:px-16 flex flex-col gap-8 items-center justify-center">
@@ -106,12 +108,13 @@ export default function Program() {
           alt="school-pict"
           className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-24 z-10"
         />
-      </section>
+      </Element>
       {/* First Section*/}
 
       {/* Second Section*/}
-      <section
+      <Element
         id="daycare"
+        name="daycare"
         className="h-[700px] w-full relative py-32 z-20 bg-primary-content"
       >
         <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8 text-5xl">
@@ -157,12 +160,13 @@ export default function Program() {
           alt="school-pict"
           className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-44 z-10"
         />
-      </section>
+      </Element>
       {/* Second Section*/}
 
       {/* Third Section*/}
-      <section
+      <Element
         id="playgroup"
+        name="playgroup"
         className="h-auto lg:h-[900px] w-full py-32 relative z-20 bg-success"
       >
         <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
@@ -217,12 +221,13 @@ export default function Program() {
           alt="school-pict"
           className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-44 z-10"
         />
-      </section>
+      </Element>
       {/* Third Section*/}
 
       {/* Fourth Section*/}
-      <section
+      <Element
         id="kindegarten"
+        name="kindegarten"
         className="h-auto lg:h-[800px] w-full py-32 relative z-20 bg-[#2278D4]"
       >
         <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
@@ -268,12 +273,13 @@ export default function Program() {
           alt="school-pict"
           className="object-cover absolute top-10 right-2"
         />
-      </section>
+      </Element>
       {/* Fourth Section*/}
 
       {/* Fifth Section*/}
-      <section
+      <Element
         id="kurikulum"
+        name="kurikulum"
         className="h-auto lg:h-[700px] w-full py-32"
         style={{
           backgroundImage: "url(/image/program_sekolah/bgIllustration.svg)",
@@ -299,11 +305,15 @@ export default function Program() {
             tua.
           </p>
         </div>
-      </section>
+      </Element>
       {/* Fifth Section*/}
 
       {/* Sixth Section*/}
-      <section id="kelas-jadwal-harian" className="h-auto w-full mb-8 py-32">
+      <Element
+        id="kelas-jadwal-harian"
+        name="kelas-jadwal-harian"
+        className="h-auto w-full mb-8 py-32"
+      >
         <div className="px-0 lg:px-16 h-full w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
           <span className="text-secondary-content text-3xl text-center lg:text-5xl font-semibold">
             Kelas & Jadwal Harian
@@ -336,7 +346,7 @@ export default function Program() {
             />
           </div>
         </div>
-      </section>
+      </Element>
       {/* Sixth Section*/}
 
       <Footer />
