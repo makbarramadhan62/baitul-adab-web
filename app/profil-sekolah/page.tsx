@@ -23,7 +23,7 @@ export default function Profile() {
       <Element
         id="sejarah-singkat"
         name="sejarah-singkat"
-        className="flex flex-col gap-8 items-center justify-center mb-0 py-32"
+        className="flex flex-col gap-8 items-center justify-center mb-0 py-20 lg:py-32"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full mb-4 lg:mb-8">
@@ -73,7 +73,7 @@ export default function Profile() {
       <Element
         id="visi-misi"
         name="visi-misi"
-        className="w-full py-32 flex flex-col items-center justify-center"
+        className="w-full py-16 lg:py-32 flex flex-col items-center justify-center"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-0 lg:mb-8">
@@ -166,7 +166,7 @@ export default function Profile() {
       <Element
         id="detail-sekolah"
         name="detail-sekolah"
-        className="w-full py-32"
+        className="w-full py-16 lg:py-32"
       >
         <div className="px-4 lg:px-16 text-neutral">
           <div className="flex gap-8 items-start font-semibold">

@@ -47,7 +47,7 @@ export default function Program() {
       <Element
         id="program-sekolah"
         name="program-sekolah"
-        className="min-h-screen w-full py-32 flex-grow relative"
+        className="min-h-screen w-full py-20 lg:py-32 flex-grow relative"
       >
         <div className="px-4 lg:px-16 flex flex-col gap-8 items-center justify-center">
           <div className="flex flex-col justify-center items-center gap-0 lg:gap-4 text-5xl font-semibold">
@@ -115,7 +115,7 @@ export default function Program() {
       <Element
         id="daycare"
         name="daycare"
-        className="h-[700px] w-full relative py-32 z-20 bg-primary-content"
+        className="h-[700px] w-full relative py-16 lg:py-32 z-20 bg-primary-content"
       >
         <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8 text-5xl">
           <span className="text-base-100 font-semibold text-center">
@@ -149,7 +149,7 @@ export default function Program() {
           style={{ width: "15%", height: "auto" }}
           src="/image/program_sekolah/trees.svg"
           alt="school-pict"
-          className="object-cover absolute bottom-14 left-20"
+          className="object-cover absolute bottom-10 left-10"
         />
         <Image
           height={100}
@@ -167,7 +167,7 @@ export default function Program() {
       <Element
         id="playgroup"
         name="playgroup"
-        className="h-auto lg:h-[900px] w-full py-32 relative z-20 bg-success"
+        className="h-auto lg:h-[900px] w-full py-16 lg:py-32 relative z-20 bg-success"
       >
         <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
           <span className="text-5xl text-base-100 font-semibold text-center">
@@ -228,7 +228,7 @@ export default function Program() {
       <Element
         id="kindegarten"
         name="kindegarten"
-        className="h-auto lg:h-[800px] w-full py-32 relative z-20 bg-[#2278D4]"
+        className="h-auto lg:h-[800px] w-full py-16 lg:py-32 relative z-20 bg-[#2278D4]"
       >
         <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
           <span className="text-5xl text-base-100 font-semibold text-center mb-2">
@@ -280,7 +280,7 @@ export default function Program() {
       <Element
         id="kurikulum"
         name="kurikulum"
-        className="h-auto lg:h-[700px] w-full py-32"
+        className="h-auto lg:h-[700px] w-full py-16 lg:py-32"
         style={{
           backgroundImage: "url(/image/program_sekolah/bgIllustration.svg)",
           backgroundSize: "contain",
@@ -312,7 +312,7 @@ export default function Program() {
       <Element
         id="kelas-jadwal-harian"
         name="kelas-jadwal-harian"
-        className="h-auto w-full mb-8 py-32"
+        className="h-auto w-full mb-8 py-16 lg:py-32"
       >
         <div className="px-0 lg:px-16 h-full w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
           <span className="text-secondary-content text-3xl text-center lg:text-5xl font-semibold">

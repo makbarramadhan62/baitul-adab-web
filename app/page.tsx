@@ -130,7 +130,7 @@ export default function Home() {
       <Element
         name="fasilitas"
         id="fasilitas"
-        className="w-full py-32 relative z-20 bg-primary-content mt-0"
+        className="w-full py-16 lg:py-32 relative z-20 bg-primary-content mt-0"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center" data-aos="fade-up">
@@ -203,7 +203,7 @@ export default function Home() {
       <Element
         name="testimoni"
         id="testimoni"
-        className="w-full py-32 relative z-10"
+        className="w-full py-16 lg:py-32 relative z-10"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
@@ -245,10 +245,10 @@ export default function Home() {
       <Element
         name="alur-pendaftaran"
         id="alur-pendaftaran"
-        className="w-full py-32 relative z-10"
+        className="w-full py-16 lg:py-32 relative z-10"
       >
         <div className="px-4 lg:px-16">
-          <div className="w-full text-center mb-16">
+          <div className="w-full text-center">
             <div
               className="flex flex-col justify-center gap-4"
               data-aos="fade-up"
@@ -263,7 +263,7 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <div className="w-full lg:order-2 mt-56">
+          <div className="w-full lg:order-2 mt-8 lg:mt-56">
             <div className="flex flex-col lg:flex-row">
               <div
                 className="card w-auto md:w-auto bg-transparent rounded-lg"
@@ -363,7 +363,7 @@ export default function Home() {
       <Element
         name="syarat-pendaftaran"
         id="syarat-pendaftaran"
-        className="w-full py-32"
+        className="w-full py-16 lg:py-32"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
