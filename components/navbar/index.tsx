@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
@@ -9,22 +9,6 @@ import Link from "next/link";
 const Navbar = () => {
   const pathname = usePathname();
   const [activePath, setActivePath] = useState("");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleOutsideClick = (event: { target: any }) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
 
   useEffect(() => {
     setActivePath(pathname);
@@ -223,7 +207,6 @@ const Navbar = () => {
                             <div
                               key={index}
                               className="text-gray-600 hover:text-blue-600"
-                              onClick={() => setIsMenuOpen(false)}
                             >
                               {activePath === menu.href &&
                               link.href.includes("#") ? (
@@ -231,9 +214,6 @@ const Navbar = () => {
                                   to={link.to}
                                   smooth={true}
                                   duration={500}
-                                  onMouseDown={() =>
-                                    setTimeout(() => setIsMenuOpen(false), 200)
-                                  }
                                 >
                                   <span className="block px-4 py-2">
                                     {link.label}
