@@ -64,6 +64,11 @@ const Navbar = () => {
       href: "/program-sekolah",
       scrollLinks: [
         {
+          label: "Kelas",
+          to: "kelas",
+          href: "/program-sekolah/#kelas",
+        },
+        {
           label: "Kurikulum",
           to: "kurikulum",
           href: "/program-sekolah/#kurikulum",
@@ -137,7 +142,7 @@ const Navbar = () => {
                   className={`${
                     menu.scrollLinks.length > 0 &&
                     "dropdown-content shadow bg-base-100 rounded-box w-52"
-                  } z-[1]`}
+                  } z-[1] mt-2`}
                 >
                   {menu.scrollLinks.map((link, index) => (
                     <li
@@ -161,6 +166,7 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Navigasi Mobile */}
         <div className="drawer block lg:hidden">
           <input id="my-drawer" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content">
