@@ -177,104 +177,107 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Hamburger Menu */}
-        <div className="lg:hidden me-auto">
-          <button
-            className="text-gray-600 hover:text-blue-600 focus:outline-none"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <i className="bi bi-list text-2xl"></i>
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div
-            className="lg:hidden flex flex-col items-start gap-4 absolute top-16 left-8 bg-white rounded-lg shadow-md p-4 overflow-y-auto"
-            ref={menuRef}
-          >
-            <div className="join join-vertical w-full text-neutral">
-              {menuItems.map((menu, index) => (
-                <div
-                  key={index}
-                  className={`collapse ${
-                    menu.scrollLinks.length > 0 && "collapse-arrow"
-                  } join-item`}
-                >
-                  {menu.scrollLinks.length > 0 ? (
-                    <>
-                      <input
-                        type="radio"
-                        name="my-accordion"
-                        defaultChecked={activePath === menu.href}
-                      />
-                      <div
-                        className={`collapse-title font-medium ${getMobileLinkClass(
-                          menu.href,
-                        )}`}
-                      >
-                        {menu.label}
-                      </div>
-                      <div className="collapse-content">
-                        {menu.scrollLinks.map((link, index) => (
-                          <div
-                            key={index}
-                            className="text-gray-600 hover:text-blue-600"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {activePath === menu.href &&
-                            link.href.includes("#") ? (
-                              <ScrollLink
-                                to={link.to}
-                                smooth={true}
-                                duration={500}
-                                onMouseDown={() =>
-                                  setTimeout(() => setIsMenuOpen(false), 200)
-                                }
-                              >
-                                <span className="block px-4 py-2">
-                                  {link.label}
-                                </span>
-                              </ScrollLink>
-                            ) : (
-                              <Link href={link.href}>
-                                <span className="block px-4 py-2">
-                                  {link.label}
-                                </span>
-                              </Link>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </>
-                  ) : (
-                    <Link href={menu.href}>
-                      <div
-                        className={`collapse-title font-medium ${getMobileLinkClass(
-                          menu.href,
-                        )}`}
-                      >
-                        {menu.label}
-                      </div>
-                    </Link>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div className="space-x-4">
-              <Link href="/">
-                <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
-              </Link>
-              <Link href="/">
-                <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
-              </Link>
-              <Link href="/">
-                <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
-              </Link>
+        <div className="drawer">
+          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+          <div className="drawer-content">
+            {/* Page content here */}
+            <label
+              htmlFor="my-drawer"
+              className="text-gray-600 hover:text-blue-600 focus:outline-none drawer-button"
+            >
+              <i className="bi bi-list text-2xl"></i>
+            </label>
+          </div>
+          <div className="drawer-side">
+            <label
+              htmlFor="my-drawer"
+              aria-label="close sidebar"
+              className="drawer-overlay"
+            ></label>
+            <div className="menu bg-base-100 px-4 py-8 w-2/3 min-h-full text-base-content flex flex-col justify-between items-center">
+              {/* Sidebar content here */}
+              <div className="join join-vertical w-full text-neutral">
+                {menuItems.map((menu, index) => (
+                  <div
+                    key={index}
+                    className={`collapse ${
+                      menu.scrollLinks.length > 0 && "collapse-arrow"
+                    } join-item`}
+                  >
+                    {menu.scrollLinks.length > 0 ? (
+                      <>
+                        <input
+                          type="radio"
+                          name="my-accordion"
+                          defaultChecked={activePath === menu.href}
+                        />
+                        <div
+                          className={`collapse-title font-medium ${getMobileLinkClass(
+                            menu.href,
+                          )}`}
+                        >
+                          {menu.label}
+                        </div>
+                        <div className="collapse-content">
+                          {menu.scrollLinks.map((link, index) => (
+                            <div
+                              key={index}
+                              className="text-gray-600 hover:text-blue-600"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {activePath === menu.href &&
+                              link.href.includes("#") ? (
+                                <ScrollLink
+                                  to={link.to}
+                                  smooth={true}
+                                  duration={500}
+                                  onMouseDown={() =>
+                                    setTimeout(() => setIsMenuOpen(false), 200)
+                                  }
+                                >
+                                  <span className="block px-4 py-2">
+                                    {link.label}
+                                  </span>
+                                </ScrollLink>
+                              ) : (
+                                <Link href={link.href}>
+                                  <span className="block px-4 py-2">
+                                    {link.label}
+                                  </span>
+                                </Link>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <Link href={menu.href}>
+                        <div
+                          className={`collapse-title font-medium ${getMobileLinkClass(
+                            menu.href,
+                          )}`}
+                        >
+                          {menu.label}
+                        </div>
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="space-x-4">
+                <Link href="/">
+                  <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
+                </Link>
+                <Link href="/">
+                  <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
+                </Link>
+                <Link href="/">
+                  <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
+                </Link>
+              </div>
             </div>
           </div>
-        )}
+        </div>
 
         {/* Button Pendaftaran */}
         <div className="flex gap-6 font-semibold items-center">
