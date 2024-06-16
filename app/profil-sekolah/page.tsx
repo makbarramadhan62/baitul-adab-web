@@ -3,18 +3,37 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useCallback, useEffect, useState } from "react";
 import Tab_1 from "@/app/profil-sekolah/tab_1";
 import Tab_2 from "@/app/profil-sekolah/tab_2";
 import Tab_3 from "@/app/profil-sekolah/tab_3";
 import { Element } from "react-scroll";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState(1);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleTabChange = (tabIndex: SetStateAction<number>) => {
     setActiveTab(tabIndex);
   };
+
+  const images = [
+    "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg",
+    "https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg",
+    "https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg",
+    "https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg",
+  ];
+
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((currentSlide + 1) % images.length);
+  }, [currentSlide, images.length]);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+    return () => clearInterval(interval);
+  }, [currentSlide, nextSlide]);
+
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
       <Navbar />
@@ -26,15 +45,26 @@ export default function Profile() {
         className="flex flex-col gap-8 items-center justify-center mb-0 py-20 lg:py-32"
       >
         <div className="px-4 lg:px-16">
-          <div className="w-full mb-4 lg:mb-8">
-            <Image
-              height={100}
-              width={100}
-              unoptimized
-              src="/image/profil_sekolah/image.png"
-              alt="school-pict"
-              className="object-cover mx-auto w-full h-96 lg:h-auto rounded-lg"
-            />
+          <div className="w-full h-[425px] lg:h-[500px] relative flex justify-center items-center">
+            <AnimatePresence>
+              <motion.div
+                key={currentSlide}
+                initial={{ opacity: 0, x: "100%" }}
+                animate={{ opacity: 1, x: "0%" }}
+                exit={{ opacity: 0, x: "-100%" }}
+                transition={{ duration: 1, type: "tween" }}
+                className="absolute inset-0 w-full h-full"
+              >
+                <Image
+                  src={images[currentSlide]}
+                  height={100}
+                  width={100}
+                  unoptimized
+                  alt="school-pict"
+                  className="object-cover mx-auto w-full h-96 lg:h-auto rounded-lg"
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
           <div className="w-full text-center mb-4 lg:mb-8">
             <div className="flex flex-col justify-center gap-0 lg:gap-4 text-5xl font-semibold">
