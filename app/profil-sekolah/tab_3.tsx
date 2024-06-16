@@ -28,11 +28,6 @@ const Tab_3 = () => {
           imageAlt="school-pict"
           title="Kolam Renang"
         />
-        <FacilityCard
-          imageSrc="/image/profil_sekolah/facility-4.svg"
-          imageAlt="school-pict"
-          title="Mainan Edukatif"
-        />
       </div>
 
       <div className="mt-10 flex flex-col gap-10 lg:flex-row items-center justify-center">
