@@ -30,14 +30,20 @@ const Navbar = () => {
     setActivePath(pathname);
   }, [pathname]);
 
-  const getLinkClass = (paths: string | string[]) => {
-    return paths.includes(activePath)
+  const getLinkClass = (path: string) => {
+    if (path === "/" && activePath !== "/") {
+      return "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
+    }
+    return activePath.startsWith(path)
       ? "text-blue-600 border-b-2 border-blue-600 pb-1"
       : "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
   };
 
-  const getMobileLinkClass = (paths: string | string[]) => {
-    return paths.includes(activePath)
+  const getMobileLinkClass = (path: string) => {
+    if (path === "/" && activePath !== "/") {
+      return "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
+    }
+    return activePath.startsWith(path)
       ? "text-blue-600"
       : "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
   };
@@ -98,9 +104,19 @@ const Navbar = () => {
           href: "/program-sekolah/#daycare",
         },
         {
+          label: "Apa itu Playgroup?",
+          to: "playgroup",
+          href: "/program-sekolah/#playgroup",
+        },
+        {
+          label: "Apa itu Kindegarten?",
+          to: "kindegarten",
+          href: "/program-sekolah/#kindegarten",
+        },
+        {
           label: "Biaya Sekolah",
           to: "biaya-sekolah",
-          href: "/program-sekolah/#biaya-sekolah",
+          href: "/program-sekolah/biaya-sekolah",
         },
       ],
     },
@@ -145,7 +161,7 @@ const Navbar = () => {
               <div key={index} className="dropdown dropdown-hover">
                 <div tabIndex={0} role="button">
                   <Link href={menu.href}>
-                    <span className={getLinkClass([menu.href])}>
+                    <span className={getLinkClass(menu.href)}>
                       {menu.label}
                     </span>
                   </Link>
@@ -155,14 +171,14 @@ const Navbar = () => {
                   className={`${
                     menu.scrollLinks.length > 0 &&
                     "dropdown-content shadow bg-base-100 rounded-box w-52"
-                  } z-[1] p-2`}
+                  } z-[1] p-2 mt-2`}
                 >
                   {menu.scrollLinks.map((link, index) => (
                     <li
                       key={index}
                       className="text-gray-600 hover:text-blue-600 hover:cursor-pointer"
                     >
-                      {activePath === menu.href && link.href.includes("#") ? (
+                      {activePath === menu.href ? (
                         <ScrollLink to={link.to} smooth={true} duration={500}>
                           <span className="block px-4 py-2">{link.label}</span>
                         </ScrollLink>
@@ -196,242 +212,49 @@ const Navbar = () => {
             ref={menuRef}
           >
             <div className="join join-vertical w-full text-neutral">
-              {/*Home*/}
-              <div className="collapse collapse-arrow join-item">
-                <input
-                  type="radio"
-                  name="my-accordion"
-                  defaultChecked={activePath === "/"}
-                />
-                <div
-                  className={`collapse-title font-medium ${getMobileLinkClass([
-                    "/",
-                  ])}`}
-                >
-                  Home
-                </div>
-                <div className="collapse-content">
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/#hero"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Home</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/#fasilitas"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Fasilitas</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/#testimoni"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Testimoni</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/#alur-pendaftaran"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Alur Pendaftaran</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/#syarat-pendaftaran"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">
-                        Syarat Pendaftaran
-                      </span>
-                    </ScrollLink>
-                  </div>
-                </div>
-              </div>
-              {/*Profil Sekolah*/}
-              <div className="collapse collapse-arrow join-item">
-                <input
-                  type="radio"
-                  name="my-accordion"
-                  defaultChecked={activePath === "/profil-sekolah"}
-                />
-                <div
-                  className={`collapse-title font-medium ${getMobileLinkClass([
-                    "/profil-sekolah",
-                  ])}`}
-                >
-                  Profil Sekolah
-                </div>
-                <div className="collapse-content">
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/profil-sekolah/#sejarah-singkat"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Sejarah Singkat</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/profil-sekolah/#visi-misi"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Visi & Misi</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/profil-sekolah/#detail-sekolah"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Detail Sekolah</span>
-                    </ScrollLink>
-                  </div>
-                </div>
-              </div>
-              {/*Program Sekolah*/}
-              <div className="collapse collapse-arrow join-item">
-                <input
-                  type="radio"
-                  name="my-accordion"
-                  defaultChecked={activePath === "/program-sekolah"}
-                />
-                <div
-                  className={`collapse-title font-medium ${getMobileLinkClass([
-                    "/program-sekolah",
-                  ])}`}
-                >
-                  Program Sekolah
-                </div>
-                <div className="collapse-content">
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/program-sekolah/#program-sekolah"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Program Sekolah</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/program-sekolah/#daycare"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Apa itu Daycare?</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/program-sekolah/#playgroup"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">
-                        Apa itu Playgroup?
-                      </span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/program-sekolah/#kindegarten"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">
-                        Apa itu Kindgarten?
-                      </span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/program-sekolah/#kurikulum"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Kurikulum</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/program-sekolah/#kelas-jadwal-harian"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">
-                        Kelas & Jadwal Harian
-                      </span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/program-sekolah/biaya-sekolah"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Biaya Sekolah</span>
-                    </ScrollLink>
-                  </div>
-                </div>
-              </div>
-              {/*Galeri Sekolah*/}
-              <ScrollLink
-                to="/galeri-sekolah"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                <div className="collapse join-item">
+              {menuItems.map((menu, index) => (
+                <div key={index} className="collapse collapse-arrow join-item">
                   <input
                     type="radio"
                     name="my-accordion"
-                    defaultChecked={activePath === "/galeri-sekolah"}
+                    defaultChecked={activePath === menu.href}
                   />
                   <div
                     className={`collapse-title font-medium ${getMobileLinkClass(
-                      ["/galeri-sekolah"],
+                      menu.href,
                     )}`}
                   >
-                    Galeri Sekolah
+                    {menu.label}
+                  </div>
+                  <div
+                    className={`${
+                      menu.scrollLinks.length > 0 && "collapse-content"
+                    }`}
+                  >
+                    {menu.scrollLinks.map((link, index) => (
+                      <div
+                        key={index}
+                        className="text-gray-600 hover:text-blue-600"
+                        onMouseEnter={() => setIsMenuOpen(!isMenuOpen)}
+                      >
+                        {activePath === menu.href ? (
+                          <ScrollLink to={link.to} smooth={true} duration={500}>
+                            <span className="block px-4 py-2">
+                              {link.label}
+                            </span>
+                          </ScrollLink>
+                        ) : (
+                          <Link href={link.href}>
+                            <span className="block px-4 py-2">
+                              {link.label}
+                            </span>
+                          </Link>
+                        )}
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </ScrollLink>
-              {/*Contact Us*/}
-              <div className="collapse collapse-arrow join-item">
-                <input
-                  type="radio"
-                  name="my-accordion"
-                  defaultChecked={
-                    activePath === "/contact-us" ||
-                    activePath === "/contact-us/faq"
-                  }
-                />
-                <div
-                  className={`collapse-title font-medium ${getMobileLinkClass([
-                    "/contact-us",
-                    "/contact-us/faq",
-                  ])}`}
-                >
-                  Contact us
-                </div>
-                <div className="collapse-content">
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/contact-us/"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">Contact Us</span>
-                    </ScrollLink>
-                  </div>
-                  <div className="text-gray-600 hover:text-blue-600">
-                    <ScrollLink
-                      to="/contact-us/faq"
-                      onClick={() => setIsMenuOpen(!isMenuOpen)}
-                    >
-                      <span className="block px-4 py-2">FAQ</span>
-                    </ScrollLink>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
 
             <div className="space-x-4">
