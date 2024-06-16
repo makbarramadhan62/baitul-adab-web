@@ -15,11 +15,11 @@ const GraduationCard: React.FC<GraduationCardProps> = ({
   return (
     <>
       <div
-        className="card w-72 bg-[#FAFAFA] shadow-xl text-secondary-content hover:bg-primary hover:text-white"
+        className="card w-72 min-h-80 bg-[#FAFAFA] shadow-xl text-secondary-content hover:bg-primary hover:text-white"
         style={{
           backgroundImage: "url(/image/profil_sekolah/background.svg)",
-          backgroundSize: "contain",
-          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundPosition: "bottom",
           backgroundRepeat: "no-repeat",
         }}
       >

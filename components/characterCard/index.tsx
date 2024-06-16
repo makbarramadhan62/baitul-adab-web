@@ -17,10 +17,10 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
   return (
     <>
       <div
-        className="card w-72 bg-[#FAFAFA] shadow-xl hover:bg-primary hover:text-white"
+        className="card w-72 min-h-80 bg-[#FAFAFA] shadow-xl hover:bg-primary hover:text-white"
         style={{
           backgroundImage: "url(/image/profil_sekolah/background.svg)",
-          backgroundSize: "contain",
+          backgroundSize: "cover",
           backgroundPosition: "bottom",
           backgroundRepeat: "no-repeat",
         }}
