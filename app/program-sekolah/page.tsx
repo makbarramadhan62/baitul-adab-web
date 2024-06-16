@@ -45,8 +45,8 @@ export default function Program() {
       <Navbar />
       {/* First Section*/}
       <Element
-        id="program-sekolah"
-        name="program-sekolah"
+        id="kelas"
+        name="kelas"
         className="min-h-screen w-full py-20 lg:py-32 flex-grow relative"
       >
         <div className="px-4 lg:px-16 flex flex-col gap-8 items-center justify-center">
