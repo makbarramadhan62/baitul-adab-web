@@ -53,7 +53,7 @@ export default function Profile() {
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -300, opacity: 0 }}
-                className="absolute inset-0 w-full h-96 lg:h-auto rounded-lg"
+                className="absolute inset-0 w-full h-96 lg:h-auto rounded-lg shadow-lg"
               />
             </AnimatePresence>
           </div>
