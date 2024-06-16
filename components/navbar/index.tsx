@@ -52,21 +52,7 @@ const Navbar = () => {
     {
       label: "Home",
       href: "/",
-      scrollLinks: [
-        { label: "Home", to: "home", href: "/#home" },
-        { label: "Fasilitas", to: "fasilitas", href: "/#fasilitas" },
-        { label: "Testimoni", to: "testimoni", href: "/#testimoni" },
-        {
-          label: "Alur Pendaftaran",
-          to: "alur-pendaftaran",
-          href: "/#alur-pendaftaran",
-        },
-        {
-          label: "Syarat Pendaftaran",
-          to: "syarat-pendaftaran",
-          href: "/#syarat-pendaftaran",
-        },
-      ],
+      scrollLinks: [],
     },
     {
       label: "Profil Sekolah",
@@ -94,24 +80,14 @@ const Navbar = () => {
       href: "/program-sekolah",
       scrollLinks: [
         {
-          label: "Program Sekolah",
-          to: "program-sekolah",
-          href: "/program-sekolah/#program-sekolah",
+          label: "Kurikulum",
+          to: "kurikulum",
+          href: "/program-sekolah/#kurikulum",
         },
         {
-          label: "Apa itu Daycare?",
-          to: "daycare",
-          href: "/program-sekolah/#daycare",
-        },
-        {
-          label: "Apa itu Playgroup?",
-          to: "playgroup",
-          href: "/program-sekolah/#playgroup",
-        },
-        {
-          label: "Apa itu Kindegarten?",
-          to: "kindegarten",
-          href: "/program-sekolah/#kindegarten",
+          label: "kelas & Jadwal Harian",
+          to: "kelas-jadwal-harian",
+          href: "/program-sekolah/#kelas-jadwal-harian",
         },
         {
           label: "Biaya Sekolah",
@@ -160,18 +136,24 @@ const Navbar = () => {
             {menuItems.map((menu, index) => (
               <div key={index} className="dropdown dropdown-hover">
                 <div tabIndex={0} role="button">
-                  <Link href={menu.href}>
+                  {menu.scrollLinks.length > 0 ? (
                     <span className={getLinkClass(menu.href)}>
                       {menu.label}
                     </span>
-                  </Link>
+                  ) : (
+                    <Link href={menu.href}>
+                      <span className={getLinkClass(menu.href)}>
+                        {menu.label}
+                      </span>
+                    </Link>
+                  )}
                 </div>
                 <ul
                   tabIndex={0}
                   className={`${
                     menu.scrollLinks.length > 0 &&
                     "dropdown-content shadow bg-base-100 rounded-box w-52"
-                  } z-[1] p-2 mt-2`}
+                  } z-[1]`}
                 >
                   {menu.scrollLinks.map((link, index) => (
                     <li
