@@ -45,7 +45,7 @@ export default function Profile() {
         className="flex flex-col gap-8 items-center justify-center mb-0 py-20 lg:py-32"
       >
         <div className="px-4 lg:px-16">
-          <div className="w-full h-[425px] lg:h-[500px] relative flex justify-center items-center">
+          <div className="w-full h-[400px] relative flex justify-center items-center">
             <AnimatePresence>
               <motion.img
                 key={images[currentSlide]}
@@ -53,11 +53,11 @@ export default function Profile() {
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -300, opacity: 0 }}
-                className="absolute inset-0 w-full h-96 lg:h-auto rounded-lg shadow-lg"
+                className="object-cover absolute w-full h-[400px] rounded-lg shadow-lg"
               />
             </AnimatePresence>
           </div>
-          <div className="w-full text-center mb-4 lg:mb-8">
+          <div className="w-full text-center my-4 lg:my-8">
             <div className="flex flex-col justify-center gap-0 lg:gap-4 text-5xl font-semibold">
               <span className="text-neutral">Sejarah Singkat</span>
               <span className="text-secondary-content">
