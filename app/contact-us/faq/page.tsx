@@ -5,7 +5,7 @@ export default function Faq() {
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
       <Navbar />
-      <div className="w-full px-4 lg:px-16 flex flex-col gap-8 items-center justify-center mb-8 mt-24 lg:mt-32">
+      <div className="w-full px-4 lg:px-16 py-20 lg:py-32 flex flex-col gap-8 items-center justify-center">
         <span className="text-neutral text-8xl font-bold">FAQ</span>
         <div className="flex flex-col w-full lg:w-3/4 gap-4">
           <div

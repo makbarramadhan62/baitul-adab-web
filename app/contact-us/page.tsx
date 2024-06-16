@@ -9,7 +9,7 @@ export default function Pendaftaran() {
       <Navbar />
       <section
         id="program-first"
-        className="h-full lg:h-[944px] w-full mb-16 lg:mb-0 py-32 relative "
+        className="h-full lg:h-[944px] w-full py-20 lg:py-32 relative "
       >
         <Image
           height={100}
