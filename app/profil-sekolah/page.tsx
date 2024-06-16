@@ -47,23 +47,14 @@ export default function Profile() {
         <div className="px-4 lg:px-16">
           <div className="w-full h-[425px] lg:h-[500px] relative flex justify-center items-center">
             <AnimatePresence>
-              <motion.div
-                key={currentSlide}
-                initial={{ opacity: 0, x: "100%" }}
-                animate={{ opacity: 1, x: "0%" }}
-                exit={{ opacity: 0, x: "-100%" }}
-                transition={{ duration: 1, type: "tween" }}
-                className="absolute inset-0 w-full h-full"
-              >
-                <Image
-                  src={images[currentSlide]}
-                  height={100}
-                  width={100}
-                  unoptimized
-                  alt="school-pict"
-                  className="object-cover mx-auto w-full h-96 lg:h-auto rounded-lg"
-                />
-              </motion.div>
+              <motion.img
+                key={images[currentSlide]}
+                src={images[currentSlide]}
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -300, opacity: 0 }}
+                className="absolute inset-0 w-full h-96 lg:h-auto rounded-lg"
+              />
             </AnimatePresence>
           </div>
           <div className="w-full text-center mb-4 lg:mb-8">
