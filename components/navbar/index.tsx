@@ -9,6 +9,17 @@ import Link from "next/link";
 const Navbar = () => {
   const pathname = usePathname();
   const [activePath, setActivePath] = useState("");
+  const [hoveredDropdownIndex, setHoveredDropdownIndex] = useState<
+    number | null
+  >(null);
+
+  const handleMouseEnter = (index: number) => {
+    setHoveredDropdownIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredDropdownIndex(null);
+  };
 
   useEffect(() => {
     setActivePath(pathname);
@@ -123,7 +134,11 @@ const Navbar = () => {
           {/* Navigasi Utama */}
           <div className="hidden lg:flex space-x-6">
             {menuItems.map((menu, index) => (
-              <div key={index} className="dropdown dropdown-hover">
+              <div
+                key={index}
+                className="relative"
+                onMouseEnter={() => handleMouseEnter(index)}
+              >
                 <div tabIndex={0} role="button">
                   {menu.scrollLinks.length > 0 ? (
                     <span className={getLinkClass(menu.href)}>
@@ -137,30 +152,39 @@ const Navbar = () => {
                     </Link>
                   )}
                 </div>
-                <ul
-                  tabIndex={0}
-                  className={`${
-                    menu.scrollLinks.length > 0 &&
-                    "dropdown-content shadow bg-base-100 rounded-box w-52"
-                  } z-[1] mt-2`}
-                >
-                  {menu.scrollLinks.map((link, index) => (
-                    <li
-                      key={index}
-                      className="text-gray-600 hover:text-blue-600 hover:cursor-pointer"
+                {hoveredDropdownIndex === index &&
+                  menu.scrollLinks.length > 0 && (
+                    <ul
+                      className="absolute dropdown-content shadow bg-base-100 rounded-box w-52 z-[1] mt-2"
+                      onMouseLeave={handleMouseLeave}
                     >
-                      {activePath === menu.href && link.href.includes("#") ? (
-                        <ScrollLink to={link.to} smooth={true} duration={500}>
-                          <span className="block px-4 py-2">{link.label}</span>
-                        </ScrollLink>
-                      ) : (
-                        <Link href={link.href}>
-                          <span className="block px-4 py-2">{link.label}</span>
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                </ul>
+                      {menu.scrollLinks.map((link, subIndex) => (
+                        <li
+                          key={subIndex}
+                          className="text-gray-600 hover:text-blue-600 hover:cursor-pointer"
+                        >
+                          {activePath === menu.href &&
+                          link.href.includes("#") ? (
+                            <ScrollLink
+                              to={link.to}
+                              smooth={true}
+                              duration={500}
+                            >
+                              <span className="block px-4 py-2">
+                                {link.label}
+                              </span>
+                            </ScrollLink>
+                          ) : (
+                            <Link href={link.href}>
+                              <span className="block px-4 py-2">
+                                {link.label}
+                              </span>
+                            </Link>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
               </div>
             ))}
           </div>
