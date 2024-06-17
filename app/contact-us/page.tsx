@@ -1,11 +1,34 @@
+"use client";
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import PendaftaranForm from "@/app/contact-us/pendaftaranForm";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
+import React, { useEffect, useState } from "react";
 
 export default function Pendaftaran() {
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWhatsApp(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
+      {showWhatsApp && (
+        <FloatingWhatsApp
+          avatar="/image/logo.svg"
+          className="text-neutral"
+          phoneNumber="6281255446710"
+          accountName="Baitul Adab"
+          allowEsc={true}
+          allowClickAway={true}
+        />
+      )}
       <Navbar />
       <section
         id="program-first"

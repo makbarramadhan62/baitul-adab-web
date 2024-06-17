@@ -1,9 +1,32 @@
+"use client";
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import React, { useEffect, useState } from "react";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Faq() {
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWhatsApp(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
+      {showWhatsApp && (
+        <FloatingWhatsApp
+          avatar="/image/logo.svg"
+          className="text-neutral"
+          phoneNumber="6281255446710"
+          accountName="Baitul Adab"
+          allowEsc={true}
+          allowClickAway={true}
+        />
+      )}
       <Navbar />
       <div className="w-full px-4 lg:px-16 py-20 lg:py-32 flex flex-col gap-8 items-center justify-center">
         <span className="text-neutral text-8xl font-bold">FAQ</span>

@@ -9,6 +9,7 @@ import Tab_2 from "@/app/profil-sekolah/tab_2";
 import Tab_3 from "@/app/profil-sekolah/tab_3";
 import { Element } from "react-scroll";
 import { AnimatePresence, motion } from "framer-motion";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState(1);
@@ -17,6 +18,16 @@ export default function Profile() {
   const handleTabChange = (tabIndex: SetStateAction<number>) => {
     setActiveTab(tabIndex);
   };
+
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWhatsApp(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const images = [
     "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg",
@@ -36,6 +47,16 @@ export default function Profile() {
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
+      {showWhatsApp && (
+        <FloatingWhatsApp
+          avatar="/image/logo.svg"
+          className="text-neutral"
+          phoneNumber="6281255446710"
+          accountName="Baitul Adab"
+          allowEsc={true}
+          allowClickAway={true}
+        />
+      )}
       <Navbar />
 
       {/* First Section */}

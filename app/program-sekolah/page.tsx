@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -9,9 +9,20 @@ import Image from "next/image";
 import LevelCard from "@/components/levelCard";
 import ClassCard from "@/components/classCard";
 import { Element } from "react-scroll";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Program() {
   const [current, setCurrent] = useState(0);
+
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWhatsApp(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const programs = [
     {
@@ -42,6 +53,16 @@ export default function Program() {
 
   return (
     <div className="flex w-full flex-col items-center overflow-x-hidden">
+      {showWhatsApp && (
+        <FloatingWhatsApp
+          avatar="/image/logo.svg"
+          className="text-neutral"
+          phoneNumber="6281255446710"
+          accountName="Baitul Adab"
+          allowEsc={true}
+          allowClickAway={true}
+        />
+      )}
       <Navbar />
       {/* First Section*/}
       <Element

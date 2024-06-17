@@ -2,15 +2,25 @@
 
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
-import { SetStateAction, useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import Tab_1 from "@/app/program-sekolah/biaya-sekolah/tab_1";
 import Tab_2 from "@/app/program-sekolah/biaya-sekolah/tab_2";
 import Tab2_1 from "@/app/program-sekolah/biaya-sekolah/tab2_1";
 import Tab2_2 from "@/app/program-sekolah/biaya-sekolah/tab2_2";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function SchoolExpenses() {
   const [activeTab, setActiveTab] = useState(1);
   const [activeTab2, setActiveTab2] = useState(1);
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWhatsApp(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleTabChange = (tabIndex: SetStateAction<number>) => {
     setActiveTab(tabIndex);
@@ -20,6 +30,16 @@ export default function SchoolExpenses() {
   };
   return (
     <div className="flex w-full flex-col items-center overflow-x-hidden">
+      {showWhatsApp && (
+        <FloatingWhatsApp
+          avatar="/image/logo.svg"
+          className="text-neutral"
+          phoneNumber="6281255446710"
+          accountName="Baitul Adab"
+          allowEsc={true}
+          allowClickAway={true}
+        />
+      )}
       <Navbar />
       {/* First Section */}
       <section id="program-first" className="w-full mt-[92px]">
