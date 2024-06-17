@@ -27,7 +27,7 @@ export default function SchoolExpenses() {
           className="w-full flex flex-col items-center justify-center h-[430px]"
           style={{
             backgroundImage:
-              "url(/image/program_sekolah/biaya_sekolah/headerBg.png)",
+              "url(/image/program-sekolah/biaya-sekolah/headerBg.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

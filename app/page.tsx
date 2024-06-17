@@ -7,8 +7,9 @@ import CurriculumCard from "@/components/curiculumCard";
 import Footer from "@/components/footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Element } from "react-scroll";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Home() {
   useEffect(() => {
@@ -63,8 +64,28 @@ export default function Home() {
     },
   ];
 
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowWhatsApp(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="flex w-full flex-col items-center overflow-x-hidden">
+      {showWhatsApp && (
+        <FloatingWhatsApp
+          avatar="/image/logo.svg"
+          className="text-neutral"
+          phoneNumber="6281255446710"
+          accountName="Baitul Adab"
+          allowEsc={true}
+          allowClickAway={true}
+        />
+      )}
       <Navbar />
 
       {/* Hero Section*/}
@@ -116,6 +137,16 @@ export default function Home() {
         </div>
         <Image
           data-aos="fade-up"
+          data-aos-delay="400"
+          height={100}
+          width={100}
+          unoptimized
+          src="/image/home/ornament-1.svg"
+          alt="school-pict"
+          className="object-cover absolute h-auto w-[200px] lg:bottom-24 xl:bottom-0 2xl:bottom-16 left-20 hidden lg:block"
+        />
+        <Image
+          data-aos="fade-up"
           height={100}
           width={100}
           unoptimized
@@ -138,7 +169,7 @@ export default function Home() {
               Kenapa Harus Baitul Adab?
             </span>
           </div>
-          <div className="flex flex-col gap-10 items-center justify-center p-8 w-1/2 lg:w-full lg:order-1 lg:justify-center mx-auto">
+          <div className="flex flex-col gap-5 items-center justify-center p-8 w-1/2 lg:w-full lg:order-1 lg:justify-center mx-auto">
             <div
               className="flex flex-col lg:flex-row items-center justify-center"
               data-aos="fade-up"
@@ -196,6 +227,22 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Image
+          height={100}
+          width={100}
+          unoptimized
+          src="/image/home/ornament-3.svg"
+          alt="school-pict"
+          className="object-cover absolute h-auto w-1/4 left-0 bottom-0 hidden lg:block"
+        />
+        <Image
+          height={100}
+          width={100}
+          unoptimized
+          src="/image/home/ornament-2.svg"
+          alt="school-pict"
+          className="object-cover absolute h-auto w-1/4 right-0 -top-20 hidden lg:block"
+        />
       </Element>
       {/* Second Section*/}
 

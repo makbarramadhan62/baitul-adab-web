@@ -3,7 +3,7 @@
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Image from "next/image";
-import { SetStateAction, useCallback, useEffect, useState } from "react";
+import React, { SetStateAction, useCallback, useEffect, useState } from "react";
 import Tab_1 from "@/app/profil-sekolah/tab_1";
 import Tab_2 from "@/app/profil-sekolah/tab_2";
 import Tab_3 from "@/app/profil-sekolah/tab_3";
@@ -42,7 +42,7 @@ export default function Profile() {
       <Element
         id="sejarah-singkat"
         name="sejarah-singkat"
-        className="flex flex-col gap-8 items-center justify-center mb-0 py-20 lg:py-32"
+        className="flex flex-col gap-8 items-center justify-center mb-0 py-20 lg:py-32 relative"
       >
         <div className="px-4 lg:px-16">
           <div className="w-full h-[400px] relative flex justify-center items-center">
@@ -87,6 +87,14 @@ export default function Profile() {
             </span>
           </div>
         </div>
+        <Image
+          height={100}
+          width={100}
+          unoptimized
+          src="/image/profil-sekolah/ornament-1.svg"
+          alt="school-pict"
+          className="object-cover absolute h-auto w-1/12 right-20 bottom-0 hidden lg:block"
+        />
       </Element>
       {/* First Section */}
 
@@ -106,7 +114,15 @@ export default function Profile() {
           <div className="gap-8 lg:gap-16 flex flex-col lg:flex-row items-center justify-center text-neutral">
             {/* Bagian Kiri */}
             <div className="lg:w-1/2 lg:order-1 mb-0 lg:mb-8">
-              <div className="card gap-24 bg-primary-content shadow-xl px-2 lg:px-16 h-auto lg:h-[500px]">
+              <div
+                className="card gap-24 bg-primary-content shadow-xl px-2 lg:px-16 h-auto lg:h-[500px]"
+                style={{
+                  backgroundImage: "url(/image/profil-sekolah/bgCard.svg)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "bottom",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
                 <div className="card-body gap-4 lg:gap-10 text-white">
                   <h2 className="card-title mx-auto underline text-2xl lg:text-4xl font-medium">
                     Visi
@@ -123,7 +139,7 @@ export default function Profile() {
                       width={100}
                       unoptimized
                       style={{ width: "40%", height: "auto" }}
-                      src="/image/profil_sekolah/visiIllustration.svg"
+                      src="/image/profil-sekolah/visiIllustration.svg"
                       alt="school-pict"
                       className="object-contain mx-auto"
                     />
@@ -133,7 +149,15 @@ export default function Profile() {
             </div>
             {/* Bagian Kanan */}
             <div className="lg:w-1/2 lg:order-1 mb-0 lg:mb-8">
-              <div className="card bg-primary-content shadow-xl px-2 lg:px-16 h-auto lg:h-[500px]">
+              <div
+                className="card bg-primary-content shadow-xl px-2 lg:px-16 h-auto lg:h-[500px]"
+                style={{
+                  backgroundImage: "url(/image/profil-sekolah/bgCard.svg)",
+                  backgroundSize: "cover",
+                  backgroundPosition: "bottom",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
                 <div className="card-body gap-4 lg:gap-10 text-white">
                   <h2 className="card-title mx-auto underline text-2xl lg:text-4xl font-medium">
                     Misi

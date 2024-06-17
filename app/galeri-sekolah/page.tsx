@@ -26,7 +26,7 @@ export default function Gallery() {
                   width={100}
                   unoptimized
                   style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
+                  src="/image/galeri-sekolah/image.png"
                   alt="school-pict"
                   className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
                 />
@@ -37,7 +37,7 @@ export default function Gallery() {
                   width={100}
                   unoptimized
                   style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
+                  src="/image/galeri-sekolah/image.png"
                   alt="school-pict"
                   className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
                 />
@@ -48,42 +48,7 @@ export default function Gallery() {
                   width={100}
                   unoptimized
                   style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
-                  alt="school-pict"
-                  className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
-                />
-              </div>
-            </div>
-            <div className="grid gap-4">
-              <div className="overflow-hidden rounded-xl">
-                <Image
-                  height={100}
-                  width={100}
-                  unoptimized
-                  style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
-                  alt="school-pict"
-                  className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
-                />
-              </div>
-              <div className="overflow-hidden rounded-xl">
-                <Image
-                  height={100}
-                  width={100}
-                  unoptimized
-                  style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
-                  alt="school-pict"
-                  className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
-                />
-              </div>
-              <div className="overflow-hidden rounded-xl">
-                <Image
-                  height={100}
-                  width={100}
-                  unoptimized
-                  style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
+                  src="/image/galeri-sekolah/image.png"
                   alt="school-pict"
                   className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
                 />
@@ -96,7 +61,7 @@ export default function Gallery() {
                   width={100}
                   unoptimized
                   style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
+                  src="/image/galeri-sekolah/image.png"
                   alt="school-pict"
                   className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
                 />
@@ -107,7 +72,7 @@ export default function Gallery() {
                   width={100}
                   unoptimized
                   style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
+                  src="/image/galeri-sekolah/image.png"
                   alt="school-pict"
                   className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
                 />
@@ -118,7 +83,7 @@ export default function Gallery() {
                   width={100}
                   unoptimized
                   style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
+                  src="/image/galeri-sekolah/image.png"
                   alt="school-pict"
                   className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
                 />
@@ -131,7 +96,7 @@ export default function Gallery() {
                   width={100}
                   unoptimized
                   style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
+                  src="/image/galeri-sekolah/image.png"
                   alt="school-pict"
                   className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
                 />
@@ -142,7 +107,7 @@ export default function Gallery() {
                   width={100}
                   unoptimized
                   style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
+                  src="/image/galeri-sekolah/image.png"
                   alt="school-pict"
                   className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
                 />
@@ -153,7 +118,42 @@ export default function Gallery() {
                   width={100}
                   unoptimized
                   style={{ width: "100%", height: "auto" }}
-                  src="/image/galeri_sekolah/image.png"
+                  src="/image/galeri-sekolah/image.png"
+                  alt="school-pict"
+                  className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
+                />
+              </div>
+            </div>
+            <div className="grid gap-4">
+              <div className="overflow-hidden rounded-xl">
+                <Image
+                  height={100}
+                  width={100}
+                  unoptimized
+                  style={{ width: "100%", height: "auto" }}
+                  src="/image/galeri-sekolah/image.png"
+                  alt="school-pict"
+                  className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl">
+                <Image
+                  height={100}
+                  width={100}
+                  unoptimized
+                  style={{ width: "100%", height: "auto" }}
+                  src="/image/galeri-sekolah/image.png"
+                  alt="school-pict"
+                  className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
+                />
+              </div>
+              <div className="overflow-hidden rounded-xl">
+                <Image
+                  height={100}
+                  width={100}
+                  unoptimized
+                  style={{ width: "100%", height: "auto" }}
+                  src="/image/galeri-sekolah/image.png"
                   alt="school-pict"
                   className="h-auto max-w-full rounded-xl grayscale transition duration-200 hover:scale-110 hover:grayscale-0"
                 />

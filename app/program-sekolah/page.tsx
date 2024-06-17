@@ -138,7 +138,7 @@ export default function Program() {
           width={100}
           unoptimized
           style={{ width: "8%", height: "auto" }}
-          src="/image/program_sekolah/baloon.svg"
+          src="/image/program-sekolah/baloon.svg"
           alt="school-pict"
           className="object-cover absolute bottom-50 right-20"
         />
@@ -147,7 +147,7 @@ export default function Program() {
           width={100}
           unoptimized
           style={{ width: "15%", height: "auto" }}
-          src="/image/program_sekolah/trees.svg"
+          src="/image/program-sekolah/trees.svg"
           alt="school-pict"
           className="object-cover absolute bottom-10 left-10"
         />
@@ -156,7 +156,7 @@ export default function Program() {
           width={100}
           unoptimized
           style={{ width: "100%", height: "auto" }}
-          src="/image/program_sekolah/bg_tosca.svg"
+          src="/image/program-sekolah/bg_tosca.svg"
           alt="school-pict"
           className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-44 z-10"
         />
@@ -180,14 +180,14 @@ export default function Program() {
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 mb-16 lg:mb-0">
             <LevelCard
-              imageSrc="/image/program_sekolah/illustrationLevel.svg"
+              imageSrc="/image/program-sekolah/illustrationLevel.svg"
               imageAlt="school-pict"
               title="Playgroup Regular"
               description="07:00 - 11:00"
             />
 
             <LevelCard
-              imageSrc="/image/program_sekolah/illustrationLevel.svg"
+              imageSrc="/image/program-sekolah/illustrationLevel.svg"
               imageAlt="school-pict"
               title="Playgroup Regular"
               description="07:00 - 11:00"
@@ -199,7 +199,7 @@ export default function Program() {
           width={100}
           unoptimized
           style={{ width: "5%", height: "auto" }}
-          src="/image/program_sekolah/pencil.svg"
+          src="/image/program-sekolah/pencil.svg"
           alt="school-pict"
           className="object-cover absolute bottom-40 right-8 lg:right-16"
         />
@@ -208,7 +208,7 @@ export default function Program() {
           width={100}
           unoptimized
           style={{ width: "10%", height: "auto" }}
-          src="/image/program_sekolah/baloon.svg"
+          src="/image/program-sekolah/baloon.svg"
           alt="school-pict"
           className="object-cover absolute top-0 lg:top-14 left-8 lg:left-20"
         />
@@ -217,7 +217,7 @@ export default function Program() {
           width={100}
           unoptimized
           style={{ width: "100%", height: "auto" }}
-          src="/image/program_sekolah/bg_blue.svg"
+          src="/image/program-sekolah/bg_blue.svg"
           alt="school-pict"
           className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-44 z-10"
         />
@@ -241,14 +241,14 @@ export default function Program() {
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 mb-16 lg:mb-0">
             <LevelCard
-              imageSrc="/image/program_sekolah/illustrationLevel.svg"
+              imageSrc="/image/program-sekolah/illustrationLevel.svg"
               imageAlt="school-pict"
               title="Kindegarten Regular"
               description="07:00 - 11:00"
             />
 
             <LevelCard
-              imageSrc="/image/program_sekolah/illustrationLevel.svg"
+              imageSrc="/image/program-sekolah/illustrationLevel.svg"
               imageAlt="school-pict"
               title="Kindegarten Regular + Daycare"
               description="07:00 - 11:00"
@@ -260,7 +260,7 @@ export default function Program() {
           width={100}
           unoptimized
           style={{ width: "15%", height: "auto" }}
-          src="/image/program_sekolah/kidsPlane.svg"
+          src="/image/program-sekolah/kidsPlane.svg"
           alt="school-pict"
           className="object-cover absolute bottom-40 left-5 lg:left-20"
         />
@@ -269,7 +269,7 @@ export default function Program() {
           width={100}
           unoptimized
           style={{ width: "10%", height: "auto" }}
-          src="/image/program_sekolah/baloon.svg"
+          src="/image/program-sekolah/baloon.svg"
           alt="school-pict"
           className="object-cover absolute top-10 right-2"
         />
@@ -282,7 +282,7 @@ export default function Program() {
         name="kurikulum"
         className="h-auto lg:h-[700px] w-full py-16 lg:py-32"
         style={{
-          backgroundImage: "url(/image/program_sekolah/bgIllustration.svg)",
+          backgroundImage: "url(/image/program-sekolah/bgIllustration.svg)",
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -321,7 +321,7 @@ export default function Program() {
 
           <div className="flex flex-col lg:flex-row gap-16">
             <ClassCard
-              imageSrc="/image/program_sekolah/classImage.png"
+              imageSrc="/image/program-sekolah/classImage.png"
               imageAlt="school-pict"
               title="KB"
               subTitle="Regular"
@@ -329,7 +329,7 @@ export default function Program() {
               unggulan={false}
             />
             <ClassCard
-              imageSrc="/image/program_sekolah/classImage.png"
+              imageSrc="/image/program-sekolah/classImage.png"
               imageAlt="school-pict"
               title="KB + TK"
               subTitle="Daycare"
@@ -337,7 +337,7 @@ export default function Program() {
               unggulan={true}
             />
             <ClassCard
-              imageSrc="/image/program_sekolah/classImage.png"
+              imageSrc="/image/program-sekolah/classImage.png"
               imageAlt="school-pict"
               title="TK"
               subTitle="Regular"

@@ -9,7 +9,7 @@ const Tab_2 = () => {
         width={100}
         unoptimized
         style={{ width: "10%", height: "auto" }}
-        src="/image/profil_sekolah/baloon.svg"
+        src="/image/profil-sekolah/baloon.svg"
         alt="school-pict"
         className="object-contain mx-auto absolute bottom-5 left-5"
       />
@@ -18,7 +18,7 @@ const Tab_2 = () => {
         width={100}
         unoptimized
         style={{ width: "10%", height: "auto" }}
-        src="/image/profil_sekolah/baloon.svg"
+        src="/image/profil-sekolah/baloon.svg"
         alt="school-pict"
         className="object-contain mx-auto absolute bottom-5 right-5"
       />
@@ -28,22 +28,22 @@ const Tab_2 = () => {
 
       <div className="mt-10 flex flex-col gap-10 lg:flex-row items-center justify-center">
         <GraduationCard
-          imageSrc="/image/profil_sekolah/lulusan.svg"
+          imageSrc="/image/profil-sekolah/lulusan.svg"
           imageAlt="school-pict"
           title="Beradab & Berakhlak Islami"
         />{" "}
         <GraduationCard
-          imageSrc="/image/profil_sekolah/lulusan-1.svg"
+          imageSrc="/image/profil-sekolah/lulusan-1.svg"
           imageAlt="school-pict"
           title="Bisa Membaca Al-Quran"
         />{" "}
         <GraduationCard
-          imageSrc="/image/profil_sekolah/lulusan-2.svg"
+          imageSrc="/image/profil-sekolah/lulusan-2.svg"
           imageAlt="school-pict"
           title="Memiliki Hafalan Al-Quran"
         />{" "}
         <GraduationCard
-          imageSrc="/image/profil_sekolah/lulusan-3.svg"
+          imageSrc="/image/profil-sekolah/lulusan-3.svg"
           imageAlt="school-pict"
           title="Bisa Berbahasa Asing"
         />
@@ -51,17 +51,17 @@ const Tab_2 = () => {
 
       <div className="mt-10 flex flex-col gap-10 lg:flex-row items-center justify-center">
         <GraduationCard
-          imageSrc="/image/profil_sekolah/lulusan-4.svg"
+          imageSrc="/image/profil-sekolah/lulusan-4.svg"
           imageAlt="school-pict"
           title="Mengenal Literasi Dasar"
         />{" "}
         <GraduationCard
-          imageSrc="/image/profil_sekolah/lulusan-5.svg"
+          imageSrc="/image/profil-sekolah/lulusan-5.svg"
           imageAlt="school-pict"
           title="Menjadi SIswa Yang Berprestasi"
         />{" "}
         <GraduationCard
-          imageSrc="/image/profil_sekolah/lulusan-6.svg"
+          imageSrc="/image/profil-sekolah/lulusan-6.svg"
           imageAlt="school-pict"
           title="Memiliki Karakter HUMBLE"
         />{" "}
