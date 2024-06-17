@@ -16,7 +16,15 @@ const LevelCard: React.FC<LevelCardProps> = ({
 }) => {
   return (
     <>
-      <div className="card w-72 bg-[#FAFAFA] shadow-xl">
+      <div
+        className="card w-72 bg-[#FAFAFA] shadow-xl"
+        style={{
+          backgroundImage: "url(/image/program-sekolah/bgCard.svg)",
+          backgroundSize: "cover",
+          backgroundPosition: "bottom",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <div className="card-body items-center text-center">
           <span className="card-title text-lg lg:text-2xl text-neutral">
             {title}

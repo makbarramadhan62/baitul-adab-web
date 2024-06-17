@@ -17,7 +17,7 @@ const FacilityCard: React.FC<FacilityCardProps> = ({
       <div
         className="card w-72 min-h-80 bg-[#FAFAFA] shadow-xl text-secondary-content hover:bg-primary hover:text-white"
         style={{
-          backgroundImage: "url(/image/profil_sekolah/background.svg)",
+          backgroundImage: "url(/image/profil-sekolah/background.svg)",
           backgroundSize: "cover",
           backgroundPosition: "bottom",
           backgroundRepeat: "no-repeat",
