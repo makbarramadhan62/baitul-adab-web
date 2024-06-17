@@ -54,7 +54,6 @@ export default function Profile() {
           phoneNumber="6281255446710"
           accountName="Baitul Adab"
           allowEsc={true}
-          allowClickAway={true}
         />
       )}
       <Navbar />

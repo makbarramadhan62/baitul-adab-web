@@ -26,7 +26,6 @@ export default function Pendaftaran() {
           phoneNumber="6281255446710"
           accountName="Baitul Adab"
           allowEsc={true}
-          allowClickAway={true}
         />
       )}
       <Navbar />
