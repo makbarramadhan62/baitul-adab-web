@@ -14,6 +14,30 @@ export default function Gallery() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const data = [
+    {
+      src: "/image/galeri-sekolah/image-2.png",
+    },
+    {
+      src: "/image/galeri-sekolah/image-2.png",
+    },
+    {
+      src: "/image/galeri-sekolah/image-2.png",
+    },
+    {
+      src: "/image/galeri-sekolah/image-2.png",
+    },
+    {
+      src: "/image/galeri-sekolah/image-6.png",
+    },
+    {
+      src: "/image/galeri-sekolah/image-2.png",
+    },
+    {
+      src: "/image/galeri-sekolah/image-2.png",
+    },
+  ];
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
       {showWhatsApp && (
@@ -38,139 +62,26 @@ export default function Gallery() {
             </span>
           </div>
 
-          <div className="columns-1 gap-5 lg:gap-8 sm:columns-2 lg:columns-3 xl:columns-4 [&>div:not(:first-child)]:mt-5 lg:[&>div:not(:first-child)]:mt-8 ">
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image-2.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image-3.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image-4.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image-5.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image-6.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image-7.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image-7.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image-8.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                height={100}
-                width={100}
-                unoptimized
-                style={{ width: "100%", height: "auto" }}
-                src="/image/galeri-sekolah/image-9.png"
-                alt="school-pict"
-                className="h-auto max-w-full rounded-xl transition duration-200 hover:scale-110"
-              />
-            </div>
+          <div className="grid md:grid-cols-4 auto-rows-[500px] gap-4 my-10">
+            {data.map((item, i) => (
+              <div
+                key={i}
+                className={`rounded-xl flex flex-col items-center justify-center overflow-hidden  ${
+                  i === 0 || i === 4 || i === 5 || i === 6
+                    ? "md:col-span-2"
+                    : ""
+                } ${i === 2 ? "md:row-span-2" : ""}`}
+              >
+                <Image
+                  height={100}
+                  width={100}
+                  unoptimized
+                  src={item.src}
+                  alt="school-pict"
+                  className="object-cover h-full w-full rounded-xl transition duration-200 hover:scale-110"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
