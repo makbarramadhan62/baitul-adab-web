@@ -7,13 +7,48 @@ import Link from "next/link";
 
 const Navbar = () => {
   const pathname = usePathname();
-  const hash = document.location.hash;
   const [activePath, setActivePath] = useState("");
   const [hoveredDropdownIndex, setHoveredDropdownIndex] = useState<
     number | null
   >(null);
   const [activeSidebar, setActiveSidebar] = useState<boolean>(false);
   const [currentHash, setCurrentHash] = useState("");
+  const [activeAccordion, setActiveAccordion] = useState<string>("");
+
+  useEffect(() => {
+    setActivePath(pathname);
+    console.log(pathname);
+  }, [pathname]);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const newHash = window.location.hash;
+      setCurrentHash(newHash);
+      localStorage.setItem("currentHash", newHash);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    const storedHash = localStorage.getItem("currentHash");
+    setCurrentHash(storedHash || window.location.hash);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    const storedAccordion = localStorage.getItem("activeAccordion");
+    if (storedAccordion) {
+      setActiveAccordion(storedAccordion);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (activeAccordion) {
+      localStorage.setItem("activeAccordion", activeAccordion);
+    }
+  }, [activeAccordion]);
 
   const handleMouseEnter = (index: number) => {
     setHoveredDropdownIndex(index);
@@ -22,17 +57,6 @@ const Navbar = () => {
   const handleMouseLeave = () => {
     setHoveredDropdownIndex(null);
   };
-
-  useEffect(() => {
-    setActivePath(pathname);
-    setCurrentHash(hash);
-  }, [pathname, hash]);
-
-  useEffect(() => {
-    console.log(hash);
-    console.log(pathname);
-    console.log(currentHash);
-  }, [pathname, hash, currentHash]);
 
   const getLinkClass = (path: string) => {
     if (path === "/" && activePath !== "/") {
@@ -129,8 +153,14 @@ const Navbar = () => {
           label: "Contact Us",
           to: "contact-us",
           href: "/contact-us",
+          hash: "contact-us",
         },
-        { label: "FAQ", to: "faq", href: "/contact-us/faq" },
+        {
+          label: "FAQ",
+          to: "faq",
+          href: "/contact-us/faq",
+          hash: "faq",
+        },
       ],
     },
   ];
@@ -231,39 +261,69 @@ const Navbar = () => {
                       menu.scrollLinks.length > 0 && "collapse-arrow"
                     } join-item`}
                   >
-                    <input
-                      type="radio"
-                      name="my-accordion"
-                      defaultChecked={activePath === menu.href}
-                    />
-                    <div
-                      className={`collapse-title font-medium ${getMobileLinkClass(
-                        menu.href,
-                      )}`}
-                    >
-                      {menu.label}
-                    </div>
-                    <div className="collapse-content">
-                      {menu.scrollLinks.map((link, index) => (
+                    {menu.scrollLinks.length > 0 ? (
+                      <>
+                        <input
+                          type="radio"
+                          name="my-accordion"
+                          checked={activeAccordion === menu.href}
+                          onChange={() => setActiveAccordion(menu.href)}
+                        />
                         <div
-                          key={index}
-                          className={`text-gray-600 ${
-                            currentHash === link.hash && "text-blue-600"
-                          }`}
-                          onClick={() => setActiveSidebar(false)}
+                          className={`collapse-title font-medium ${getMobileLinkClass(
+                            menu.href,
+                          )}`}
                         >
-                          <Link href={link.href}>
-                            <span
-                              className={`block px-4 py-2 ${
-                                currentHash === link.hash && "text-blue-600"
-                              }`}
-                            >
-                              {link.label}
-                            </span>
-                          </Link>
+                          {menu.label}
                         </div>
-                      ))}
-                    </div>
+                        <div className="collapse-content">
+                          {menu.scrollLinks.map((link, subIndex) => (
+                            <div
+                              key={subIndex}
+                              className={`text-gray-600 ${
+                                currentHash === link.hash ||
+                                activePath === link.href
+                                  ? "text-blue-600"
+                                  : ""
+                              }`}
+                              onClick={() => setActiveSidebar(false)}
+                            >
+                              <Link
+                                href={link.href}
+                                onClick={() => setCurrentHash(link.hash!)}
+                              >
+                                <span
+                                  className={`block px-4 py-2 ${
+                                    currentHash === link.hash
+                                      ? "text-blue-600"
+                                      : ""
+                                  }`}
+                                >
+                                  {link.label}
+                                </span>
+                              </Link>
+                            </div>
+                          ))}
+                        </div>
+                      </>
+                    ) : (
+                      <Link
+                        href={menu.href}
+                        onClick={() => {
+                          setActiveSidebar(false);
+                          setCurrentHash("");
+                          setActiveAccordion(menu.href);
+                        }}
+                      >
+                        <div
+                          className={`collapse-title font-medium ${getMobileLinkClass(
+                            menu.href,
+                          )}`}
+                        >
+                          {menu.label}
+                        </div>
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>
