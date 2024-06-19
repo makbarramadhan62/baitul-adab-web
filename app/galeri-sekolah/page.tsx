@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
@@ -27,7 +25,7 @@ export default function Gallery() {
           allowEsc={true}
         />
       )}
-      <Navbar />
+
       <section
         id="gallery-first"
         className="w-full px-4 lg:px-16 flex flex-col gap-8 items-center justify-center mb-0 mt-24 lg:mt-32"
@@ -184,7 +182,6 @@ export default function Gallery() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

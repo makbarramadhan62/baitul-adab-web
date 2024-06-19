@@ -3,15 +3,17 @@
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Link as ScrollLink } from "react-scroll";
 import Link from "next/link";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const hash = document.location.hash;
   const [activePath, setActivePath] = useState("");
   const [hoveredDropdownIndex, setHoveredDropdownIndex] = useState<
     number | null
   >(null);
+  const [activeSidebar, setActiveSidebar] = useState<boolean>(false);
+  const [currentHash, setCurrentHash] = useState("");
 
   const handleMouseEnter = (index: number) => {
     setHoveredDropdownIndex(index);
@@ -23,7 +25,14 @@ const Navbar = () => {
 
   useEffect(() => {
     setActivePath(pathname);
-  }, [pathname]);
+    setCurrentHash(hash);
+  }, [pathname, hash]);
+
+  useEffect(() => {
+    console.log(hash);
+    console.log(pathname);
+    console.log(currentHash);
+  }, [pathname, hash, currentHash]);
 
   const getLinkClass = (path: string) => {
     if (path === "/" && activePath !== "/") {
@@ -45,11 +54,13 @@ const Navbar = () => {
 
   const menuItems = [
     {
+      index: 0,
       label: "Home",
       href: "/",
       scrollLinks: [],
     },
     {
+      index: 1,
       label: "Profil Sekolah",
       href: "/profil-sekolah",
       scrollLinks: [
@@ -57,20 +68,24 @@ const Navbar = () => {
           label: "Sejarah Singkat",
           to: "sejarah-singkat",
           href: "/profil-sekolah/#sejarah-singkat",
+          hash: "#sejarah-singkat",
         },
         {
           label: "Visi & Misi",
           to: "visi-misi",
           href: "/profil-sekolah/#visi-misi",
+          hash: "#visi-misi",
         },
         {
           label: "Detail Sekolah",
           to: "detail-sekolah",
           href: "/profil-sekolah/#detail-sekolah",
+          hash: "#detail-sekolah",
         },
       ],
     },
     {
+      index: 2,
       label: "Program Sekolah",
       href: "/program-sekolah",
       scrollLinks: [
@@ -78,16 +93,19 @@ const Navbar = () => {
           label: "Kelas",
           to: "kelas",
           href: "/program-sekolah/#kelas",
+          hash: "#kelas",
         },
         {
           label: "Kurikulum",
           to: "kurikulum",
           href: "/program-sekolah/#kurikulum",
+          hash: "#kurikulum",
         },
         {
           label: "kelas & Jadwal Harian",
           to: "kelas-jadwal-harian",
           href: "/program-sekolah/#kelas-jadwal-harian",
+          hash: "#kelas-jadwal-harian",
         },
         {
           label: "Biaya Sekolah",
@@ -97,11 +115,13 @@ const Navbar = () => {
       ],
     },
     {
+      index: 3,
       label: "Galeri Sekolah",
       href: "/galeri-sekolah",
       scrollLinks: [],
     },
     {
+      index: 4,
       label: "Contact Us",
       href: "/contact-us",
       scrollLinks: [
@@ -163,24 +183,11 @@ const Navbar = () => {
                           key={subIndex}
                           className="text-gray-600 hover:text-blue-600 hover:cursor-pointer"
                         >
-                          {activePath === menu.href &&
-                          link.href.includes("#") ? (
-                            <ScrollLink
-                              to={link.to}
-                              smooth={true}
-                              duration={500}
-                            >
-                              <span className="block px-4 py-2">
-                                {link.label}
-                              </span>
-                            </ScrollLink>
-                          ) : (
-                            <Link href={link.href}>
-                              <span className="block px-4 py-2">
-                                {link.label}
-                              </span>
-                            </Link>
-                          )}
+                          <Link href={link.href}>
+                            <span className="block px-4 py-2">
+                              {link.label}
+                            </span>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -192,7 +199,13 @@ const Navbar = () => {
 
         {/* Navigasi Mobile */}
         <div className="drawer block lg:hidden">
-          <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+          <input
+            id="my-drawer"
+            type="checkbox"
+            className="drawer-toggle"
+            checked={activeSidebar}
+            onChange={() => setActiveSidebar(!activeSidebar)}
+          />
           <div className="drawer-content">
             {/* Page content here */}
             <label
@@ -218,59 +231,39 @@ const Navbar = () => {
                       menu.scrollLinks.length > 0 && "collapse-arrow"
                     } join-item`}
                   >
-                    {menu.scrollLinks.length > 0 ? (
-                      <>
-                        <input
-                          type="radio"
-                          name="my-accordion"
-                          defaultChecked={activePath === menu.href}
-                        />
+                    <input
+                      type="radio"
+                      name="my-accordion"
+                      defaultChecked={activePath === menu.href}
+                    />
+                    <div
+                      className={`collapse-title font-medium ${getMobileLinkClass(
+                        menu.href,
+                      )}`}
+                    >
+                      {menu.label}
+                    </div>
+                    <div className="collapse-content">
+                      {menu.scrollLinks.map((link, index) => (
                         <div
-                          className={`collapse-title font-medium ${getMobileLinkClass(
-                            menu.href,
-                          )}`}
+                          key={index}
+                          className={`text-gray-600 ${
+                            currentHash === link.hash && "text-blue-600"
+                          }`}
+                          onClick={() => setActiveSidebar(false)}
                         >
-                          {menu.label}
-                        </div>
-                        <div className="collapse-content">
-                          {menu.scrollLinks.map((link, index) => (
-                            <div
-                              key={index}
-                              className="text-gray-600 hover:text-blue-600"
+                          <Link href={link.href}>
+                            <span
+                              className={`block px-4 py-2 ${
+                                currentHash === link.hash && "text-blue-600"
+                              }`}
                             >
-                              {activePath === menu.href &&
-                              link.href.includes("#") ? (
-                                <ScrollLink
-                                  to={link.to}
-                                  smooth={true}
-                                  duration={500}
-                                >
-                                  <span className="block px-4 py-2">
-                                    {link.label}
-                                  </span>
-                                </ScrollLink>
-                              ) : (
-                                <Link href={link.href}>
-                                  <span className="block px-4 py-2">
-                                    {link.label}
-                                  </span>
-                                </Link>
-                              )}
-                            </div>
-                          ))}
+                              {link.label}
+                            </span>
+                          </Link>
                         </div>
-                      </>
-                    ) : (
-                      <Link href={menu.href}>
-                        <div
-                          className={`collapse-title font-medium ${getMobileLinkClass(
-                            menu.href,
-                          )}`}
-                        >
-                          {menu.label}
-                        </div>
-                      </Link>
-                    )}
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>

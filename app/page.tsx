@@ -1,14 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "@/components/navbar";
 import TestimonialCard from "@/components/testimonialCard";
 import CurriculumCard from "@/components/curiculumCard";
-import Footer from "@/components/footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect, useState } from "react";
-import { Element } from "react-scroll";
+
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Home() {
@@ -85,11 +83,9 @@ export default function Home() {
           allowEsc={true}
         />
       )}
-      <Navbar />
 
-      {/* Hero Section*/}
-      <Element
-        name="home"
+      {/* Hero section*/}
+      <section
         id="home"
         className="pt-16 lg:pt-32 lg:pb-16 px-4 lg:px-16 flex flex-col lg:flex-row items-center justify-center relative min-h-screen "
       >
@@ -129,7 +125,7 @@ export default function Home() {
             unoptimized
             priority={true}
             style={{ height: "auto" }}
-            src="/image/home/heroSectionChildren.png"
+            src="/image/home/herosectionChildren.png"
             alt="school-pict"
             className="object-contain mx-auto w-full md:w-4/5"
           />
@@ -153,12 +149,11 @@ export default function Home() {
           alt="school-pict"
           className="object-cover absolute h-auto w-full -bottom-1 lg:-bottom-20 xl:-bottom-28 z-10"
         />
-      </Element>
-      {/* Hero Section*/}
+      </section>
+      {/* Hero section*/}
 
-      {/* Second Section*/}
-      <Element
-        name="fasilitas"
+      {/* Second section*/}
+      <section
         id="fasilitas"
         className="w-full py-16 lg:py-32 relative z-20 bg-primary-content mt-0"
       >
@@ -242,15 +237,11 @@ export default function Home() {
           alt="school-pict"
           className="object-cover absolute h-auto w-1/4 right-0 -top-20 hidden lg:block"
         />
-      </Element>
-      {/* Second Section*/}
+      </section>
+      {/* Second section*/}
 
-      {/* Third Section*/}
-      <Element
-        name="testimoni"
-        id="testimoni"
-        className="w-full py-16 lg:py-32 relative z-10"
-      >
+      {/* Third section*/}
+      <section id="testimoni" className="w-full py-16 lg:py-32 relative z-10">
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
             <div
@@ -284,12 +275,11 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </Element>
-      {/* Third Section*/}
+      </section>
+      {/* Third section*/}
 
-      {/*  Fourth Section*/}
-      <Element
-        name="alur-pendaftaran"
+      {/*  Fourth section*/}
+      <section
         id="alur-pendaftaran"
         className="w-full py-16 lg:py-32 relative z-10"
       >
@@ -402,15 +392,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Element>
-      {/*  Fourth Section*/}
+      </section>
+      {/*  Fourth section*/}
 
-      {/*  Fifth Section*/}
-      <Element
-        name="syarat-pendaftaran"
-        id="syarat-pendaftaran"
-        className="w-full py-16 lg:py-32"
-      >
+      {/*  Fifth section*/}
+      <section id="syarat-pendaftaran" className="w-full py-16 lg:py-32">
         <div className="px-4 lg:px-16">
           <div className="w-full text-center mb-8">
             <div
@@ -508,10 +494,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </Element>
-      {/*  Fifth Section*/}
-
-      <Footer />
+      </section>
+      {/*  Fifth section*/}
     </div>
   );
 }

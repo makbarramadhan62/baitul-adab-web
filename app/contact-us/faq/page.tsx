@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import React, { useEffect, useState } from "react";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
@@ -26,7 +24,7 @@ export default function Faq() {
           allowEsc={true}
         />
       )}
-      <Navbar />
+
       <div className="w-full px-4 lg:px-16 py-20 lg:py-32 flex flex-col gap-8 items-center justify-center">
         <span className="text-neutral text-8xl font-bold">FAQ</span>
         <div className="flex flex-col w-full lg:w-3/4 gap-4">
@@ -92,7 +90,6 @@ export default function Faq() {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

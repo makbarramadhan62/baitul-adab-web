@@ -2,13 +2,12 @@
 
 import React, { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
+
 import ProgramCard from "@/components/programCard";
 import Image from "next/image";
 import LevelCard from "@/components/levelCard";
 import ClassCard from "@/components/classCard";
-import { Element } from "react-scroll";
+
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 export default function Program() {
@@ -62,11 +61,10 @@ export default function Program() {
           allowEsc={true}
         />
       )}
-      <Navbar />
-      {/* First Section*/}
-      <Element
+
+      {/* First section*/}
+      <section
         id="kelas"
-        name="kelas"
         className="min-h-screen w-full py-20 lg:py-32 flex-grow relative"
       >
         <div className="px-4 lg:px-16 flex flex-col gap-8 items-center justify-center">
@@ -128,13 +126,12 @@ export default function Program() {
           alt="school-pict"
           className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-24 z-10"
         />
-      </Element>
-      {/* First Section*/}
+      </section>
+      {/* First section*/}
 
-      {/* Second Section*/}
-      <Element
+      {/* Second section*/}
+      <section
         id="daycare"
-        name="daycare"
         className="h-[700px] w-full relative py-16 lg:py-32 z-20 bg-primary-content"
       >
         <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8 text-5xl">
@@ -180,13 +177,12 @@ export default function Program() {
           alt="school-pict"
           className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-44 z-10"
         />
-      </Element>
-      {/* Second Section*/}
+      </section>
+      {/* Second section*/}
 
-      {/* Third Section*/}
-      <Element
+      {/* Third section*/}
+      <section
         id="playgroup"
-        name="playgroup"
         className="h-auto lg:h-[900px] w-full py-16 lg:py-32 relative z-20 bg-success"
       >
         <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
@@ -241,13 +237,12 @@ export default function Program() {
           alt="school-pict"
           className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-44 z-10"
         />
-      </Element>
-      {/* Third Section*/}
+      </section>
+      {/* Third section*/}
 
-      {/* Fourth Section*/}
-      <Element
+      {/* Fourth section*/}
+      <section
         id="kindegarten"
-        name="kindegarten"
         className="h-auto lg:h-[800px] w-full py-16 lg:py-32 relative z-20 bg-[#2278D4]"
       >
         <div className="px-4 lg:px-16 w-full lg:w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
@@ -293,13 +288,12 @@ export default function Program() {
           alt="school-pict"
           className="object-cover absolute top-10 right-2"
         />
-      </Element>
-      {/* Fourth Section*/}
+      </section>
+      {/* Fourth section*/}
 
-      {/* Fifth Section*/}
-      <Element
+      {/* Fifth section*/}
+      <section
         id="kurikulum"
-        name="kurikulum"
         className="h-auto lg:h-[700px] w-full py-16 lg:py-32"
         style={{
           backgroundImage: "url(/image/program-sekolah/bgIllustration.svg)",
@@ -325,13 +319,12 @@ export default function Program() {
             tua.
           </p>
         </div>
-      </Element>
-      {/* Fifth Section*/}
+      </section>
+      {/* Fifth section*/}
 
-      {/* Sixth Section*/}
-      <Element
+      {/* Sixth section*/}
+      <section
         id="kelas-jadwal-harian"
-        name="kelas-jadwal-harian"
         className="h-auto w-full mb-8 py-16 lg:py-32"
       >
         <div className="px-0 lg:px-16 h-full w-3/4 mx-auto p-8 flex flex-col justify-center items-center gap-4 lg:gap-8">
@@ -366,10 +359,8 @@ export default function Program() {
             />
           </div>
         </div>
-      </Element>
-      {/* Sixth Section*/}
-
-      <Footer />
+      </section>
+      {/* Sixth section*/}
     </div>
   );
 }

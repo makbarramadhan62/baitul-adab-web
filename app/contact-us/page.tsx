@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import Image from "next/image";
 import PendaftaranForm from "@/app/contact-us/pendaftaranForm";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
@@ -28,7 +26,7 @@ export default function Pendaftaran() {
           allowEsc={true}
         />
       )}
-      <Navbar />
+
       <section
         id="program-first"
         className="h-full lg:h-[944px] w-full py-20 lg:py-32 relative "
@@ -185,7 +183,6 @@ export default function Pendaftaran() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

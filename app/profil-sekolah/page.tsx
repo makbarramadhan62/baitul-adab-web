@@ -1,13 +1,11 @@
 "use client";
 
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import Image from "next/image";
 import React, { SetStateAction, useCallback, useEffect, useState } from "react";
 import Tab_1 from "@/app/profil-sekolah/tab_1";
 import Tab_2 from "@/app/profil-sekolah/tab_2";
 import Tab_3 from "@/app/profil-sekolah/tab_3";
-import { Element } from "react-scroll";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
@@ -56,12 +54,10 @@ export default function Profile() {
           allowEsc={true}
         />
       )}
-      <Navbar />
 
-      {/* First Section */}
-      <Element
+      {/* First section */}
+      <section
         id="sejarah-singkat"
-        name="sejarah-singkat"
         className="flex flex-col gap-8 items-center justify-center mb-0 py-20 lg:py-32 relative"
       >
         <div className="px-4 lg:px-16">
@@ -115,13 +111,12 @@ export default function Profile() {
           alt="school-pict"
           className="object-cover absolute h-auto w-1/12 right-20 bottom-0 hidden lg:block"
         />
-      </Element>
-      {/* First Section */}
+      </section>
+      {/* First section */}
 
-      {/* Second Section */}
-      <Element
+      {/* Second section */}
+      <section
         id="visi-misi"
-        name="visi-misi"
         className="w-full py-16 lg:py-32 flex flex-col items-center justify-center"
       >
         <div className="px-4 lg:px-16">
@@ -224,15 +219,11 @@ export default function Profile() {
             </div>
           </div>
         </div>
-      </Element>
-      {/* Second Section */}
+      </section>
+      {/* Second section */}
 
-      {/* Third Section */}
-      <Element
-        id="detail-sekolah"
-        name="detail-sekolah"
-        className="w-full py-16 lg:py-32"
-      >
+      {/* Third section */}
+      <section id="detail-sekolah" className="w-full py-16 lg:py-32">
         <div className="px-4 lg:px-16 text-neutral">
           <div className="flex gap-8 items-start font-semibold">
             <button
@@ -273,9 +264,8 @@ export default function Profile() {
           {activeTab === 2 && <Tab_2 />}
           {activeTab === 3 && <Tab_3 />}
         </div>
-      </Element>
-      {/* Third Section */}
-      <Footer />
+      </section>
+      {/* Third section */}
     </div>
   );
 }

@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import React, { SetStateAction, useEffect, useState } from "react";
 import Tab_1 from "@/app/program-sekolah/biaya-sekolah/tab_1";
 import Tab_2 from "@/app/program-sekolah/biaya-sekolah/tab_2";
@@ -39,8 +37,8 @@ export default function SchoolExpenses() {
           allowEsc={true}
         />
       )}
-      <Navbar />
-      {/* First Section */}
+
+      {/* First section */}
       <section id="program-first" className="w-full mt-[92px]">
         <div
           className="w-full flex flex-col items-center justify-center h-[430px]"
@@ -63,9 +61,9 @@ export default function SchoolExpenses() {
           </div>
         </div>
       </section>
-      {/* First Section */}
+      {/* First section */}
 
-      {/* Second Section */}
+      {/* Second section */}
       <section id="program-second" className="w-full my-8">
         <div className="px-4 lg:px-16 text-center">
           <span className="text-base-content text-2xl font-medium w-full lg:w-2/3">
@@ -130,9 +128,7 @@ export default function SchoolExpenses() {
           {activeTab2 === 2 && <Tab2_2 />}
         </div>
       </section>
-      {/* Second Section */}
-
-      <Footer />
+      {/* Second section */}
     </div>
   );
 }

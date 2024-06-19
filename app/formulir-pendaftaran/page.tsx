@@ -104,7 +104,7 @@ export default function RegistrationForm() {
     }, 3000);
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormsection>) => {
     e.preventDefault();
     setIsLoading(true);
     setIsSuccess(false);
