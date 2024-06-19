@@ -125,7 +125,7 @@ export default function Home() {
             unoptimized
             priority={true}
             style={{ height: "auto" }}
-            src="/image/home/herosectionChildren.png"
+            src="/image/home/heroSectionChildren.png"
             alt="school-pict"
             className="object-contain mx-auto w-full md:w-4/5"
           />
