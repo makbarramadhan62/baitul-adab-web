@@ -204,8 +204,21 @@ const Navbar = () => {
                           key={subIndex}
                           className="text-gray-600 hover:text-blue-600 hover:cursor-pointer"
                         >
-                          <Link href={link.href}>
-                            <span className="block px-4 py-2">
+                          <Link
+                            href={link.href}
+                            onClick={() => {
+                              setCurrentHash(link.hash);
+                              localStorage.setItem("currentHash", link.hash);
+                            }}
+                          >
+                            <span
+                              className={`block px-4 py-2  ${
+                                currentHash === link.hash ||
+                                activePath === link.href
+                                  ? "text-blue-600"
+                                  : ""
+                              }`}
+                            >
                               {link.label}
                             </span>
                           </Link>
