@@ -276,9 +276,10 @@ export default function RegistrationForm() {
                   Alamat Lengkap
                 </label>
                 <textarea
+                  rows={5}
                   name="alamat"
                   placeholder="Masukkan alamat lengkap"
-                  className="input input-bordered w-full text-neutral py-2"
+                  className="input input-bordered w-full h-full text-neutral py-2"
                   value={formData.alamat}
                   onChange={handleChange}
                 />
