@@ -13,7 +13,7 @@ const Navbar = () => {
   >(null);
   const [activeSidebar, setActiveSidebar] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
-  const [activeAccordion, setActiveAccordion] = useState("");
+  const [activeAccordion, setActiveAccordion] = useState(pathname);
 
   useEffect(() => {
     setActivePath(pathname);
@@ -28,16 +28,11 @@ const Navbar = () => {
     window.addEventListener("hashchange", handleHashChange);
 
     setCurrentHash(localStorage.getItem("currentHash") || window.location.hash);
-    setActiveAccordion(localStorage.getItem("activeAccordion") || "");
 
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem("activeAccordion", activeAccordion);
-  }, [activeAccordion]);
 
   const handleMouseEnter = (index: number | SetStateAction<null>) => {
     setHoveredDropdownIndex(index);
@@ -186,7 +181,13 @@ const Navbar = () => {
                       {menu.label}
                     </span>
                   ) : (
-                    <Link href={menu.href}>
+                    <Link
+                      href={menu.href}
+                      onClick={() => {
+                        setCurrentHash("");
+                        localStorage.setItem("currentHash", "");
+                      }}
+                    >
                       <span className={getLinkClass(menu.href)}>
                         {menu.label}
                       </span>
@@ -267,8 +268,7 @@ const Navbar = () => {
                         <input
                           type="radio"
                           name="my-accordion"
-                          checked={activeAccordion === menu.href}
-                          onChange={() => setActiveAccordion(menu.href)}
+                          defaultChecked={activeAccordion === menu.href}
                         />
                         <div
                           className={`collapse-title font-medium ${getMobileLinkClass(
@@ -319,7 +319,6 @@ const Navbar = () => {
                         onClick={() => {
                           setActiveSidebar(false);
                           setCurrentHash("");
-                          setActiveAccordion(menu.href);
                           localStorage.setItem("currentHash", "");
                         }}
                       >
