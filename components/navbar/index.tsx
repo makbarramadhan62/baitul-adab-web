@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, SetStateAction } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,28 +9,26 @@ const Navbar = () => {
   const pathname = usePathname();
   const [activePath, setActivePath] = useState("");
   const [hoveredDropdownIndex, setHoveredDropdownIndex] = useState<
-    number | null
+    number | SetStateAction<null>
   >(null);
-  const [activeSidebar, setActiveSidebar] = useState<boolean>(false);
+  const [activeSidebar, setActiveSidebar] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
-  const [activeAccordion, setActiveAccordion] = useState<string>("");
+  const [activeAccordion, setActiveAccordion] = useState("");
 
   useEffect(() => {
     setActivePath(pathname);
-    console.log(pathname);
   }, [pathname]);
 
   useEffect(() => {
     const handleHashChange = () => {
       const newHash = window.location.hash;
-      setCurrentHash(newHash);
       localStorage.setItem("currentHash", newHash);
+      setCurrentHash(newHash);
     };
-
     window.addEventListener("hashchange", handleHashChange);
 
-    const storedHash = localStorage.getItem("currentHash");
-    setCurrentHash(storedHash || window.location.hash);
+    setCurrentHash(localStorage.getItem("currentHash") || window.location.hash);
+    setActiveAccordion(localStorage.getItem("activeAccordion") || "");
 
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
@@ -38,19 +36,10 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const storedAccordion = localStorage.getItem("activeAccordion");
-    if (storedAccordion) {
-      setActiveAccordion(storedAccordion);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (activeAccordion) {
-      localStorage.setItem("activeAccordion", activeAccordion);
-    }
+    localStorage.setItem("activeAccordion", activeAccordion);
   }, [activeAccordion]);
 
-  const handleMouseEnter = (index: number) => {
+  const handleMouseEnter = (index: number | SetStateAction<null>) => {
     setHoveredDropdownIndex(index);
   };
 
@@ -76,100 +65,103 @@ const Navbar = () => {
       : "text-gray-600 transition ease-in-out duration-200 hover:text-blue-600";
   };
 
-  const menuItems = [
-    {
-      index: 0,
-      label: "Home",
-      href: "/",
-      scrollLinks: [],
-    },
-    {
-      index: 1,
-      label: "Profil Sekolah",
-      href: "/profil-sekolah",
-      scrollLinks: [
-        {
-          label: "Sejarah Singkat",
-          to: "sejarah-singkat",
-          href: "/profil-sekolah/#sejarah-singkat",
-          hash: "#sejarah-singkat",
-        },
-        {
-          label: "Visi & Misi",
-          to: "visi-misi",
-          href: "/profil-sekolah/#visi-misi",
-          hash: "#visi-misi",
-        },
-        {
-          label: "Detail Sekolah",
-          to: "detail-sekolah",
-          href: "/profil-sekolah/#detail-sekolah",
-          hash: "#detail-sekolah",
-        },
-      ],
-    },
-    {
-      index: 2,
-      label: "Program Sekolah",
-      href: "/program-sekolah",
-      scrollLinks: [
-        {
-          label: "Kelas",
-          to: "kelas",
-          href: "/program-sekolah/#kelas",
-          hash: "#kelas",
-        },
-        {
-          label: "Kurikulum",
-          to: "kurikulum",
-          href: "/program-sekolah/#kurikulum",
-          hash: "#kurikulum",
-        },
-        {
-          label: "kelas & Jadwal Harian",
-          to: "kelas-jadwal-harian",
-          href: "/program-sekolah/#kelas-jadwal-harian",
-          hash: "#kelas-jadwal-harian",
-        },
-        {
-          label: "Biaya Sekolah",
-          to: "biaya-sekolah",
-          href: "/program-sekolah/biaya-sekolah",
-        },
-      ],
-    },
-    {
-      index: 3,
-      label: "Galeri Sekolah",
-      href: "/galeri-sekolah",
-      scrollLinks: [],
-    },
-    {
-      index: 4,
-      label: "Contact Us",
-      href: "/contact-us",
-      scrollLinks: [
-        {
-          label: "Contact Us",
-          to: "contact-us",
-          href: "/contact-us",
-          hash: "contact-us",
-        },
-        {
-          label: "FAQ",
-          to: "faq",
-          href: "/contact-us/faq",
-          hash: "faq",
-        },
-      ],
-    },
-  ];
+  const menuItems = useMemo(
+    () => [
+      {
+        index: 0,
+        label: "Home",
+        href: "/",
+        scrollLinks: [],
+      },
+      {
+        index: 1,
+        label: "Profil Sekolah",
+        href: "/profil-sekolah",
+        scrollLinks: [
+          {
+            label: "Sejarah Singkat",
+            to: "sejarah-singkat",
+            href: "/profil-sekolah/#sejarah-singkat",
+            hash: "#sejarah-singkat",
+          },
+          {
+            label: "Visi & Misi",
+            to: "visi-misi",
+            href: "/profil-sekolah/#visi-misi",
+            hash: "#visi-misi",
+          },
+          {
+            label: "Detail Sekolah",
+            to: "detail-sekolah",
+            href: "/profil-sekolah/#detail-sekolah",
+            hash: "#detail-sekolah",
+          },
+        ],
+      },
+      {
+        index: 2,
+        label: "Program Sekolah",
+        href: "/program-sekolah",
+        scrollLinks: [
+          {
+            label: "Kelas",
+            to: "kelas",
+            href: "/program-sekolah/#kelas",
+            hash: "#kelas",
+          },
+          {
+            label: "Kurikulum",
+            to: "kurikulum",
+            href: "/program-sekolah/#kurikulum",
+            hash: "#kurikulum",
+          },
+          {
+            label: "Kelas & Jadwal Harian",
+            to: "kelas-jadwal-harian",
+            href: "/program-sekolah/#kelas-jadwal-harian",
+            hash: "#kelas-jadwal-harian",
+          },
+          {
+            label: "Biaya Sekolah",
+            to: "biaya-sekolah",
+            href: "/program-sekolah/biaya-sekolah",
+            hash: "biaya-sekolah",
+          },
+        ],
+      },
+      {
+        index: 3,
+        label: "Galeri Sekolah",
+        href: "/galeri-sekolah",
+        scrollLinks: [],
+      },
+      {
+        index: 4,
+        label: "Contact Us",
+        href: "/contact-us",
+        scrollLinks: [
+          {
+            label: "Contact Us",
+            to: "contact-us",
+            href: "/contact-us",
+            hash: "contact-us",
+          },
+          {
+            label: "FAQ",
+            to: "faq",
+            href: "/contact-us/faq",
+            hash: "faq",
+          },
+        ],
+      },
+    ],
+    [],
+  );
 
   return (
     <nav className="bg-white py-4 px-8 w-full fixed top-0 z-50">
       <div className="mx-auto flex justify-between items-center">
         <div className="flex gap-6 font-semibold items-center">
-          {/* Logo Website */}
           <div className="hidden lg:block">
             <Image
               width={100}
@@ -181,7 +173,6 @@ const Navbar = () => {
             />
           </div>
 
-          {/* Navigasi Utama */}
           <div className="hidden lg:flex space-x-6">
             {menuItems.map((menu, index) => (
               <div
@@ -227,7 +218,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Navigasi Mobile */}
         <div className="drawer block lg:hidden">
           <input
             id="my-drawer"
@@ -237,7 +227,6 @@ const Navbar = () => {
             onChange={() => setActiveSidebar(!activeSidebar)}
           />
           <div className="drawer-content">
-            {/* Page content here */}
             <label
               htmlFor="my-drawer"
               className="text-gray-600 hover:text-blue-600 focus:outline-none drawer-button"
@@ -252,7 +241,6 @@ const Navbar = () => {
               className="drawer-overlay"
             ></label>
             <div className="menu bg-base-100 px-4 py-8 w-2/3 min-h-full text-base-content flex flex-col justify-between items-center">
-              {/* Sidebar content here */}
               <div className="join join-vertical w-full text-neutral">
                 {menuItems.map((menu, index) => (
                   <div
@@ -290,7 +278,13 @@ const Navbar = () => {
                             >
                               <Link
                                 href={link.href}
-                                onClick={() => setCurrentHash(link.hash!)}
+                                onClick={() => {
+                                  setCurrentHash(link.hash);
+                                  localStorage.setItem(
+                                    "currentHash",
+                                    link.hash,
+                                  );
+                                }}
                               >
                                 <span
                                   className={`block px-4 py-2 ${
@@ -313,6 +307,7 @@ const Navbar = () => {
                           setActiveSidebar(false);
                           setCurrentHash("");
                           setActiveAccordion(menu.href);
+                          localStorage.setItem("currentHash", "");
                         }}
                       >
                         <div
@@ -342,7 +337,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Button Pendaftaran */}
         <div className="flex gap-6 font-semibold items-center">
           <Link href="/contact-us">
             <button
