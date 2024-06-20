@@ -415,7 +415,6 @@ export default function Home() {
               </span>
             </div>
           </div>
-          o
           <div className="flex flex-col lg:flex-row items-center justify-center">
             {/* Bagian Kiri */}
             <div
