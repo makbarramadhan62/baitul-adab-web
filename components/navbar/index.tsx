@@ -13,7 +13,7 @@ const Navbar = () => {
   >(null);
   const [activeSidebar, setActiveSidebar] = useState(false);
   const [currentHash, setCurrentHash] = useState("");
-  const [activeAccordion, setActiveAccordion] = useState(pathname);
+  const [activeAccordion] = useState(pathname);
 
   useEffect(() => {
     setActivePath(pathname);
