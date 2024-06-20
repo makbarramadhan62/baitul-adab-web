@@ -19,25 +19,25 @@ export default function Gallery() {
 
   const data = [
     {
-      src: "/image/galeri-sekolah/img (1).jpg",
+      src: "/image/galeri-sekolah/img (1).JPG",
     },
     {
-      src: "/image/galeri-sekolah/img (2).jpg",
+      src: "/image/galeri-sekolah/img (2).JPG",
     },
     {
-      src: "/image/galeri-sekolah/img (3).jpg",
+      src: "/image/galeri-sekolah/img (3).JPG",
     },
     {
-      src: "/image/galeri-sekolah/img (4).jpg",
+      src: "/image/galeri-sekolah/img (4).JPG",
     },
     {
-      src: "/image/galeri-sekolah/img (5).jpg",
+      src: "/image/galeri-sekolah/img (5).JPG",
     },
     {
-      src: "/image/galeri-sekolah/img (6).jpg",
+      src: "/image/galeri-sekolah/img (6).JPG",
     },
     {
-      src: "/image/galeri-sekolah/img (7).jpg",
+      src: "/image/galeri-sekolah/img (7).JPG",
     },
   ];
   return (
