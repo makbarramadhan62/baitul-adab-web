@@ -6,6 +6,8 @@ import Tab_2 from "@/app/program-sekolah/biaya-sekolah/tab_2";
 import Tab2_1 from "@/app/program-sekolah/biaya-sekolah/tab2_1";
 import Tab2_2 from "@/app/program-sekolah/biaya-sekolah/tab2_2";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default function SchoolExpenses() {
   const [activeTab, setActiveTab] = useState(1);
@@ -28,6 +30,7 @@ export default function SchoolExpenses() {
   };
   return (
     <div className="flex w-full flex-col items-center overflow-x-hidden">
+      <Navbar />
       {showWhatsApp && (
         <FloatingWhatsApp
           avatar="/image/logo.svg"
@@ -129,6 +132,7 @@ export default function SchoolExpenses() {
         </div>
       </section>
       {/* Second section */}
+      <Footer />
     </div>
   );
 }

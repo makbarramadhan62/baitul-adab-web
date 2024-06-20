@@ -8,6 +8,8 @@ import Tab_3 from "@/app/profil-sekolah/tab_3";
 
 import { AnimatePresence, motion } from "framer-motion";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default function Profile() {
   const [activeTab, setActiveTab] = useState(1);
@@ -45,6 +47,7 @@ export default function Profile() {
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
+      <Navbar />
       {showWhatsApp && (
         <FloatingWhatsApp
           avatar="/image/logo.svg"
@@ -266,6 +269,7 @@ export default function Profile() {
         </div>
       </section>
       {/* Third section */}
+      <Footer />
     </div>
   );
 }

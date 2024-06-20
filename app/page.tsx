@@ -8,6 +8,8 @@ import "aos/dist/aos.css";
 import React, { useEffect, useState } from "react";
 
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default function Home() {
   useEffect(() => {
@@ -74,6 +76,7 @@ export default function Home() {
 
   return (
     <div className="flex w-full flex-col items-center overflow-x-hidden">
+      <Navbar />
       {showWhatsApp && (
         <FloatingWhatsApp
           avatar="/image/logo.svg"
@@ -496,6 +499,8 @@ export default function Home() {
         </div>
       </section>
       {/*  Fifth section*/}
+
+      <Footer />
     </div>
   );
 }

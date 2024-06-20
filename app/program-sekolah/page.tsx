@@ -9,6 +9,8 @@ import LevelCard from "@/components/levelCard";
 import ClassCard from "@/components/classCard";
 
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default function Program() {
   const [current, setCurrent] = useState(0);
@@ -52,6 +54,7 @@ export default function Program() {
 
   return (
     <div className="flex w-full flex-col items-center overflow-x-hidden">
+      <Navbar />
       {showWhatsApp && (
         <FloatingWhatsApp
           avatar="/image/logo.svg"
@@ -361,6 +364,7 @@ export default function Program() {
         </div>
       </section>
       {/* Sixth section*/}
+      <Footer />
     </div>
   );
 }

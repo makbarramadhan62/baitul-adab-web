@@ -258,7 +258,8 @@ export default function RegistrationForm() {
               </div>
               <div className="flex flex-col gap-2">
                 <label className="text-neutral text-lg font-medium">
-                  No Hp Orang Tua / Wali<span className="text-red-600">*</span>
+                  No Hp Orang Tua / Wali
+                  <span className="text-red-600">*</span>
                 </label>
                 <input
                   name="noHp"

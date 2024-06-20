@@ -3,6 +3,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export default function Gallery() {
   const [showWhatsApp, setShowWhatsApp] = useState(false);
@@ -40,6 +42,7 @@ export default function Gallery() {
   ];
   return (
     <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
+      <Navbar />
       {showWhatsApp && (
         <FloatingWhatsApp
           avatar="/image/logo.svg"
@@ -85,6 +88,7 @@ export default function Gallery() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
