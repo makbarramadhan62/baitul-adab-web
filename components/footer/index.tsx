@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -31,18 +32,33 @@ const Footer = () => {
             muvåning, och pesask vyfisat. Viktiga poddradio har un mad och inde.
           </p>
           <div className="flex items-center gap-2">
-            <button className="btn bg-transparent shadow-none hover:bg-transparent text-white hover:text-neutral text-xl border-0">
-              <i className="bi bi-facebook"></i>
-            </button>
-            <button className="btn bg-transparent shadow-none hover:bg-transparent text-white hover:text-neutral text-xl border-0">
-              <i className="bi bi-twitter"></i>
-            </button>
+            <Link
+              href="https://www.facebook.com/profile.php?id=61551435236019&mibextid=ZbWKwL"
+              target="_blank"
+            >
+              <button className="btn bg-transparent shadow-none hover:bg-transparent text-white hover:text-neutral text-xl border-0">
+                <i className="bi bi-facebook"></i>
+              </button>
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@baisedu?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+            >
+              <button className="btn bg-transparent shadow-none hover:bg-transparent text-white hover:text-neutral text-xl border-0">
+                <i className="bi bi-tiktok"></i>
+              </button>
+            </Link>
             <button className="btn bg-transparent shadow-none hover:bg-transparent text-white hover:text-neutral text-xl border-0">
               <i className="bi bi-linkedin"></i>
             </button>
-            <button className="btn bg-transparent shadow-none hover:bg-transparent text-white hover:text-neutral text-xl border-0">
-              <i className="bi bi-instagram"></i>
-            </button>
+            <Link
+              href="https://www.instagram.com/baituladabislamicschool?igsh=MWttZXg5aDhmNnhiZQ=="
+              target="_blank"
+            >
+              <button className="btn bg-transparent shadow-none hover:bg-transparent text-white hover:text-neutral text-xl border-0">
+                <i className="bi bi-instagram"></i>
+              </button>
+            </Link>
           </div>
         </aside>
         <nav className="text-white">

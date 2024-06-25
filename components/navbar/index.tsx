@@ -359,14 +359,23 @@ const Navbar = () => {
             </button>
           </Link>
           <div className="hidden lg:flex space-x-4">
-            <Link href="/">
+            <Link
+              href="https://www.instagram.com/baituladabislamicschool?igsh=MWttZXg5aDhmNnhiZQ=="
+              target="_blank"
+            >
               <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
             </Link>
-            <Link href="/">
-              <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
+            <Link
+              href="https://www.facebook.com/profile.php?id=61551435236019&mibextid=ZbWKwL"
+              target="_blank"
+            >
+              <i className="bi bi-facebook text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
             </Link>
-            <Link href="/">
-              <i className="bi bi-instagram text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
+            <Link
+              href="https://www.tiktok.com/@baisedu?is_from_webapp=1&sender_device=pc"
+              target="_blank"
+            >
+              <i className="bi bi-tiktok text-blue-600 border border-blue-600 rounded-md p-2 hover:bg-blue-600 hover:text-white" />
             </Link>
           </div>
         </div>
