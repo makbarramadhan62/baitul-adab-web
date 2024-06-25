@@ -21,7 +21,7 @@ export default function PendaftaranForm() {
     e.preventDefault();
     const { namaCalonSiswa, namaOrangTua, nomorWhatsApp } = formData;
     const message = `Nama Calon Siswa: ${namaCalonSiswa}%0aNama Orang Tua/Wali: ${namaOrangTua}%0aNomor WhatsApp: ${nomorWhatsApp}`;
-    const whatsappURL = `https://wa.me/6281255446710?text=${message}`;
+    const whatsappURL = `https://wa.me/6285333392421?text=${message}`;
     window.open(whatsappURL, "_blank");
   };
   return (

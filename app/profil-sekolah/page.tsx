@@ -52,9 +52,10 @@ export default function Profile() {
         <FloatingWhatsApp
           avatar="/image/logo.svg"
           className="text-neutral"
-          phoneNumber="6281255446710"
+          phoneNumber="6285333392421"
           accountName="Baitul Adab"
           allowEsc={true}
+          chatMessage={"Halo, ada yang bisa dibantu?"}
         />
       )}
 
