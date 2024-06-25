@@ -336,7 +336,7 @@ export default function Home() {
                 style={{ height: "auto" }}
                 src="/image/home/arrow1.svg"
                 alt="school-pict"
-                className="object-contain mx-auto mb-auto w-1/5 hidden 2xl:block"
+                className="object-contain mx-auto mb-auto w-1/5 hidden xl:block"
               />
               <div
                 className="card w-auto md:w-auto bg-transparent rounded-lg"
@@ -369,7 +369,7 @@ export default function Home() {
                 style={{ height: "auto" }}
                 src="/image/home/arrow2.svg"
                 alt="school-pict"
-                className="object-contain mx-auto w-1/5 hidden 2xl:block"
+                className="object-contain mx-auto w-1/5 hidden xl:block"
               />
               <div
                 className="card w-auto md:w-auto bg-transparent rounded-lg"
