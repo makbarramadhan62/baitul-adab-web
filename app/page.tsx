@@ -10,6 +10,7 @@ import React, { useEffect, useState } from "react";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import Link from "next/link";
 
 export default function Home() {
   useEffect(() => {
@@ -111,9 +112,11 @@ export default function Home() {
               ultrices ligula in turpis posuere, at sodales ipsum consequat. Ut
               eleifend tellus sit amet enim maximus vehicula.
             </p>
-            <button className="btn btn-primary text-white mt-4">
-              Daftar Sekarang <i className="bi bi-arrow-right"></i>
-            </button>
+            <Link href="/contact-us">
+              <button className="btn btn-primary text-white mt-4">
+                Daftar Sekarang <i className="bi bi-arrow-right"></i>
+              </button>
+            </Link>
           </div>
         </div>
 
