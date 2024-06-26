@@ -26,42 +26,14 @@ export default function Home() {
       imageAlt: "school-pict",
       title: "Kurikulum Terbaru",
       description:
-        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
+        "Setelah bergabung KB/TK Baitul Adab, Kia menjadi lebih mandiri dan selalu semangat bangun pagi karena ingin bermain dan belajar sama temen-temen di sekolah. Saya lihat kegiatannya menarik dan variatif serta fasilitasnya pun lengkap. (Bunda Hasnah orangtua dari Sakhia)",
     },
     {
       imageSrc: "/image/home/TestimonialPerson.png",
       imageAlt: "school-pict",
       title: "Kurikulum Terbaru",
       description:
-        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
-    },
-    {
-      imageSrc: "/image/home/TestimonialPerson.png",
-      imageAlt: "school-pict",
-      title: "Kurikulum Terbaru",
-      description:
-        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
-    },
-    {
-      imageSrc: "/image/home/TestimonialPerson.png",
-      imageAlt: "school-pict",
-      title: "Kurikulum Terbaru",
-      description:
-        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
-    },
-    {
-      imageSrc: "/image/home/TestimonialPerson.png",
-      imageAlt: "school-pict",
-      title: "Kurikulum Terbaru",
-      description:
-        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
-    },
-    {
-      imageSrc: "/image/home/TestimonialPerson.png",
-      imageAlt: "school-pict",
-      title: "Kurikulum Terbaru",
-      description:
-        "Loerem ipsumLoerem ipsumLoerem ipsumLoerem ipsumLoerem ipsum Loerem ipsumLoerem ipsumLoerem ipsum",
+        "Alhamdulillah, sekarang Adiva menjadi lebih mudah dalam berteman dan berani dalam mengutarakan pendapat serta keinginannya. Gurunya friendly banget sama anak-anak, membuat Adiva nyaman di sekolah. (Bunda Raisa orangtua dari Adiva)",
     },
   ];
 
@@ -108,9 +80,8 @@ export default function Home() {
               Baitul Adab Islamic School
             </h2>
             <p className="mt-4 text-gray-600">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              ultrices ligula in turpis posuere, at sodales ipsum consequat. Ut
-              eleifend tellus sit amet enim maximus vehicula.
+              Selamat datang di Baitul Adab Islamic School, sekolah tahfidz
+              bilingual school. Al-adab qoblal ilmi (Belajar adab sebelum ilmu)
             </p>
             <Link href="/contact-us">
               <button className="btn btn-primary text-white mt-4">

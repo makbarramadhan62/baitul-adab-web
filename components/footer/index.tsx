@@ -13,7 +13,7 @@ const Footer = () => {
         className="object-contain w-full z-10"
       />
       <footer className="footer p-10 lg:px-80 gap-24 bg-primary-content text-base-content">
-        <aside className="w-2/3">
+        <aside className="w-full">
           <div className="flex items-center gap-2">
             <Image
               width={100}
@@ -48,9 +48,6 @@ const Footer = () => {
                 <i className="bi bi-tiktok"></i>
               </button>
             </Link>
-            <button className="btn bg-transparent shadow-none hover:bg-transparent text-white hover:text-neutral text-xl border-0">
-              <i className="bi bi-linkedin"></i>
-            </button>
             <Link
               href="https://www.instagram.com/baituladabislamicschool?igsh=MWttZXg5aDhmNnhiZQ=="
               target="_blank"

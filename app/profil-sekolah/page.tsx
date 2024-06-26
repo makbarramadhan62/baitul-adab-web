@@ -86,24 +86,21 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="gap-4 lg:gap-8 flex flex-col lg:flex-row items-center justify-center text-neutral">
+          <div className="gap-4 lg:gap-8 flex flex-col lg:flex-row items-start justify-center text-neutral">
             <span className="w-full lg:w-1/2 lg:order-1 text-lg lg:text-2xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Baitul Adab Islamic School (BAIS) adalah sebuah lembaga pendidikan
+              Islam yang berlokasi di kota Depok di bawah naungan Yayasan
+              Bintang Peradaban Islam BAIS. Didirikan pada tanggal 14 Agustus
+              2023 dan mulai mengadakan kegiatan pembelajaran pada awal tahun
+              2024.
             </span>
             <span className="w-full lg:w-1/2 lg:order-2 text-lg lg:text-2xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Sesuai dengan namanya, Baitul Adab, sekolah ini didesain untuk
+              melahirkan generasi penerus peradaban Islam yang sholeh, santun,
+              mandiri, bersahabat, cerdas, terampil, berakhlakul mulia dan
+              beradab. Saat ini memiliki beberapa unit kegiatan, antara lain:
+              Daycare, KB/TK, Homeschooling (jenjang SD, SMP, SMA) dan Pesantren
+              Entreupreuneur Al-Quran (jenjang SMP-SMA).
             </span>
           </div>
         </div>

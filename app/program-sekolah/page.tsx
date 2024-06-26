@@ -128,7 +128,7 @@ export default function Program() {
           style={{ width: "100%", height: "auto" }}
           src="/image/home/UnionBg.svg"
           alt="school-pict"
-          className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-24 z-10"
+          className="object-cover absolute -bottom-1 lg:-bottom-20 xl:-bottom-28 z-10"
         />
       </section>
       {/* First section*/}
