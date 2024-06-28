@@ -7,6 +7,7 @@ export default function PendaftaranForm() {
     namaCalonSiswa: "",
     namaOrangTua: "",
     nomorWhatsApp: "",
+    programKelas: "",
   });
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
@@ -19,8 +20,9 @@ export default function PendaftaranForm() {
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const { namaCalonSiswa, namaOrangTua, nomorWhatsApp } = formData;
-    const message = `Nama Calon Siswa: ${namaCalonSiswa}%0aNama Orang Tua/Wali: ${namaOrangTua}%0aNomor WhatsApp: ${nomorWhatsApp}`;
+    const { namaCalonSiswa, namaOrangTua, nomorWhatsApp, programKelas } =
+      formData;
+    const message = `Nama Calon Siswa: ${namaCalonSiswa}%0aNama Orang Tua/Wali: ${namaOrangTua}%0aNomor WhatsApp: ${nomorWhatsApp}%0aProgram Kelas: ${programKelas}`;
     const whatsappURL = `https://wa.me/6285333392421?text=${message}`;
     window.open(whatsappURL, "_blank");
   };
@@ -51,6 +53,22 @@ export default function PendaftaranForm() {
           placeholder="Nomor Whats App Orang Tua / Wali *"
           className="input input-bordered bg-transparent w-full text-neutral"
         />
+        <select
+          name="programKelas"
+          className="select select-bordered w-full text-neutral bg-transparent"
+          value={formData.programKelas}
+          onChange={handleChange}
+        >
+          <option value="" disabled>
+            Pilih Program Kelas
+          </option>
+          <option value="Playgroup Regular">Playgroup Regular</option>
+          <option value="Playgroup Plus Daycare">Playgroup Plus Daycare</option>
+          <option value="Kindergarten Regular">Kindergarten Regular</option>
+          <option value="Kindergarten Plus Daycare">
+            Kindergarten Plus Daycare
+          </option>
+        </select>
         <button type="submit" className="btn btn-primary text-white mx-auto">
           KIRIM VIA WHATSAPP
         </button>
