@@ -80,8 +80,8 @@ export default function Home() {
               Baitul Adab Islamic School
             </h2>
             <p className="mt-4 text-gray-600">
-              Selamat datang di Baitul Adab Islamic School, sekolah tahfidz
-              bilingual school. Al-adab qoblal ilmi (Belajar adab sebelum ilmu)
+              sekolah tahfidz bilingual school. Al-adab qoblal ilmi (Belajar
+              adab sebelum ilmu)
             </p>
             <Link href="/contact-us">
               <button className="btn btn-primary text-white mt-4">
@@ -322,15 +322,14 @@ export default function Home() {
                   width={100}
                   unoptimized
                   style={{ width: "auto", height: "auto" }}
-                  src="/image/home/registrationStep1.svg"
+                  src="/image/home/registrationStep2.svg"
                   alt="school-pict"
                   className="object-contain mx-auto"
                 />
                 <div className="card-body items-center text-center text-primary">
-                  <h2 className="font-semibold text-2xl">Mengisi Formulir</h2>
+                  <h2 className="font-semibold text-2xl">Ujian Tulis</h2>
                   <p className="text-lg font-normal">
-                    Isi formulir pendaftaran dan siapkan berkas - berkas yang
-                    dibutuhkan
+                    Siswa / Siswi melakukan ujian tulis
                   </p>
                 </div>
               </div>
@@ -355,15 +354,15 @@ export default function Home() {
                   width={100}
                   unoptimized
                   style={{ width: "auto", height: "auto" }}
-                  src="/image/home/registrationStep1.svg"
+                  src="/image/home/registrationStep3.svg"
                   alt="school-pict"
                   className="object-contain mx-auto"
                 />
                 <div className="card-body items-center text-center text-primary">
-                  <h2 className="font-semibold text-2xl">Mengisi Formulir</h2>
+                  <h2 className="font-semibold text-2xl">Pengumuman</h2>
                   <p className="text-lg font-normal">
-                    Isi formulir pendaftaran dan siapkan berkas - berkas yang
-                    dibutuhkan
+                    Pengumuman hasil seleksi ujian dan pembayaran registrasi
+                    sekolah
                   </p>
                 </div>
               </div>
