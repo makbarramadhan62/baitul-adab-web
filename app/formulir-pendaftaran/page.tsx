@@ -473,7 +473,7 @@ export default function RegistrationForm() {
               <div className="font-semibold flex flex-col">
                 <span>Email</span>
                 <span className="text-secondary-content">
-                  info@marcc.com.au
+                  baituladabislamicschool@gmail.com
                 </span>
               </div>
             </div>
