@@ -465,7 +465,7 @@ export default function RegistrationForm() {
               <i className="bi bi-telephone text-2xl"></i>
               <div className="font-semibold flex flex-col">
                 <span>WhatsApp</span>
-                <span className="text-secondary-content">03 5432 1234</span>
+                <span className="text-secondary-content">0853-3339-2421</span>
               </div>
             </div>
             <div className="text-neutral text-sm flex items-center gap-2">
