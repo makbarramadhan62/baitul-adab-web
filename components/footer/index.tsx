@@ -27,9 +27,8 @@ const Footer = () => {
             </span>
           </div>
           <p className="font-normal text-sm text-white">
-            Lörem ipsum od ohet dilogi. Bell trabel, samuligt, ohöbel utom
-            diska. Jinesade bel när feras redorade i belogi. FAR paratyp i
-            muvåning, och pesask vyfisat. Viktiga poddradio har un mad och inde.
+            Sekolah tahfidz billingual schools. Al - adab qoblal ilmi ( belajar
+            adab sebelum ilmu )
           </p>
           <div className="flex items-center gap-2">
             <Link
@@ -73,7 +72,7 @@ const Footer = () => {
             Galleri Sekolah
           </a>
         </nav>
-        <nav className="text-white">
+        <nav className="text-white w-72">
           <h6 className="text-xl font-semibold">Contact</h6>
           <div className="flex items-center gap-2">
             <i className="bi bi-telephone-fill"></i>
@@ -83,9 +82,12 @@ const Footer = () => {
             <i className="bi bi-envelope-fill"></i>
             <span>baituladabislamicschool@gmail.com</span>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-start gap-2">
             <i className="bi bi-geo-alt-fill"></i>
-            <span>2972 Westheimer Rd. Santa Ana, Illinois 85486 </span>
+            <span>
+              Jl. RTM Kelapa Dua Jl. H. Ahmad Sibi No.1, Tugu, Kec. Cimanggis,
+              Kota Depok, Jawa Barat 16451
+            </span>
           </div>
         </nav>
       </footer>
