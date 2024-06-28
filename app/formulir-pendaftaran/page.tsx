@@ -285,6 +285,9 @@ export default function RegistrationForm() {
                 />
               </div>
               <div className="flex flex-col gap-2">
+                <label className="text-neutral text-lg font-medium">
+                  Program Kelas
+                </label>
                 <select
                   name="jenjangPendidikan"
                   className="select select-bordered w-full text-neutral bg-base-100"
@@ -292,7 +295,7 @@ export default function RegistrationForm() {
                   onChange={handleChange}
                 >
                   <option value="" disabled>
-                    Pilih Jenjang Pendidikan
+                    Pilih Program Kelas
                   </option>
                   <option value="Playgroup Regular">Playgroup Regular</option>
                   <option value="Playgroup Plus Daycare">
