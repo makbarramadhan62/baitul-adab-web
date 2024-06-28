@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProgramCardProps {
   img: string;
+  link: string;
   title: string;
   description: string;
   className?: string;
@@ -10,6 +12,7 @@ interface ProgramCardProps {
 
 const ProgramCard: React.FC<ProgramCardProps> = ({
   img,
+  link,
   title,
   description,
   className,
@@ -42,9 +45,11 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
                 <p className="text-start text-sm">{description}</p>
               </div>
               <div className="text-end">
-                <button className="btn btn-sm btn-neutral rounded-full">
-                  Lihat
-                </button>
+                <Link href={link}>
+                  <button className="btn btn-sm btn-neutral rounded-full">
+                    Lihat
+                  </button>
+                </Link>
               </div>
             </div>
             {/* Kanan*/}
