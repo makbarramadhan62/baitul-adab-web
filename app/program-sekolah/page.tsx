@@ -27,16 +27,21 @@ export default function Program() {
 
   const programs = [
     {
+      img: "/image/program-sekolah/program_playgroup.png",
       title: "PLAYGROUP",
       description:
         "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
     },
     {
+      img: "/image/program-sekolah/program_kindegraten.png",
+
       title: "KINDERGARTEN",
       description:
         "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
     },
     {
+      img: "/image/program-sekolah/program_daycare.png",
+
       title: "DAYCARE",
       description:
         "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
@@ -112,6 +117,7 @@ export default function Program() {
                     style={{ zIndex: isCurrent ? 1 : 0 }}
                   >
                     <ProgramCard
+                      img={program.img}
                       title={program.title}
                       description={program.description}
                     />

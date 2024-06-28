@@ -1,12 +1,15 @@
 import React from "react";
+import Image from "next/image";
 
 interface ProgramCardProps {
+  img: string;
   title: string;
   description: string;
   className?: string;
 }
 
 const ProgramCard: React.FC<ProgramCardProps> = ({
+  img,
   title,
   description,
   className,
@@ -17,14 +20,14 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
         <div className="card-body p-0 items-center text-center">
           <div className="flex h-full">
             {/* Kiri*/}
-            <div className="md:flex flex-col justify-between bg-success p-4 rounded-s-2xl hidden">
-              <div className="flex flex-col items-start">
-                <span>Part I</span>
-                <span>Name</span>
-              </div>
-              <div className="text-start">
-                <span>Something here</span>
-              </div>
+            <div className="w-96">
+              <Image
+                src={img}
+                alt="school-pict"
+                width={100}
+                height={100}
+                className="object-cover w-full h-full rounded-s-2xl"
+              />
             </div>
             {/* Kiri*/}
 
@@ -49,7 +52,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
               </div>
               <div className="text-end">
                 <button className="btn btn-sm btn-neutral rounded-full">
-                  Button
+                  Lihat
                 </button>
               </div>
             </div>
