@@ -18,7 +18,7 @@ export default function Pendaftaran() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden">
+    <div className="flex min-h-screen w-full flex-col items-center overflow-x-hidden bg-white">
       <Navbar />
       {showWhatsApp && (
         <FloatingWhatsApp
@@ -33,7 +33,7 @@ export default function Pendaftaran() {
 
       <section
         id="contact-us-first"
-        className="h-full lg:h-[944px] w-full py-20 lg:py-32 relative"
+        className="h-full lg:h-[944px] w-full py-20 lg:py-32 relative bg-[#FFFAE6]"
       >
         <Image
           height={100}
@@ -60,32 +60,6 @@ export default function Pendaftaran() {
             </span>
 
             <PendaftaranForm />
-
-            <div className="flex flex-wrap justify-between gap-4">
-              <div className="text-neutral text-sm flex items-center gap-2">
-                <i className="bi bi-telephone text-2xl"></i>
-                <div className="font-semibold flex flex-col">
-                  <span>WhatsApp</span>
-                  <span className="text-secondary-content">03 5432 1234</span>
-                </div>
-              </div>
-              <div className="text-neutral text-sm flex items-center gap-2">
-                <i className="bi bi-envelope text-2xl"></i>
-                <div className="font-semibold flex flex-col">
-                  <span>Email</span>
-                  <span className="text-secondary-content">
-                    info@marcc.com.au
-                  </span>
-                </div>
-              </div>
-              <div className="text-neutral text-sm flex items-center gap-2">
-                <i className="bi bi-instagram text-2xl"></i>
-                <div className="font-semibold flex flex-col">
-                  <span>Instagram</span>
-                  <span className="text-secondary-content">@baituladab</span>
-                </div>
-              </div>
-            </div>
           </div>
 
           <div className="card w-full lg:w-1/3 bg-base-100 shadow-xl relative z-20 text-neutral">
