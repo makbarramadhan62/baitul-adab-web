@@ -92,17 +92,17 @@ const Tab_1 = () => {
                 {/* row 1 */}
                 <tr>
                   <td>SENIN</td>
-                  <td className="text-end">08:30 - 11:00</td>
+                  <td className="text-end">08:00 - 11:00</td>
                 </tr>
                 {/* row 2 */}
                 <tr>
                   <td>SELASA</td>
-                  <td className="text-end">08:30 - 11:00</td>
+                  <td className="text-end">08:00 - 11:00</td>
                 </tr>
                 {/* row 3 */}
                 <tr>
                   <td>RABU</td>
-                  <td className="text-end">08:30 - 11:00</td>
+                  <td className="text-end">08:00 - 11:00</td>
                 </tr>
               </tbody>
             </table>
