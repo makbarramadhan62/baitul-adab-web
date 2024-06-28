@@ -31,6 +31,7 @@ export default function Program() {
       title: "PLAYGROUP",
       description:
         "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
+      link: "/program-sekolah/#playgroup",
     },
     {
       img: "/image/program-sekolah/program_kindegraten.png",
@@ -38,6 +39,7 @@ export default function Program() {
       title: "KINDERGARTEN",
       description:
         "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
+      link: "/program-sekolah/#kindegarten",
     },
     {
       img: "/image/program-sekolah/program_daycare.png",
@@ -45,6 +47,7 @@ export default function Program() {
       title: "DAYCARE",
       description:
         "Program ini diperuntukan bagi anak-anak yang belum memasuki Kelompok Bermain (Playgroup) atau Taman Kanak-Kanak (Kindergarten) usia 2-3 tahun. Kegiatannya dimulai dari pukul 07.00 - 16.00 WIB",
+      link: "/program-sekolah/#daycare",
     },
   ];
 
@@ -118,6 +121,7 @@ export default function Program() {
                   >
                     <ProgramCard
                       img={program.img}
+                      link={program.link}
                       title={program.title}
                       description={program.description}
                     />
@@ -215,7 +219,7 @@ export default function Program() {
             <LevelCard
               imageSrc="/image/program-sekolah/illustrationLevel.svg"
               imageAlt="school-pict"
-              title="Playgroup Regular"
+              title="Playgroup Regular + Daycare"
               description="07:00 - 11:00"
             />
           </div>
