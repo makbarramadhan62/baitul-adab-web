@@ -24,14 +24,14 @@ export default function Home() {
     {
       imageSrc: "/image/home/TestimonialPerson.png",
       imageAlt: "school-pict",
-      title: "Kurikulum Terbaru",
+      title: "Kia",
       description:
         "Setelah bergabung KB/TK Baitul Adab, Kia menjadi lebih mandiri dan selalu semangat bangun pagi karena ingin bermain dan belajar sama temen-temen di sekolah. Saya lihat kegiatannya menarik dan variatif serta fasilitasnya pun lengkap. (Bunda Hasnah orangtua dari Sakhia)",
     },
     {
       imageSrc: "/image/home/TestimonialPerson.png",
       imageAlt: "school-pict",
-      title: "Kurikulum Terbaru",
+      title: "Adiva",
       description:
         "Alhamdulillah, sekarang Adiva menjadi lebih mudah dalam berteman dan berani dalam mengutarakan pendapat serta keinginannya. Gurunya friendly banget sama anak-anak, membuat Adiva nyaman di sekolah. (Bunda Raisa orangtua dari Adiva)",
     },
@@ -310,10 +310,10 @@ export default function Home() {
                 style={{ height: "auto" }}
                 src="/image/home/arrow1.svg"
                 alt="school-pict"
-                className="object-contain mx-auto mb-auto w-1/5 hidden xl:block"
+                className="object-contain mx-auto mb-auto w-1/6 hidden xl:block"
               />
               <div
-                className="card w-auto md:w-auto bg-transparent rounded-lg"
+                className="card w-auto md:w-1/2 bg-transparent rounded-lg"
                 data-aos="fade-up"
                 data-aos-delay="1200"
               >
@@ -342,7 +342,7 @@ export default function Home() {
                 style={{ height: "auto" }}
                 src="/image/home/arrow2.svg"
                 alt="school-pict"
-                className="object-contain mx-auto w-1/5 hidden xl:block"
+                className="object-contain mx-auto w-1/6 hidden xl:block"
               />
               <div
                 className="card w-auto md:w-auto bg-transparent rounded-lg"
