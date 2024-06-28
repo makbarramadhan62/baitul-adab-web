@@ -213,14 +213,14 @@ export default function Program() {
               imageSrc="/image/program-sekolah/illustrationLevel.svg"
               imageAlt="school-pict"
               title="Playgroup Regular"
-              description="07:00 - 11:00"
+              description="08:30 - 11:00"
             />
 
             <LevelCard
               imageSrc="/image/program-sekolah/illustrationLevel.svg"
               imageAlt="school-pict"
               title="Playgroup Regular + Daycare"
-              description="07:00 - 11:00"
+              description="08:30 - 11:00"
             />
           </div>
         </div>
@@ -273,14 +273,14 @@ export default function Program() {
               imageSrc="/image/program-sekolah/illustrationLevel.svg"
               imageAlt="school-pict"
               title="Kindegarten Regular"
-              description="07:00 - 11:00"
+              description="08:30 - 11:00"
             />
 
             <LevelCard
               imageSrc="/image/program-sekolah/illustrationLevel.svg"
               imageAlt="school-pict"
               title="Kindegarten Regular + Daycare"
-              description="07:00 - 11:00"
+              description="08:30 - 11:00"
             />
           </div>
         </div>
