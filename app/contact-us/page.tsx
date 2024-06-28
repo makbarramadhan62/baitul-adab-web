@@ -122,8 +122,7 @@ export default function Pendaftaran() {
                     className="object-contain"
                   />
                   <span className="text-base font-medium">
-                    Menunggu pengumuman untuk melakukan test wawancara (calon
-                    siswa)
+                    Observasi, fingerprint, test, dan wawancara calon siswa
                   </span>
                 </div>
                 <div className="flex gap-4 bg-[#FFF6E9] rounded-full items-center">
@@ -137,8 +136,7 @@ export default function Pendaftaran() {
                     className="object-contain"
                   />
                   <span className="text-base font-medium">
-                    Menunggu pengumuman untuk melakukan test wawancara (calon
-                    siswa)
+                    Pengumuman hasil observasi calon siswa
                   </span>
                 </div>
                 <div className="flex gap-4 bg-[#FFF6E9] rounded-full items-center">
@@ -152,8 +150,7 @@ export default function Pendaftaran() {
                     className="object-contain"
                   />
                   <span className="text-base font-medium">
-                    Menunggu pengumuman untuk melakukan test wawancara (calon
-                    siswa)
+                    Masa orientasi siswa baru
                   </span>
                 </div>
               </div>
