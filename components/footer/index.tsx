@@ -76,7 +76,7 @@ const Footer = () => {
           <h6 className="text-xl font-semibold">Contact</h6>
           <div className="flex items-center gap-2">
             <i className="bi bi-telephone-fill"></i>
-            <span>0856-1623-478</span>
+            <span>0853-3339-2421</span>
           </div>
           <div className="flex items-center gap-2">
             <i className="bi bi-envelope-fill"></i>
