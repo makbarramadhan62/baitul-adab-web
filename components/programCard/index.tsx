@@ -36,16 +36,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
               <div className="flex flex-col gap-4">
                 <div className="flex justify-between items-start">
                   <div>
-                    <span className="card-title text-xs">Version 1.1</span>
                     <span className="card-title text-lg">{title}</span>
-                  </div>
-                  <div className="text-start">
-                    <progress
-                      className="progress w-12"
-                      value="95"
-                      max="100"
-                    ></progress>
-                    <p className="text-xs">95/100</p>
                   </div>
                 </div>
                 <p className="text-start text-sm">{description}</p>
