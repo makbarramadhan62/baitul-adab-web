@@ -4,7 +4,6 @@ import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import React from "react";
-import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
